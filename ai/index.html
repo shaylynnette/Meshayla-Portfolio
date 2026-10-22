@@ -243,7 +243,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
       <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All projects</button>
       <button type="button" class="fbtn" data-filter="prod,practice" aria-pressed="false">Completed</button>
       <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
-      <span class="fcount" aria-live="polite">Showing 8 of 8 projects</span>
+      <span class="fcount" aria-live="polite">Showing 10 of 10 projects</span>
     </div>
 
     <!-- BUILD 1 -->
@@ -335,6 +335,50 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
       </div>
       <div class="tags"><span class="tag">JavaScript</span><span class="tag">Structured data</span><span class="tag">Sharded static data</span><span class="tag">Open data licensing</span><span class="tag">Child privacy</span><span class="tag">Accessibility</span></div>
       <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">Visit GC Bible Study</a></div>
+    </article>
+
+    <!-- BUILD: PICTURE PIN SIGN-IN -->
+    <article class="proj" data-status="prod">
+      <div class="proj-head">
+        <div><div class="kicker">Security design &middot; identity for young children</div><h3>Sign-in for children who can&rsquo;t use passwords: picture PIN and approved devices</h3></div>
+        <span class="badge b-prod">In production</span>
+      </div>
+      <p>A five-year-old can&rsquo;t manage an email and password, and a children&rsquo;s product can&rsquo;t afford to be careless with identity. Children sign in with a picture PIN on a device their parent has approved, and the parent stays in control of every step.</p>
+      <div class="cols">
+        <div><h4>How it works</h4><ul>
+          <li>A parent creates a one-time device code that expires in 10 minutes, with one live code per family.</li>
+          <li>The child picks four pictures instead of typing a password.</li>
+          <li>Wrong tries are counted per child, so guessing slows down and stops.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>The server stores a keyed hash of the pictures, never the pictures themselves, and the device code is stored hashed too.</li>
+          <li>Database access rules are on, and only the server can write sign-in records.</li>
+          <li>Approved devices can be managed by the parent, so a lost tablet is not a lost account.</li>
+        </ul></div>
+      </div>
+      <div class="tags"><span class="tag">Authentication design</span><span class="tag">Keyed hashing</span><span class="tag">Row-level security</span><span class="tag">Supabase</span><span class="tag">Child privacy</span></div>
+    </article>
+
+    <!-- BUILD: WORKBOOKS + WEEKLY REPORT -->
+    <article class="proj" data-status="prod">
+      <div class="proj-head">
+        <div><div class="kicker">Commerce &middot; scheduled automation</div><h3>Paid digital workbooks and a weekly progress email for parents</h3></div>
+        <span class="badge b-prod">In production</span>
+      </div>
+      <p>Parents can buy a fillable workbook once and use it for every child in the family, with each child&rsquo;s answers and drawings saved page by page. Every Friday afternoon a progress email goes to families without anyone pressing a button.</p>
+      <div class="cols">
+        <div><h4>Design decisions</h4><ul>
+          <li>Who owns a workbook is decided only on the server, from purchases recorded by Stripe&rsquo;s own webhook. The browser is never trusted.</li>
+          <li>A child&rsquo;s pages can be read or saved only by that child&rsquo;s own family.</li>
+          <li>A guard blocks test-mode payments from running on the live site.</li>
+        </ul></div>
+        <div><h4>The Friday email</h4><ul>
+          <li>A scheduled job that sends at 5 p.m. Central all year, even when clocks change.</li>
+          <li>Safe to re-run: it sends at most once per family per week.</li>
+          <li>The workbook functions have automated tests.</li>
+        </ul></div>
+      </div>
+      <div class="tags"><span class="tag">Stripe Checkout</span><span class="tag">Webhooks</span><span class="tag">Scheduled functions</span><span class="tag">Idempotent jobs</span><span class="tag">Serverless</span><span class="tag">Automated testing</span></div>
     </article>
 
     <!-- BUILD 2 -->
