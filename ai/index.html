@@ -136,8 +136,10 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
 </style>
+<link rel="stylesheet" href="/assets/css/enhance.css">
 </head>
 <body>
+<!-- Reading the source? Good instinct. This page is plain HTML, CSS and vanilla JavaScript on purpose: no framework, no build step, nothing to hide. Questions or ideas: meshayla@kempadvisory.com -->
 <a class="skip" href="#main">Skip to content</a>
 
 <nav aria-label="Main">
@@ -165,6 +167,12 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
       <a class="btn-soft" href="#skills">Skills, labeled honestly</a>
     </div>
     <p class="honesty"><strong>How to read this page:</strong> every capability carries a status badge &mdash; <span class="badge b-prod">In practice</span> delivered in real work, <span class="badge b-build">Building</span> in active development, <span class="badge b-learn">Learning</span> studying now. I would rather show you where I am than oversell it.</p>
+    <div class="stats" role="list" aria-label="Impact highlights">
+      <div class="stat" role="listitem"><b data-count="6">6</b><span>states&rsquo; standards crosswalked with AI-assisted analysis</span></div>
+      <div class="stat" role="listitem"><b data-count="100" data-suffix="%">100%</b><span>first-submission approval on a statewide certification program</span></div>
+      <div class="stat" role="listitem"><b data-count="40" data-suffix="%">40%</b><span>team turnaround gain after introducing AI workflows</span></div>
+      <div class="stat" role="listitem"><b data-count="95" data-suffix="%">95%</b><span>participant satisfaction on an enterprise LMS curriculum</span></div>
+    </div>
   </div>
 </header>
 
@@ -213,9 +221,16 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     <div class="s-pill">Featured builds</div>
     <h2 class="s-h2">Systems I have <em>designed and shipped</em></h2>
     <p class="s-body">Client details are generalized. Where a repository will be public, a link appears here as soon as it is.</p>
+    <div class="filters" data-filters role="group" aria-label="Filter builds by status">
+      <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All builds</button>
+      <button type="button" class="fbtn" data-filter="prod" aria-pressed="false">In production</button>
+      <button type="button" class="fbtn" data-filter="practice" aria-pressed="false">In practice</button>
+      <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
+      <span class="fcount" aria-live="polite">Showing 6 of 6 builds</span>
+    </div>
 
     <!-- BUILD 1 -->
-    <article class="proj">
+    <article class="proj" data-status="prod">
       <div class="proj-head">
         <div><div class="kicker">Product architecture</div><h3>GC Academy: an adaptive K&ndash;5 learning platform</h3></div>
         <span class="badge b-prod">In production</span>
@@ -239,12 +254,12 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <title id="d1t">GC Academy architecture</title>
           <desc id="d1d">Learner and parent browsers connect through a Netlify edge gate and serverless functions to Supabase, Stripe and an email service.</desc>
           <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <rect class="bx p" x="15" y="105" width="165" height="80" rx="12"/><text class="tx" x="97" y="138" text-anchor="middle">Learner &amp; Parent</text><text class="tx2" x="97" y="158" text-anchor="middle">Browsers, any device</text>
-          <rect class="bx g" x="250" y="25" width="215" height="75" rx="12"/><text class="tx" x="357" y="56" text-anchor="middle">Edge gate</text><text class="tx2" x="357" y="76" text-anchor="middle">Members-only content check</text>
-          <rect class="bx g" x="250" y="190" width="215" height="75" rx="12"/><text class="tx" x="357" y="221" text-anchor="middle">Serverless functions</text><text class="tx2" x="357" y="241" text-anchor="middle">Sessions, billing, reports</text>
-          <rect class="bx" x="545" y="10" width="200" height="70" rx="12"/><text class="tx" x="645" y="40" text-anchor="middle">Supabase</text><text class="tx2" x="645" y="60" text-anchor="middle">Database &amp; progress records</text>
-          <rect class="bx" x="545" y="110" width="200" height="70" rx="12"/><text class="tx" x="645" y="140" text-anchor="middle">Stripe</text><text class="tx2" x="645" y="160" text-anchor="middle">Plans, card verification</text>
-          <rect class="bx" x="545" y="210" width="200" height="70" rx="12"/><text class="tx" x="645" y="240" text-anchor="middle">Email service</text><text class="tx2" x="645" y="260" text-anchor="middle">Weekly parent reports</text>
+          <g class="node" tabindex="0" role="button" aria-label="Learner &amp; Parent" data-info="Children learn in the browser; parents manage children, consent and billing in a separate Parent Center."><rect class="bx p" x="15" y="105" width="165" height="80" rx="12"/><text class="tx" x="97" y="138" text-anchor="middle">Learner &amp; Parent</text><text class="tx2" x="97" y="158" text-anchor="middle">Browsers, any device</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Edge gate" data-info="Runs before a file is served and sends members-only lessons only to signed-in members; the free sample stays public."><rect class="bx g" x="250" y="25" width="215" height="75" rx="12"/><text class="tx" x="357" y="56" text-anchor="middle">Edge gate</text><text class="tx2" x="357" y="76" text-anchor="middle">Members-only content check</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Serverless functions" data-info="Small server-side functions handle sessions, checkout, billing portal, webhooks and the weekly report, so there is no server to maintain."><rect class="bx g" x="250" y="190" width="215" height="75" rx="12"/><text class="tx" x="357" y="221" text-anchor="middle">Serverless functions</text><text class="tx2" x="357" y="241" text-anchor="middle">Sessions, billing, reports</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Supabase" data-info="Postgres database for learners, progress and approved devices, with access rules enforced on the server."><rect class="bx" x="545" y="10" width="200" height="70" rx="12"/><text class="tx" x="645" y="40" text-anchor="middle">Supabase</text><text class="tx2" x="645" y="60" text-anchor="middle">Database &amp; progress records</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Stripe" data-info="Handles plans and card verification; webhooks tell the platform when a membership changes."><rect class="bx" x="545" y="110" width="200" height="70" rx="12"/><text class="tx" x="645" y="140" text-anchor="middle">Stripe</text><text class="tx2" x="645" y="160" text-anchor="middle">Plans, card verification</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Email service" data-info="Sends the weekly progress report and approval requests to parents."><rect class="bx" x="545" y="210" width="200" height="70" rx="12"/><text class="tx" x="645" y="240" text-anchor="middle">Email service</text><text class="tx2" x="645" y="260" text-anchor="middle">Weekly parent reports</text></g>
           <path class="ln" d="M180 130 L250 70" marker-end="url(#a1)"/><path class="ln" d="M180 165 L250 215" marker-end="url(#a1)"/>
           <path class="ln" d="M465 215 L545 55" marker-end="url(#a1)"/><path class="ln" d="M465 228 L545 145" marker-end="url(#a1)"/><path class="ln" d="M465 245 L545 245" marker-end="url(#a1)"/>
         </svg>
@@ -255,7 +270,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     </article>
 
     <!-- BUILD 2 -->
-    <article class="proj">
+    <article class="proj" data-status="practice">
       <div class="proj-head">
         <div><div class="kicker">Generative AI workflow</div><h3>AI-assisted multi-state standards crosswalk</h3></div>
         <span class="badge b-prod">In practice</span>
@@ -278,11 +293,11 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <title id="d2t">Standards crosswalk workflow</title>
           <desc id="d2d">Course inventory and state standards feed structured AI prompts that draft a crosswalk and gap list, which a human reviews before lesson redesign.</desc>
           <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <rect class="bx" x="10" y="45" width="130" height="85" rx="12"/><text class="tx" x="75" y="80" text-anchor="middle">Course</text><text class="tx" x="75" y="97" text-anchor="middle">inventory</text><text class="tx2" x="75" y="116" text-anchor="middle">+ state standards</text>
-          <rect class="bx y" x="170" y="45" width="130" height="85" rx="12"/><text class="tx" x="235" y="80" text-anchor="middle">Structured</text><text class="tx" x="235" y="97" text-anchor="middle">AI prompts</text><text class="tx2" x="235" y="116" text-anchor="middle">map &amp; compare</text>
-          <rect class="bx y" x="330" y="45" width="130" height="85" rx="12"/><text class="tx" x="395" y="80" text-anchor="middle">Draft</text><text class="tx" x="395" y="97" text-anchor="middle">crosswalk</text><text class="tx2" x="395" y="116" text-anchor="middle">+ gap list</text>
-          <rect class="bx p" x="490" y="45" width="130" height="85" rx="12"/><text class="tx" x="555" y="80" text-anchor="middle">Human</text><text class="tx" x="555" y="97" text-anchor="middle">review</text><text class="tx2" x="555" y="116" text-anchor="middle">approve / correct</text>
-          <rect class="bx g" x="650" y="45" width="100" height="85" rx="12"/><text class="tx" x="700" y="80" text-anchor="middle">Redesign</text><text class="tx" x="700" y="97" text-anchor="middle">&amp; approval</text><text class="tx2" x="700" y="116" text-anchor="middle">documents</text>
+          <g class="node" tabindex="0" role="button" aria-label="Course inventory and standards" data-info="The existing lessons and objectives, plus each state’s standards documents, are the two inputs."><rect class="bx" x="10" y="45" width="130" height="85" rx="12"/><text class="tx" x="75" y="80" text-anchor="middle">Course</text><text class="tx" x="75" y="97" text-anchor="middle">inventory</text><text class="tx2" x="75" y="116" text-anchor="middle">+ state standards</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Structured AI prompts" data-info="Reusable prompts compare each lesson with each standard and return a mapping in a fixed format."><rect class="bx y" x="170" y="45" width="130" height="85" rx="12"/><text class="tx" x="235" y="80" text-anchor="middle">Structured</text><text class="tx" x="235" y="97" text-anchor="middle">AI prompts</text><text class="tx2" x="235" y="116" text-anchor="middle">map &amp; compare</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Draft crosswalk" data-info="The model’s proposed mappings and a list of standards with no matching lesson."><rect class="bx y" x="330" y="45" width="130" height="85" rx="12"/><text class="tx" x="395" y="80" text-anchor="middle">Draft</text><text class="tx" x="395" y="97" text-anchor="middle">crosswalk</text><text class="tx2" x="395" y="116" text-anchor="middle">+ gap list</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Human review" data-info="A subject-matter reviewer approves or corrects every mapping before anything moves on."><rect class="bx p" x="490" y="45" width="130" height="85" rx="12"/><text class="tx" x="555" y="80" text-anchor="middle">Human</text><text class="tx" x="555" y="97" text-anchor="middle">review</text><text class="tx2" x="555" y="116" text-anchor="middle">approve / correct</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Redesign and approval" data-info="New or revised lessons, assessments and the documents a state reviewer needs to verify compliance."><rect class="bx g" x="650" y="45" width="100" height="85" rx="12"/><text class="tx" x="700" y="80" text-anchor="middle">Redesign</text><text class="tx" x="700" y="97" text-anchor="middle">&amp; approval</text><text class="tx2" x="700" y="116" text-anchor="middle">documents</text></g>
           <path class="ln" d="M140 88 L170 88" marker-end="url(#a2)"/><path class="ln" d="M300 88 L330 88" marker-end="url(#a2)"/><path class="ln" d="M460 88 L490 88" marker-end="url(#a2)"/><path class="ln" d="M620 88 L650 88" marker-end="url(#a2)"/>
         </svg>
         <figcaption>Workflow pattern: AI drafts, a person decides. This is the template for the planned crosswalk agent below.</figcaption>
@@ -291,7 +306,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     </article>
 
     <!-- BUILD: STYLE STUDIO -->
-    <article class="proj">
+    <article class="proj" data-status="prod">
       <div class="proj-head">
         <div><div class="kicker">Interactive product &middot; image-processing pipeline</div><h3>Style Studio: a real-time virtual styling engine</h3></div>
         <span class="badge b-prod">In production</span>
@@ -316,10 +331,10 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <title id="d4t">Style Studio rendering pipeline</title>
           <desc id="d4d">Artwork and a data catalog feed a canvas compositing engine that recolors, maps prints, cleans edges and fits items per character, producing a saved look.</desc>
           <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <rect class="bx" x="10" y="30" width="140" height="85" rx="12"/><text class="tx" x="80" y="66" text-anchor="middle">Artwork</text><text class="tx2" x="80" y="86" text-anchor="middle">per-character layers</text>
-          <rect class="bx" x="180" y="30" width="140" height="85" rx="12"/><text class="tx" x="250" y="66" text-anchor="middle">Item catalog</text><text class="tx2" x="250" y="86" text-anchor="middle">data-driven shop</text>
-          <rect class="bx y" x="350" y="30" width="210" height="85" rx="12"/><text class="tx" x="455" y="60" text-anchor="middle">Compositing engine</text><text class="tx2" x="455" y="80" text-anchor="middle">recolor &middot; print mapping</text><text class="tx2" x="455" y="96" text-anchor="middle">edge cleanup &middot; fit &middot; masks</text>
-          <rect class="bx g" x="590" y="30" width="160" height="85" rx="12"/><text class="tx" x="670" y="60" text-anchor="middle">Saved look</text><text class="tx2" x="670" y="80" text-anchor="middle">on device, look codes,</text><text class="tx2" x="670" y="96" text-anchor="middle">print</text>
+          <g class="node" tabindex="0" role="button" aria-label="Artwork" data-info="Layered art for each character and garment, prepared to a shared size and alignment spec."><rect class="bx" x="10" y="30" width="140" height="85" rx="12"/><text class="tx" x="80" y="66" text-anchor="middle">Artwork</text><text class="tx2" x="80" y="86" text-anchor="middle">per-character layers</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Item catalog" data-info="A data file describes every item, its price, tier and available colors or prints; new items need no new code."><rect class="bx" x="180" y="30" width="140" height="85" rx="12"/><text class="tx" x="250" y="66" text-anchor="middle">Item catalog</text><text class="tx2" x="250" y="86" text-anchor="middle">data-driven shop</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Compositing engine" data-info="Draws layers on a canvas in real time: recolors art, maps printed fabric, cleans edges, fits each item to each character and builds lip and makeup masks."><rect class="bx y" x="350" y="30" width="210" height="85" rx="12"/><text class="tx" x="455" y="60" text-anchor="middle">Compositing engine</text><text class="tx2" x="455" y="80" text-anchor="middle">recolor &middot; print mapping</text><text class="tx2" x="455" y="96" text-anchor="middle">edge cleanup &middot; fit &middot; masks</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Saved look" data-info="Looks are stored on the device, can be shared as a short code and can be printed. Nothing is uploaded."><rect class="bx g" x="590" y="30" width="160" height="85" rx="12"/><text class="tx" x="670" y="60" text-anchor="middle">Saved look</text><text class="tx2" x="670" y="80" text-anchor="middle">on device, look codes,</text><text class="tx2" x="670" y="96" text-anchor="middle">print</text></g>
           <path class="ln" d="M150 72 L180 72" marker-end="url(#a4)"/><path class="ln" d="M320 72 L350 72" marker-end="url(#a4)"/><path class="ln" d="M560 72 L590 72" marker-end="url(#a4)"/>
         </svg>
         <figcaption>Simplified rendering pipeline. The same pipeline pattern generalizes to AI-generated assets and personalized styling.</figcaption>
@@ -329,7 +344,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     </article>
 
     <!-- BUILD 3 -->
-    <article class="proj">
+    <article class="proj" data-status="practice">
       <div class="proj-head">
         <div><div class="kicker">Enterprise generative AI</div><h3>LLM content pipelines and AI voiceover at scale</h3></div>
         <span class="badge b-prod">In practice</span>
@@ -349,7 +364,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     </article>
 
     <!-- BUILD 4 (planned) -->
-    <article class="proj">
+    <article class="proj" data-status="build">
       <div class="proj-head">
         <div><div class="kicker">Flagship in build &middot; public repository planned</div><h3>Standards-grounded RAG tutor, with an evaluation set</h3></div>
         <span class="badge b-build">Building</span>
@@ -360,13 +375,13 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <title id="d3t">Planned RAG tutor architecture</title>
           <desc id="d3d">Public standards are chunked, embedded and indexed. A retriever feeds a language model that answers with citations. An evaluation harness and guardrails surround it.</desc>
           <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text>
-          <rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text>
-          <rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text>
-          <rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text>
-          <rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text>
-          <rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text>
-          <rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text>
+          <g class="node" tabindex="0" role="button" aria-label="Public standards" data-info="Planned: public Texas standards text, with every passage keeping its source identifier."><rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Chunk and embed" data-info="Planned: split standards into passages small enough to retrieve precisely, and convert them to embeddings."><rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Vector index" data-info="Planned: a Postgres vector index that finds the passages closest in meaning to a question."><rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Retriever" data-info="Planned: selects the top passages for a question and passes them, with their sources, to the model."><rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Language model" data-info="Planned: writes the answer using only the retrieved passages and cites each one."><rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Evaluation harness" data-info="Planned: a golden question set that scores whether the right passage was found and whether the answer is grounded."><rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Guardrails" data-info="Planned: the tutor declines when the standards do not support an answer and keeps a child-safe tone."><rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text></g>
           <path class="ln" d="M130 58 L155 58" marker-end="url(#a3)"/><path class="ln" d="M275 58 L300 58" marker-end="url(#a3)"/><path class="ln" d="M420 58 L445 58" marker-end="url(#a3)"/><path class="ln" d="M565 58 L590 58" marker-end="url(#a3)"/>
           <path class="ln" d="M670 95 L670 140" marker-end="url(#a3)"/><path class="ln" d="M590 75 L415 160" marker-end="url(#a3)"/>
         </svg>
@@ -377,7 +392,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     </article>
 
     <!-- BUILD 5 (planned) -->
-    <article class="proj">
+    <article class="proj" data-status="build">
       <div class="proj-head">
         <div><div class="kicker">Flagship in build &middot; public repository planned</div><h3>Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
         <span class="badge b-build">Building</span>
@@ -469,5 +484,6 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 
 </main>
 <footer>&copy; 2026 Kemp Advisory Group, LLC &nbsp;&bull;&nbsp; <a href="/">Back to meshayla.com</a></footer>
+<script src="/assets/js/enhance.js" defer></script>
 </body>
 </html>
