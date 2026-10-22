@@ -894,26 +894,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDocModa
 </script>
 
 
-// Lazy-load course iframe so it doesn't fire on page load
-document.getElementById('toggleBtn') &amp;&amp; document.getElementById('toggleBtn').addEventListener('click', function(){
-  var wrap = document.getElementById('courseWrap');
-  var frame = document.getElementById('courseFrame');
-  var isHidden = wrap.style.display === 'none';
-  wrap.style.display = isHidden ? 'block' : 'none';
-  this.textContent = isHidden ? '▲ Hide Preview' : '👁️ Preview Course';
-  // Only load src once
-  if (isHidden &amp;&amp; frame.src === 'about:blank') {
-    frame.src = frame.getAttribute('data-src');
-  }
-});
-
-document.querySelectorAll("a[href^='#']").forEach(a=&gt;{
-  a.addEventListener("click",e=&gt;{
-    const el=document.getElementById(a.getAttribute("href").slice(1));
-    if(el){e.preventDefault();el.scrollIntoView({behavior:"smooth"});}
-  });
-});
-
 <script>
 document.querySelectorAll("a[href^='#']").forEach(a=>{
   a.addEventListener("click",e=>{

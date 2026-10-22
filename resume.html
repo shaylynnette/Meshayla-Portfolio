@@ -413,7 +413,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
           <div class="resume-name">Meshayla Kemp</div>
           <div class="resume-title-r">Enterprise Learning Architect • AI Integration Lead • Principal Consultant</div>
           <div class="resume-contact">
-            (214) 425-8689 •
+            1 (833) 387-1777 •
             <a href="mailto:meshayla@kempadvisory.com">meshayla@kempadvisory.com</a> •
             <a href="https://www.meshayla.com/" target="_blank">meshayla.com</a> •
             <a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank">linkedin.com/in/meshaylakemp</a>
@@ -735,26 +735,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDocModa
 
 </script>
 
-
-// Lazy-load course iframe so it doesn't fire on page load
-document.getElementById('toggleBtn') &amp;&amp; document.getElementById('toggleBtn').addEventListener('click', function(){
-  var wrap = document.getElementById('courseWrap');
-  var frame = document.getElementById('courseFrame');
-  var isHidden = wrap.style.display === 'none';
-  wrap.style.display = isHidden ? 'block' : 'none';
-  this.textContent = isHidden ? '▲ Hide Preview' : '👁️ Preview Course';
-  // Only load src once
-  if (isHidden &amp;&amp; frame.src === 'about:blank') {
-    frame.src = frame.getAttribute('data-src');
-  }
-});
-
-document.querySelectorAll("a[href^='#']").forEach(a=&gt;{
-  a.addEventListener("click",e=&gt;{
-    const el=document.getElementById(a.getAttribute("href").slice(1));
-    if(el){e.preventDefault();el.scrollIntoView({behavior:"smooth"});}
-  });
-});
 
 <script>
 document.querySelectorAll("a[href^='#']").forEach(a=>{
