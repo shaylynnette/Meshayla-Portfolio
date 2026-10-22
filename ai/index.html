@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Solution Architecture | Meshayla Kemp</title>
+<meta name="description" content="Meshayla Kemp designs AI-enabled learning and workforce enablement systems: solution architecture, generative AI workflows, and agentic automation for enterprise, education and government.">
+<link rel="canonical" href="https://www.meshayla.com/ai/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Solution Architecture | Meshayla Kemp">
+<meta property="og:description" content="AI-enabled learning and workforce enablement: architecture, generative AI workflows and agentic automation.">
+<meta property="og:url" content="https://www.meshayla.com/ai/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNCNUQ5OUMiLz48dGV4dCB4PSIxNiIgeT0iMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxQzFBMTciPk08L3RleHQ+PC9zdmc+">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#F7C5D8;--pink2:#EE9BB8;--pink3:#FDF0F5;
+  --green:#B8D99C;--green2:#5E9A3C;--green3:#E8F5D9;
+  --yellow:#FFE066;--yellow2:#FFCD00;--yellow3:#FFF9D6;
+  --ink:#1C1A17;--charcoal:#3B3530;--muted:#665B55;
+  --white:#FFFFFF;--cream:#FDFAF6;--border:rgba(28,26,23,.12);
+  --shadow:0 4px 24px rgba(28,26,23,.07);--shadow-md:0 8px 36px rgba(28,26,23,.11);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;}
+a{color:inherit;}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--cream);padding:10px 16px;z-index:2000;border-radius:0 0 10px 0;}
+.skip:focus{left:0;}
+:focus-visible{outline:3px solid var(--green2);outline-offset:3px;}
+
+/* NAV (matches home page) */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,246,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 3.5rem;height:66px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--green2);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--ink);}
+.nav-cta{background:var(--ink)!important;color:var(--cream)!important;padding:8px 20px;border-radius:50px;font-size:12px!important;}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:10px;width:42px;height:38px;cursor:pointer;color:var(--ink);font-size:20px;line-height:1;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 2rem;}
+section{padding:5rem 0;}
+.s-pill{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.9rem;}
+.s-pill::before{content:'';width:22px;height:3px;border-radius:2px;background:var(--green2);}
+h2.s-h2{font-family:'Playfair Display',serif;font-size:clamp(30px,3.6vw,46px);font-weight:700;line-height:1.12;letter-spacing:-.3px;margin-bottom:1rem;}
+h2.s-h2 em{font-style:italic;color:var(--green2);}
+.s-body{font-size:15px;line-height:1.85;color:var(--muted);max-width:680px;}
+
+/* HERO */
+.hero{padding:9rem 0 5rem;background:linear-gradient(145deg,var(--pink3) 0%,var(--yellow3) 45%,var(--green3) 100%);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5.2vw,66px);font-weight:700;line-height:1.08;letter-spacing:-.5px;margin-bottom:1.1rem;max-width:860px;}
+.hero h1 em{font-style:italic;color:var(--green2);}
+.roles{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;}
+.hero p.lede{font-size:16px;color:var(--charcoal);max-width:660px;margin-bottom:2rem;line-height:1.85;}
+.btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-dark{background:var(--ink);color:var(--cream);padding:13px 30px;border-radius:50px;font-size:13px;font-weight:700;text-decoration:none;display:inline-block;transition:transform .2s,background .2s;}
+.btn-dark:hover{background:var(--charcoal);transform:translateY(-2px);}
+.btn-soft{background:var(--white);color:var(--ink);padding:13px 30px;border-radius:50px;font-size:13px;font-weight:700;text-decoration:none;border:2px solid var(--border);display:inline-block;transition:border-color .2s;}
+.btn-soft:hover{border-color:var(--green2);}
+.honesty{margin-top:2rem;font-size:13px;color:var(--charcoal);background:rgba(255,255,255,.7);border:1px solid var(--border);border-radius:14px;padding:12px 16px;max-width:660px;}
+
+/* STATUS BADGES (text + color, never color alone) */
+.badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:3px 10px;border-radius:50px;border:1.5px solid;white-space:nowrap;}
+.b-prod{background:var(--green3);border-color:var(--green2);color:#2F5A17;}
+.b-build{background:var(--yellow3);border-color:#B38F00;color:#6B5500;}
+.b-learn{background:var(--pink3);border-color:#C2547E;color:#8A2A55;}
+
+/* PILLARS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:1.6rem;box-shadow:var(--shadow);}
+.card h3{font-family:'Playfair Display',serif;font-size:21px;margin:.7rem 0 .5rem;}
+.card p{font-size:14px;color:var(--muted);line-height:1.75;}
+.card ul{margin:.8rem 0 0 1.1rem;font-size:13.5px;color:var(--charcoal);}
+.card li{margin-bottom:.25rem;}
+
+/* PROJECTS */
+.alt{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.proj{background:var(--cream);border:1px solid var(--border);border-radius:24px;padding:2rem;margin-top:1.75rem;box-shadow:var(--shadow);}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;}
+.proj h3{font-family:'Playfair Display',serif;font-size:26px;line-height:1.2;}
+.kicker{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.proj p{font-size:14.5px;color:var(--charcoal);margin:.9rem 0;max-width:760px;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;}
+.cols h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.cols ul{margin-left:1.1rem;font-size:14px;color:var(--charcoal);}
+.cols li{margin-bottom:.3rem;}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem;}
+.tag{font-size:11.5px;font-weight:700;background:var(--white);border:1px solid var(--border);border-radius:50px;padding:4px 12px;color:var(--charcoal);}
+.diagram{margin-top:1.5rem;background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1rem;}
+.diagram figcaption{font-size:12.5px;color:var(--muted);margin-top:.5rem;text-align:center;}
+.diagram svg{width:100%;height:auto;display:block;}
+.diagram{overflow-x:auto;}
+@media(max-width:700px){.diagram svg{min-width:640px;}}
+.bx{fill:var(--cream);stroke:var(--ink);stroke-width:1.4;}
+.bx.g{fill:var(--green3);stroke:#2F5A17;}
+.bx.y{fill:var(--yellow3);stroke:#8A6D00;}
+.bx.p{fill:var(--pink3);stroke:#8A2A55;}
+.bx.dash{stroke-dasharray:5 4;}
+.tx{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;fill:var(--ink);}
+.tx2{font-family:'Nunito',sans-serif;font-size:11px;font-weight:600;fill:var(--muted);}
+.ln{stroke:var(--charcoal);stroke-width:1.5;fill:none;}
+.pending{font-size:12.5px;color:var(--muted);margin-top:1rem;font-style:italic;}
+
+/* SKILLS MATRIX */
+.matrix{margin-top:2rem;display:grid;gap:.9rem;}
+.row{display:grid;grid-template-columns:200px 1fr;gap:1rem;align-items:start;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1rem 1.2rem;}
+.row h3{font-size:14px;font-weight:800;}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;}
+.chip{font-size:12.5px;font-weight:600;background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:5px 11px;display:inline-flex;gap:8px;align-items:center;}
+.legend{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem;font-size:12.5px;color:var(--muted);align-items:center;}
+
+/* LOG + CTA */
+.steps{margin:1.5rem 0 0 1.2rem;font-size:15px;color:var(--charcoal);max-width:720px;}
+.steps li{margin-bottom:.6rem;}
+.cta{background:var(--ink);color:var(--cream);text-align:center;}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(30px,3.6vw,44px);margin-bottom:.8rem;}
+.cta p{color:#D8D0C8;max-width:560px;margin:0 auto 1.8rem;font-size:15px;}
+.cta .btn-soft{background:var(--green);border-color:var(--green);}
+footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
+
+@media(max-width:960px){
+  nav{padding:0 1.25rem;}
+  .nav-links{display:none;}
+  .nav-toggle{display:block;}
+  nav.open .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;position:absolute;top:66px;left:0;right:0;background:rgba(253,250,246,.98);border-bottom:1px solid var(--border);padding:1.4rem 1.5rem 1.6rem;}
+  nav.open .nav-links a{font-size:15px;}
+  .grid3,.cols{grid-template-columns:1fr;}
+  .row{grid-template-columns:1fr;}
+  .wrap{padding:0 1.25rem;}
+  section{padding:3.5rem 0;}
+  .hero{padding:7rem 0 3.5rem;}
+  .proj{padding:1.3rem;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
+  <a class="nav-logo" href="/">Meshayla <span>Kemp</span></a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰';">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/ai/" aria-current="page">AI</a></li>
+    <li><a href="/#resume">Resume</a></li>
+    <li><a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="#connect" class="nav-cta">Let&rsquo;s Connect</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<header class="hero">
+  <div class="wrap">
+    <p class="roles">AI Solution Architect &nbsp;&bull;&nbsp; Generative AI &nbsp;&bull;&nbsp; Agentic Automation</p>
+    <h1>AI that helps people <em>learn, adopt and perform</em> &mdash; designed as a system, not a demo.</h1>
+    <p class="lede">I architect AI-enabled learning and workforce enablement for utilities, government, enterprise and education. Ten years of instructional design and change management mean I design for the person on the other end of the model, then build, measure and govern what ships.</p>
+    <div class="btns">
+      <a class="btn-dark" href="#builds">See the builds</a>
+      <a class="btn-soft" href="#skills">Skills, labeled honestly</a>
+    </div>
+    <p class="honesty"><strong>How to read this page:</strong> every capability carries a status badge &mdash; <span class="badge b-prod">In practice</span> delivered in real work, <span class="badge b-build">Building</span> in active development, <span class="badge b-learn">Learning</span> studying now. I would rather show you where I am than oversell it.</p>
+  </div>
+</header>
+
+<section id="pillars">
+  <div class="wrap">
+    <div class="s-pill">What I do</div>
+    <h2 class="s-h2">Three ways I work <em>with AI</em></h2>
+    <p class="s-body">One lens runs through all of it: AI only counts when people can adopt it, trust it and perform better because of it.</p>
+    <div class="grid3">
+      <article class="card">
+        <span class="badge b-prod">In practice</span>
+        <h3>Solution Architecture</h3>
+        <p>Turning a messy business problem into a clear system: data flows, human review points, risk and rollout.</p>
+        <ul>
+          <li>Architecture diagrams and decision records</li>
+          <li>Human-in-the-loop workflow design</li>
+          <li>Change management and adoption planning</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="badge b-prod">In practice</span> <span class="badge b-build">Building</span>
+        <h3>Generative AI Engineering</h3>
+        <p>Structured prompting, content pipelines and quality checks that cut cycle time without lowering the bar.</p>
+        <ul>
+          <li>Prompt design for job-task analysis and scenarios</li>
+          <li>AI voiceover and content production pipelines</li>
+          <li>Retrieval-grounded answers with citations (in build)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="badge b-build">Building</span>
+        <h3>Agentic Development</h3>
+        <p>Multi-step agents that use tools, hand work back to a person, and leave a record of what they did.</p>
+        <ul>
+          <li>Reusable agent skills for recurring workflows</li>
+          <li>Tool calling and MCP servers (in build)</li>
+          <li>Evaluation harnesses and guardrails</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="builds" class="alt">
+  <div class="wrap">
+    <div class="s-pill">Featured builds</div>
+    <h2 class="s-h2">Systems I have <em>designed and shipped</em></h2>
+    <p class="s-body">Client details are generalized. Where a repository will be public, a link appears here as soon as it is.</p>
+
+    <!-- BUILD 1 -->
+    <article class="proj">
+      <div class="proj-head">
+        <div><div class="kicker">Product architecture</div><h3>GC Academy: an adaptive K&ndash;5 learning platform</h3></div>
+        <span class="badge b-prod">In production</span>
+      </div>
+      <p>A subscription learning platform for children, with a parent dashboard, individualized learning paths and weekly progress reports. I set the architecture and product rules, and directed an AI-assisted build against them.</p>
+      <div class="cols">
+        <div><h4>Problem</h4><ul>
+          <li>Parents need visibility into what a child actually learned, without extra work.</li>
+          <li>Paid content must stay behind a membership gate while a free sample stays public.</li>
+          <li>Children&rsquo;s data demands consent and privacy by design.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>Static front end with serverless functions, so there are no servers to run.</li>
+          <li>An edge function sends members-only files only to signed-in members.</li>
+          <li>Question banks pass a validator that enforces written quality rules.</li>
+          <li>Parent consent and card verification before any child information is shared.</li>
+        </ul></div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 290" role="img" aria-labelledby="d1t d1d">
+          <title id="d1t">GC Academy architecture</title>
+          <desc id="d1d">Learner and parent browsers connect through a Netlify edge gate and serverless functions to Supabase, Stripe and an email service.</desc>
+          <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <rect class="bx p" x="15" y="105" width="165" height="80" rx="12"/><text class="tx" x="97" y="138" text-anchor="middle">Learner &amp; Parent</text><text class="tx2" x="97" y="158" text-anchor="middle">Browsers, any device</text>
+          <rect class="bx g" x="250" y="25" width="215" height="75" rx="12"/><text class="tx" x="357" y="56" text-anchor="middle">Edge gate</text><text class="tx2" x="357" y="76" text-anchor="middle">Members-only content check</text>
+          <rect class="bx g" x="250" y="190" width="215" height="75" rx="12"/><text class="tx" x="357" y="221" text-anchor="middle">Serverless functions</text><text class="tx2" x="357" y="241" text-anchor="middle">Sessions, billing, reports</text>
+          <rect class="bx" x="545" y="10" width="200" height="70" rx="12"/><text class="tx" x="645" y="40" text-anchor="middle">Supabase</text><text class="tx2" x="645" y="60" text-anchor="middle">Database &amp; progress records</text>
+          <rect class="bx" x="545" y="110" width="200" height="70" rx="12"/><text class="tx" x="645" y="140" text-anchor="middle">Stripe</text><text class="tx2" x="645" y="160" text-anchor="middle">Plans, card verification</text>
+          <rect class="bx" x="545" y="210" width="200" height="70" rx="12"/><text class="tx" x="645" y="240" text-anchor="middle">Email service</text><text class="tx2" x="645" y="260" text-anchor="middle">Weekly parent reports</text>
+          <path class="ln" d="M180 130 L250 70" marker-end="url(#a1)"/><path class="ln" d="M180 165 L250 215" marker-end="url(#a1)"/>
+          <path class="ln" d="M465 215 L545 55" marker-end="url(#a1)"/><path class="ln" d="M465 228 L545 145" marker-end="url(#a1)"/><path class="ln" d="M465 245 L545 245" marker-end="url(#a1)"/>
+        </svg>
+        <figcaption>Simplified architecture. Learner and parent traffic is gated at the edge; sensitive work happens in serverless functions.</figcaption>
+      </figure>
+      <div class="tags"><span class="tag">Netlify</span><span class="tag">Serverless functions</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Child-privacy design</span><span class="tag">AI-assisted engineering</span></div>
+      <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://academy.gisellechanel.com" target="_blank" rel="noopener">Visit GC Academy</a></div>
+    </article>
+
+    <!-- BUILD 2 -->
+    <article class="proj">
+      <div class="proj-head">
+        <div><div class="kicker">Generative AI workflow</div><h3>AI-assisted multi-state standards crosswalk</h3></div>
+        <span class="badge b-prod">In practice</span>
+      </div>
+      <p>A secondary Economics and Financial Literacy program was failing state compliance and needed to expand to five more states. I used AI analysis to map the courseware against each state&rsquo;s graduation standards, surface gaps, and drive targeted lesson redesign.</p>
+      <div class="cols">
+        <div><h4>Outcome</h4><ul>
+          <li>Standards crosswalks for six states.</li>
+          <li>Gap analysis, new gap-filling lessons and a master curriculum map.</li>
+          <li>State approval with 100% compliance on the program.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>AI proposes mappings; a subject-matter reviewer approves every one.</li>
+          <li>Gaps are measured against depth-of-knowledge levels, not keywords alone.</li>
+          <li>Every output lands in a document the state reviewer can verify.</li>
+        </ul></div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 175" role="img" aria-labelledby="d2t d2d">
+          <title id="d2t">Standards crosswalk workflow</title>
+          <desc id="d2d">Course inventory and state standards feed structured AI prompts that draft a crosswalk and gap list, which a human reviews before lesson redesign.</desc>
+          <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <rect class="bx" x="10" y="45" width="130" height="85" rx="12"/><text class="tx" x="75" y="80" text-anchor="middle">Course</text><text class="tx" x="75" y="97" text-anchor="middle">inventory</text><text class="tx2" x="75" y="116" text-anchor="middle">+ state standards</text>
+          <rect class="bx y" x="170" y="45" width="130" height="85" rx="12"/><text class="tx" x="235" y="80" text-anchor="middle">Structured</text><text class="tx" x="235" y="97" text-anchor="middle">AI prompts</text><text class="tx2" x="235" y="116" text-anchor="middle">map &amp; compare</text>
+          <rect class="bx y" x="330" y="45" width="130" height="85" rx="12"/><text class="tx" x="395" y="80" text-anchor="middle">Draft</text><text class="tx" x="395" y="97" text-anchor="middle">crosswalk</text><text class="tx2" x="395" y="116" text-anchor="middle">+ gap list</text>
+          <rect class="bx p" x="490" y="45" width="130" height="85" rx="12"/><text class="tx" x="555" y="80" text-anchor="middle">Human</text><text class="tx" x="555" y="97" text-anchor="middle">review</text><text class="tx2" x="555" y="116" text-anchor="middle">approve / correct</text>
+          <rect class="bx g" x="650" y="45" width="100" height="85" rx="12"/><text class="tx" x="700" y="80" text-anchor="middle">Redesign</text><text class="tx" x="700" y="97" text-anchor="middle">&amp; approval</text><text class="tx2" x="700" y="116" text-anchor="middle">documents</text>
+          <path class="ln" d="M140 88 L170 88" marker-end="url(#a2)"/><path class="ln" d="M300 88 L330 88" marker-end="url(#a2)"/><path class="ln" d="M460 88 L490 88" marker-end="url(#a2)"/><path class="ln" d="M620 88 L650 88" marker-end="url(#a2)"/>
+        </svg>
+        <figcaption>Workflow pattern: AI drafts, a person decides. This is the template for the planned crosswalk agent below.</figcaption>
+      </figure>
+      <div class="tags"><span class="tag">LLM analysis</span><span class="tag">Prompt design</span><span class="tag">Standards alignment</span><span class="tag">Human-in-the-loop</span></div>
+    </article>
+
+    <!-- BUILD: STYLE STUDIO -->
+    <article class="proj">
+      <div class="proj-head">
+        <div><div class="kicker">Interactive product &middot; image-processing pipeline</div><h3>Style Studio: a real-time virtual styling engine</h3></div>
+        <span class="badge b-prod">In production</span>
+      </div>
+      <p>A free, no-sign-up browser game where children style characters with outfits, hair color and makeup, then save or print their looks. Under the hood it is a compositing engine: it recolors artwork, maps printed fabrics onto garments, cleans cut-out edges, and fits every item to every character. I specified the product rules and quality bar, and directed an AI-assisted build against them.</p>
+      <div class="cols">
+        <div><h4>Problem</h4><ul>
+          <li>Hundreds of item and character combinations cannot each be drawn by hand.</li>
+          <li>Layered clothing showed skin patches, ragged edges and misaligned makeup.</li>
+          <li>Children&rsquo;s play needs privacy by default: no accounts, chat or sharing.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>One data-driven catalog; new items are data, not new code.</li>
+          <li>Recoloring and fabric mapping reuse one artwork shape for many colors and prints.</li>
+          <li>Edge cleanup pass: despeckle, contour smoothing, fringe removal.</li>
+          <li>Lip and makeup masks derived per character from color analysis, not hand-drawn.</li>
+          <li>Looks stay on the device; unlocks use codes behind a grown-up gate.</li>
+        </ul></div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 150" role="img" aria-labelledby="d4t d4d">
+          <title id="d4t">Style Studio rendering pipeline</title>
+          <desc id="d4d">Artwork and a data catalog feed a canvas compositing engine that recolors, maps prints, cleans edges and fits items per character, producing a saved look.</desc>
+          <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <rect class="bx" x="10" y="30" width="140" height="85" rx="12"/><text class="tx" x="80" y="66" text-anchor="middle">Artwork</text><text class="tx2" x="80" y="86" text-anchor="middle">per-character layers</text>
+          <rect class="bx" x="180" y="30" width="140" height="85" rx="12"/><text class="tx" x="250" y="66" text-anchor="middle">Item catalog</text><text class="tx2" x="250" y="86" text-anchor="middle">data-driven shop</text>
+          <rect class="bx y" x="350" y="30" width="210" height="85" rx="12"/><text class="tx" x="455" y="60" text-anchor="middle">Compositing engine</text><text class="tx2" x="455" y="80" text-anchor="middle">recolor &middot; print mapping</text><text class="tx2" x="455" y="96" text-anchor="middle">edge cleanup &middot; fit &middot; masks</text>
+          <rect class="bx g" x="590" y="30" width="160" height="85" rx="12"/><text class="tx" x="670" y="60" text-anchor="middle">Saved look</text><text class="tx2" x="670" y="80" text-anchor="middle">on device, look codes,</text><text class="tx2" x="670" y="96" text-anchor="middle">print</text>
+          <path class="ln" d="M150 72 L180 72" marker-end="url(#a4)"/><path class="ln" d="M320 72 L350 72" marker-end="url(#a4)"/><path class="ln" d="M560 72 L590 72" marker-end="url(#a4)"/>
+        </svg>
+        <figcaption>Simplified rendering pipeline. The same pipeline pattern generalizes to AI-generated assets and personalized styling.</figcaption>
+      </figure>
+      <div class="tags"><span class="tag">Canvas image processing</span><span class="tag">Color science</span><span class="tag">Data-driven design</span><span class="tag">Game economy</span><span class="tag">Privacy by design</span><span class="tag">Visual QA</span><span class="tag">AI-assisted engineering</span></div>
+      <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">Play Style Studio</a></div>
+    </article>
+
+    <!-- BUILD 3 -->
+    <article class="proj">
+      <div class="proj-head">
+        <div><div class="kicker">Enterprise generative AI</div><h3>LLM content pipelines and AI voiceover at scale</h3></div>
+        <span class="badge b-prod">In practice</span>
+      </div>
+      <p>At a learning-technology company I introduced large language model workflows and AI voiceover platforms into standard production, including interactive branching scenarios, and led the team that used them. Separately, on a multi-billion-dollar utility transformation, I embed structured prompts into role-based job-task analyses to turn engineering and system specifications into clear learning objectives.</p>
+      <div class="cols">
+        <div><h4>Outcome</h4><ul>
+          <li>Shorter design cycles and lower multimedia production cost.</li>
+          <li>A 40% gain in team turnaround efficiency across the team I led.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>Prompts are structured and reusable, so quality does not depend on one person.</li>
+          <li>Subject-matter experts review technical accuracy before anything is published.</li>
+        </ul></div>
+      </div>
+      <div class="tags"><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Microsoft Copilot</span><span class="tag">WellSaid Labs</span><span class="tag">Murf.ai</span><span class="tag">Branching scenarios</span></div>
+    </article>
+
+    <!-- BUILD 4 (planned) -->
+    <article class="proj">
+      <div class="proj-head">
+        <div><div class="kicker">Flagship in build &middot; public repository planned</div><h3>Standards-grounded RAG tutor, with an evaluation set</h3></div>
+        <span class="badge b-build">Building</span>
+      </div>
+      <p>A retrieval-augmented assistant that answers learner and educator questions from public Texas standards (TEKS) and cites exactly where each answer came from. The evaluation set matters as much as the app: it measures whether answers are grounded and whether the system declines when it should.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 235" role="img" aria-labelledby="d3t d3d">
+          <title id="d3t">Planned RAG tutor architecture</title>
+          <desc id="d3d">Public standards are chunked, embedded and indexed. A retriever feeds a language model that answers with citations. An evaluation harness and guardrails surround it.</desc>
+          <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text>
+          <rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text>
+          <rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text>
+          <rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text>
+          <rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text>
+          <rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text>
+          <rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text>
+          <path class="ln" d="M130 58 L155 58" marker-end="url(#a3)"/><path class="ln" d="M275 58 L300 58" marker-end="url(#a3)"/><path class="ln" d="M420 58 L445 58" marker-end="url(#a3)"/><path class="ln" d="M565 58 L590 58" marker-end="url(#a3)"/>
+          <path class="ln" d="M670 95 L670 140" marker-end="url(#a3)"/><path class="ln" d="M590 75 L415 160" marker-end="url(#a3)"/>
+        </svg>
+        <figcaption>Planned architecture (dashed = not yet built). The repository and results will be linked here.</figcaption>
+      </figure>
+      <div class="tags"><span class="tag">Retrieval-augmented generation</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span><span class="tag">Guardrails</span></div>
+      <p class="pending">Repository link: coming when the first working version is public.</p>
+    </article>
+
+    <!-- BUILD 5 (planned) -->
+    <article class="proj">
+      <div class="proj-head">
+        <div><div class="kicker">Flagship in build &middot; public repository planned</div><h3>Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
+        <span class="badge b-build">Building</span>
+      </div>
+      <p>The crosswalk workflow above, rebuilt as a tool-calling agent on public standards only: it reads a lesson set, calls a standards-lookup tool exposed through the Model Context Protocol (MCP), drafts the mapping and gap report, then pauses for human approval. Every run writes an audit trail.</p>
+      <div class="tags"><span class="tag">Tool calling</span><span class="tag">Model Context Protocol</span><span class="tag">Human approval step</span><span class="tag">Audit logging</span></div>
+      <p class="pending">Repository link: coming when the first working version is public.</p>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="s-pill">Skills matrix</div>
+    <h2 class="s-h2">By layer, <em>labeled honestly</em></h2>
+    <div class="legend"><span class="badge b-prod">In practice</span> delivered in real work <span class="badge b-build">Building</span> in active development <span class="badge b-learn">Learning</span> studying now</div>
+    <div class="matrix">
+      <div class="row"><h3>Models &amp; prompting</h3><div class="chips">
+        <span class="chip">ChatGPT <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Claude <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Microsoft Copilot <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Structured prompt design <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Model APIs <span class="badge b-build">Building</span></span></div></div>
+      <div class="row"><h3>Retrieval &amp; data</h3><div class="chips">
+        <span class="chip">Postgres / Supabase <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Embeddings &amp; vector search <span class="badge b-build">Building</span></span>
+        <span class="chip">Chunking strategies <span class="badge b-build">Building</span></span></div></div>
+      <div class="row"><h3>Agents &amp; tools</h3><div class="chips">
+        <span class="chip">Reusable agent skills <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Tool calling <span class="badge b-build">Building</span></span>
+        <span class="chip">MCP servers <span class="badge b-build">Building</span></span>
+        <span class="chip">Multi-agent orchestration <span class="badge b-learn">Learning</span></span></div></div>
+      <div class="row"><h3>Evaluation &amp; safety</h3><div class="chips">
+        <span class="chip">Human-in-the-loop design <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Content quality validators <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Golden-set evaluation <span class="badge b-build">Building</span></span>
+        <span class="chip">Child privacy &amp; consent design <span class="badge b-prod">In practice</span></span></div></div>
+      <div class="row"><h3>Delivery &amp; platform</h3><div class="chips">
+        <span class="chip">Netlify &amp; serverless <span class="badge b-prod">In practice</span></span>
+        <span class="chip">GitHub workflow <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Stripe integration <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Cloud AI services <span class="badge b-learn">Learning</span></span></div></div>
+      <div class="row"><h3>Adoption &amp; change</h3><div class="chips">
+        <span class="chip">Organizational change management <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Training &amp; enablement design <span class="badge b-prod">In practice</span></span>
+        <span class="chip">Kirkpatrick-aligned measurement <span class="badge b-prod">In practice</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="log" class="alt">
+  <div class="wrap">
+    <div class="s-pill">Building in public</div>
+    <h2 class="s-h2">What I am <em>learning next</em></h2>
+    <p class="s-body">I am writing a book, <em>AI for Educators</em>, and sharing builds as they happen. Here is the current path, in order:</p>
+    <ol class="steps">
+      <li>Ship the standards-grounded RAG tutor with its evaluation set.</li>
+      <li>Ship the crosswalk agent and the standards-lookup MCP server.</li>
+      <li>Publish a short write-up for each, with results and what failed.</li>
+      <li>Add recognized cloud AI credentials as I complete them.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="connect" class="cta">
+  <div class="wrap">
+    <h2>Let&rsquo;s design AI that people actually adopt.</h2>
+    <p>Consulting engagements, contract vehicles, or leadership roles in AI-enabled learning and enablement.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn-soft" href="mailto:meshayla@kempadvisory.com">Email me</a>
+      <a class="btn-soft" href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn-soft" href="https://kempadvisory.com" target="_blank" rel="noopener">Kemp Advisory Group</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>&copy; 2026 Kemp Advisory Group, LLC &nbsp;&bull;&nbsp; <a href="/">Back to meshayla.com</a></footer>
+</body>
+</html>
