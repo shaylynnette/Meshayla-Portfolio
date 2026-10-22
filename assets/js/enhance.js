@@ -102,10 +102,11 @@
         var f = b.dataset.filter, shown = 0;
         btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
         cards.forEach(function (c) {
-          var ok = f === 'all' || c.dataset.status.split(' ').indexOf(f) > -1;
+          var have = c.dataset.status.split(' ');
+          var ok = f === 'all' || f.split(',').some(function (w) { return have.indexOf(w) > -1; });
           c.hidden = !ok; if (ok) { shown++; c.classList.add('in'); }
         });
-        if (counter) counter.textContent = 'Showing ' + shown + ' of ' + cards.length + ' builds';
+        if (counter) counter.textContent = 'Showing ' + shown + ' of ' + cards.length + ' projects';
       });
     });
   }

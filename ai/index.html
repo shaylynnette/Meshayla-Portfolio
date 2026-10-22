@@ -182,9 +182,9 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     <p class="lede">I architect AI-enabled learning and workforce enablement for utilities, government, enterprise and education. Ten years of instructional design and change management mean I design for the person on the other end of the model, then build, measure and govern what ships.</p>
     <div class="btns">
       <a class="btn-dark" href="#builds">See the builds</a>
-      <a class="btn-soft" href="#skills">Skills, labeled honestly</a>
+      <a class="btn-soft" href="#skills">Skills matrix</a>
     </div>
-    <p class="honesty"><strong>How to read this page:</strong> every capability carries a status badge &mdash; <span class="badge b-prod">In practice</span> delivered in real work, <span class="badge b-build">Building</span> in active development, <span class="badge b-learn">Learning</span> studying now. I would rather show you where I am than oversell it.</p>
+    <p class="honesty"><strong>Status key:</strong> <span class="badge b-prod">In practice</span> delivered in real work, <span class="badge b-build">Building</span> in active development, <span class="badge b-learn">Learning</span> studying now.</p>
     <div class="stats" role="list" aria-label="Impact highlights">
       <div class="stat" role="listitem"><b data-count="6">6</b><span>states&rsquo; standards crosswalked with AI-assisted analysis</span></div>
       <div class="stat" role="listitem"><b data-count="100" data-suffix="%">100%</b><span>first-submission approval on a statewide certification program</span></div>
@@ -239,12 +239,11 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     <div class="s-pill">Featured builds</div>
     <h2 class="s-h2">Systems I have <em>designed and shipped</em></h2>
     <p class="s-body">Client details are generalized. Where a repository will be public, a link appears here as soon as it is.</p>
-    <div class="filters" data-filters role="group" aria-label="Filter builds by status">
-      <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All builds</button>
-      <button type="button" class="fbtn" data-filter="prod" aria-pressed="false">In production</button>
-      <button type="button" class="fbtn" data-filter="practice" aria-pressed="false">In practice</button>
+    <div class="filters" data-filters role="group" aria-label="Filter projects by status">
+      <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All projects</button>
+      <button type="button" class="fbtn" data-filter="prod,practice" aria-pressed="false">Completed</button>
       <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
-      <span class="fcount" aria-live="polite">Showing 6 of 6 builds</span>
+      <span class="fcount" aria-live="polite">Showing 8 of 8 projects</span>
     </div>
 
     <!-- BUILD 1 -->
@@ -285,6 +284,57 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
       </figure>
       <div class="tags"><span class="tag">Netlify</span><span class="tag">Serverless functions</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Child-privacy design</span><span class="tag">AI-assisted engineering</span></div>
       <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://academy.gisellechanel.com" target="_blank" rel="noopener">Visit GC Academy</a></div>
+    </article>
+
+    <!-- BUILD: QUALITY GATE -->
+    <article class="proj" data-status="prod">
+      <div class="proj-head">
+        <div><div class="kicker">Guardrails &middot; evaluation of generated content</div><h3>An automated quality gate for AI-assisted assessment content</h3></div>
+        <span class="badge b-prod">In production</span>
+      </div>
+      <p>Generated quiz questions look fine until a teacher reads them closely. I wrote the standard an instructional-materials reviewer would apply, then turned it into code that fails the site build when a question set breaks the rules. Nothing reaches a child unless it passes.</p>
+      <div class="cols">
+        <div><h4>What it checks</h4><ul>
+          <li>Every quoted answer choice appears word for word in the book chapter it cites.</li>
+          <li>Each question is tagged to a real standard, and the set covers at least four, with none over 45%.</li>
+          <li>The right answer is not the longest choice more than 40% of the time, or stuck in one slot.</li>
+          <li>Reading level: question and choice length limits by grade band; no &ldquo;all of the above.&rdquo;</li>
+          <li>A bank at least 1.4&times; the questions drawn, so a retake is mostly new.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>The rules live in a written standard first, then in code, so the two cannot drift apart.</li>
+          <li>Checks run at build time and have automated tests, so a bad set fails before it can publish.</li>
+          <li>The same validator is reused for unit tests and exams, so there is one source of truth.</li>
+          <li>A human still reads every new set once. The checks catch patterns, not meaning, and I say so in the docs.</li>
+        </ul></div>
+      </div>
+      <p class="pending">Known gap: older lesson questions have not yet been audited against these rules.</p>
+      <div class="tags"><span class="tag">Guardrails</span><span class="tag">Output validation</span><span class="tag">Automated testing</span><span class="tag">Build-time enforcement</span><span class="tag">Educational measurement</span><span class="tag">JavaScript</span></div>
+    </article>
+
+    <!-- BUILD: BIBLE + DICTIONARY -->
+    <article class="proj" data-status="prod">
+      <div class="proj-head">
+        <div><div class="kicker">Content platform &middot; data engineering &middot; privacy by design</div><h3>A kid-safe Bible reader, dictionary and thesaurus, hosted on our own site</h3></div>
+        <span class="badge b-prod">In production</span>
+      </div>
+      <p>Children can read the whole World English Bible (public domain), tap any word, and see a definition written for their age. The reading tools sit inside GC Academy, and a Bible lessons course adds short pages, retellings and small games. Everything is stored and served from our own site, so a child&rsquo;s lookups never go to a third-party service.</p>
+      <div class="cols">
+        <div><h4>What I built</h4><ul>
+          <li>All 66 books as structured data, with tap-to-define on every word and a reader that can jump straight to a lesson&rsquo;s verses.</li>
+          <li>A dictionary of about 22,000 words from Open English WordNet, filtered for kids, plus 400+ hand-written entries with simple examples.</li>
+          <li>A thesaurus that groups synonyms by meaning, from the same open data.</li>
+          <li>A Bible lessons course in six units, with five game types: catch, order, sort, pop and match.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>Dictionary and thesaurus are split into 26 small files, one per letter, and loaded only when needed. The page stays fast on a phone.</li>
+          <li>No third-party lookups: definitions come from files on our own site.</li>
+          <li>Games have large targets, no timer pressure, can be skipped, and respect reduced-motion settings.</li>
+          <li>Sources and licenses are tracked: public-domain Bible text, CC BY data credited on the page.</li>
+        </ul></div>
+      </div>
+      <div class="tags"><span class="tag">JavaScript</span><span class="tag">Structured data</span><span class="tag">Sharded static data</span><span class="tag">Open data licensing</span><span class="tag">Child privacy</span><span class="tag">Accessibility</span></div>
+      <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">Visit GC Bible Study</a></div>
     </article>
 
     <!-- BUILD 2 -->
@@ -387,7 +437,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <div><div class="kicker">Flagship &middot; first version live &middot; embeddings and a language model next</div><h3>Standards-grounded RAG tutor, with an evaluation set</h3></div>
         <span class="badge b-build">Building</span>
       </div>
-      <p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or an honest &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
+      <p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
       <div class="demo" id="demo" hidden>
         <h4>Try it &mdash; live</h4>
         <form id="demo-form" autocomplete="off">
@@ -442,7 +492,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 <section id="skills">
   <div class="wrap">
     <div class="s-pill">Skills matrix</div>
-    <h2 class="s-h2">By layer, <em>labeled honestly</em></h2>
+    <h2 class="s-h2">Skills, <em>by layer</em></h2>
     <div class="legend"><span class="badge b-prod">In practice</span> delivered in real work <span class="badge b-build">Building</span> in active development <span class="badge b-learn">Learning</span> studying now</div>
     <div class="matrix">
       <div class="row"><h3>Models &amp; prompting</h3><div class="chips">
