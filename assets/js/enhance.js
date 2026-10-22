@@ -96,7 +96,7 @@
   if (fwrap) {
     var cards = $$('.proj[data-status]');
     var counter = fwrap.querySelector('.fcount');
-    var btns = $$('.fbtn', fwrap);
+    var btns = $$('.fbtn[data-filter]', fwrap);
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
         var f = b.dataset.filter, shown = 0;
@@ -136,4 +136,27 @@
       });
     });
   });
+
+  /* 7. Screenshot viewer (native <dialog>) and expand/collapse all project details */
+  var lb = document.getElementById('lightbox');
+  if (lb && lb.showModal) {
+    var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.lb-cap');
+    $$('.shot-btn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        lbImg.src = b.dataset.full; lbImg.alt = b.dataset.alt || ''; lbCap.textContent = b.dataset.alt || '';
+        lb.showModal();
+      });
+    });
+    lb.querySelector('.lb-close').addEventListener('click', function () { lb.close(); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+  }
+  var tog = document.getElementById('toggle-details');
+  if (tog) {
+    tog.addEventListener('click', function () {
+      var open = tog.getAttribute('aria-pressed') !== 'true';
+      $$('.proj details.more').forEach(function (d) { d.open = open; });
+      tog.setAttribute('aria-pressed', String(open));
+      tog.textContent = open ? 'Collapse all details' : 'Expand all details';
+    });
+  }
 })();

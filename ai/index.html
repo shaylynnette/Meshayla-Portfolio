@@ -122,6 +122,51 @@ h2.s-h2 em{font-style:italic;color:var(--green2);}
 .demo .out ul{margin:.7rem 0 0 1.1rem;font-size:13.5px;}
 .demo .fine{font-size:12px;color:var(--muted);margin-top:.8rem;}
 
+/* LIVE TOOLS STRIP + SCREENSHOTS */
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:1.6rem;}
+.tool{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;}
+.tool:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.tool img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block;background:var(--pink3);}
+.tool .tb{padding:.85rem 1rem 1.1rem;}
+.tool b{font-family:'Playfair Display',serif;font-size:17px;display:block;line-height:1.25;}
+.tool .d{font-size:13px;color:var(--muted);display:block;margin:.25rem 0 .6rem;line-height:1.5;}
+.tool .gl{font-size:12.5px;font-weight:800;color:#2F5A17;}
+.shotrow{display:grid;grid-template-columns:minmax(0,430px) 1fr;gap:1.4rem;align-items:center;margin:1.2rem 0;}
+.shot{margin:0;}
+.shot-btn{display:block;width:100%;padding:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);cursor:zoom-in;box-shadow:var(--shadow);}
+.shot-btn img{display:block;width:100%;height:auto;}
+.shot figcaption{font-size:12px;color:var(--muted);margin-top:.45rem;}
+.shot-cta p{margin:0 0 .9rem;font-size:14px;color:var(--charcoal);}
+dialog#lightbox{border:0;border-radius:16px;padding:0;max-width:min(1000px,94vw);width:100%;background:var(--white);overflow:hidden;}
+dialog#lightbox::backdrop{background:rgba(28,26,23,.72);}
+#lightbox img{display:block;width:100%;height:auto;}
+#lightbox .lb-cap{padding:.7rem 1rem;font-size:13px;color:var(--muted);}
+#lightbox .lb-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:var(--cream);font-size:22px;line-height:1;cursor:pointer;}
+/* COLLAPSIBLE DETAIL */
+.more{margin-top:1.1rem;border-top:1px solid var(--border);}
+.more>summary{cursor:pointer;list-style:none;padding:.85rem 0;font-size:13px;font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:.5rem;}
+.more>summary::-webkit-details-marker{display:none;}
+.more>summary::before{content:'\25B8';display:inline-block;transition:transform .2s;color:var(--green2);}
+.more[open]>summary::before{transform:rotate(90deg);}
+.more>summary:hover{color:var(--green2);}
+.fexp{margin-left:auto;}
+/* PROCESS + CASE LOG */
+.flow{list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+.flow li{counter-increment:st;background:var(--cream);border:1px solid var(--border);border-radius:18px;padding:1.1rem 1.2rem;font-size:14px;color:var(--charcoal);}
+.flow li::before{content:counter(st);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--cream);font-size:13px;font-weight:800;margin-bottom:.5rem;}
+.flow b{display:block;font-size:15px;margin-bottom:.2rem;}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.4rem;}
+.case{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:1.4rem;box-shadow:var(--shadow);}
+.case .kicker{margin-bottom:.2rem;}
+.case h4{font-family:'Playfair Display',serif;font-size:19px;line-height:1.25;margin-bottom:.6rem;}
+.case p{font-size:14px;color:var(--charcoal);margin:.45rem 0;line-height:1.7;}
+.case p b{color:var(--ink);}
+.case .take{background:var(--green3);border:1px solid var(--green2);border-radius:12px;padding:8px 12px;font-size:13.5px;}
+.princ{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem;}
+.princ span{font-size:13px;font-weight:700;background:var(--yellow3);border:1px solid #B38F00;border-radius:50px;padding:6px 14px;color:#4a3b00;}
+@media(max-width:960px){.tools{grid-template-columns:repeat(2,1fr);}.shotrow{grid-template-columns:1fr;}.flow,.cases{grid-template-columns:1fr;}}
+@media(max-width:520px){.tools{grid-template-columns:1fr;}}
+
 /* SKILLS MATRIX */
 .matrix{margin-top:2rem;display:grid;gap:.9rem;}
 .row{display:grid;grid-template-columns:200px 1fr;gap:1rem;align-items:start;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1rem 1.2rem;}
@@ -194,6 +239,32 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
   </div>
 </header>
 
+<section id="tools" class="alt">
+  <div class="wrap">
+    <div class="s-pill">See it working</div>
+    <h2 class="s-h2">Try the <em>live tools</em></h2>
+    <p class="s-body">Four things you can open right now. No sign-up for any of them.</p>
+    <div class="tools">
+      <a class="tool" href="#demo">
+        <img src="/assets/img/ai/rag-tutor.jpg" width="800" height="434" alt="Screenshot of the standards tutor answering a question about rounding decimals with a Texas standard citation" loading="lazy" decoding="async">
+        <div class="tb"><b>Standards tutor</b><span class="d">Ask about a K&ndash;5 Texas math standard and get the citation.</span><span class="gl">Try it on this page &darr;</span></div>
+      </a>
+      <a class="tool" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">
+        <img src="/assets/img/ai/style-studio.jpg" width="800" height="500" alt="Screenshot of Style Studio showing an illustrated character with clothing, hair and makeup options" loading="lazy" decoding="async">
+        <div class="tb"><b>Style Studio</b><span class="d">A virtual styling game that runs in the browser.</span><span class="gl">Open the tool &#8599;</span></div>
+      </a>
+      <a class="tool" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener">
+        <img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="Screenshot of the GC Academy home page for grades 1 to 5" loading="lazy" decoding="async">
+        <div class="tb"><b>GC Academy</b><span class="d">The adaptive K&ndash;5 learning platform. Try the free sample.</span><span class="gl">Open the site &#8599;</span></div>
+      </a>
+      <a class="tool" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">
+        <img src="/assets/img/ai/gc-bible-study.jpg" width="800" height="600" alt="Screenshot of GC Bible Study with a daily verse and Bible lessons" loading="lazy" decoding="async">
+        <div class="tb"><b>GC Bible Study</b><span class="d">Daily verse, games and Bible lessons for kids.</span><span class="gl">Open the tool &#8599;</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="pillars">
   <div class="wrap">
     <div class="s-pill">What I do</div>
@@ -244,6 +315,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
       <button type="button" class="fbtn" data-filter="prod,practice" aria-pressed="false">Completed</button>
       <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
       <span class="fcount" aria-live="polite">Showing 10 of 10 projects</span>
+    <button type="button" class="fbtn fexp" id="toggle-details" aria-pressed="false">Expand all details</button>
     </div>
 
     <!-- BUILD 1 -->
@@ -253,6 +325,11 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In production</span>
       </div>
       <p>A subscription learning platform for children, with a parent dashboard, individualized learning paths and weekly progress reports. I set the architecture and product rules, and directed an AI-assisted build against them.</p>
+      <div class="shotrow">
+        <figure class="shot"><button type="button" class="shot-btn" data-full="/assets/img/ai/gc-academy.jpg" data-alt="GC Academy home page: Learn. Grow. Shine." aria-label="Enlarge screenshot: GC Academy home page"><img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="GC Academy home page: Learn. Grow. Shine." loading="lazy" decoding="async"></button><figcaption>Live screenshot, captured October 2026. Select to enlarge.</figcaption></figure>
+        <div class="shot-cta"><p>The public site, with a free sample to try. Parents get a separate Parent Center.</p><a class="btn-dark" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener">Open GC Academy &#8599;</a></div>
+      </div>
+      <details class="more"><summary>How it&rsquo;s built: design decisions and architecture</summary>
       <div class="cols">
         <div><h4>Problem</h4><ul>
           <li>Parents need visibility into what a child actually learned, without extra work.</li>
@@ -282,8 +359,8 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         </svg>
         <figcaption>Simplified architecture. Learner and parent traffic is gated at the edge; sensitive work happens in serverless functions.</figcaption>
       </figure>
+      </details>
       <div class="tags"><span class="tag">Netlify</span><span class="tag">Serverless functions</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Child-privacy design</span><span class="tag">AI-assisted engineering</span></div>
-      <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://academy.gisellechanel.com" target="_blank" rel="noopener">Visit GC Academy</a></div>
     </article>
 
     <!-- BUILD: QUALITY GATE -->
@@ -293,6 +370,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In production</span>
       </div>
       <p>Generated quiz questions look fine until a teacher reads them closely. I wrote the standard an instructional-materials reviewer would apply, then turned it into code that fails the site build when a question set breaks the rules. Nothing reaches a child unless it passes.</p>
+      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
       <div class="cols">
         <div><h4>What it checks</h4><ul>
           <li>Every quoted answer choice appears word for word in the book chapter it cites.</li>
@@ -308,6 +386,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <li>A human still reads every new set once. The checks catch patterns, not meaning, and I say so in the docs.</li>
         </ul></div>
       </div>
+      </details>
       <p class="pending">Known gap: older lesson questions have not yet been audited against these rules.</p>
       <div class="tags"><span class="tag">Guardrails</span><span class="tag">Output validation</span><span class="tag">Automated testing</span><span class="tag">Build-time enforcement</span><span class="tag">Educational measurement</span><span class="tag">JavaScript</span></div>
     </article>
@@ -319,6 +398,11 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In production</span>
       </div>
       <p>Children can read the whole World English Bible (public domain), tap any word, and see a definition written for their age. The reading tools sit inside GC Academy, and a Bible lessons course adds short pages, retellings and small games. Everything is stored and served from our own site, so a child&rsquo;s lookups never go to a third-party service.</p>
+      <div class="shotrow">
+        <figure class="shot"><button type="button" class="shot-btn" data-full="/assets/img/ai/gc-bible-study.jpg" data-alt="GC Bible Study page with Bible lessons and a daily verse" aria-label="Enlarge screenshot: GC Bible Study page"><img src="/assets/img/ai/gc-bible-study.jpg" width="800" height="600" alt="GC Bible Study page with Bible lessons and a daily verse" loading="lazy" decoding="async"></button><figcaption>Live screenshot, captured October 2026. Select to enlarge.</figcaption></figure>
+        <div class="shot-cta"><p>Daily verse, games and Bible lessons. The tap-a-word reader and dictionary live inside GC Academy for signed-in learners.</p><a class="btn-dark" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">Open GC Bible Study &#8599;</a></div>
+      </div>
+      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
       <div class="cols">
         <div><h4>What I built</h4><ul>
           <li>All 66 books as structured data, with tap-to-define on every word and a reader that can jump straight to a lesson&rsquo;s verses.</li>
@@ -333,8 +417,8 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <li>Sources and licenses are tracked: public-domain Bible text, CC BY data credited on the page.</li>
         </ul></div>
       </div>
+      </details>
       <div class="tags"><span class="tag">JavaScript</span><span class="tag">Structured data</span><span class="tag">Sharded static data</span><span class="tag">Open data licensing</span><span class="tag">Child privacy</span><span class="tag">Accessibility</span></div>
-      <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">Visit GC Bible Study</a></div>
     </article>
 
     <!-- BUILD: PICTURE PIN SIGN-IN -->
@@ -344,6 +428,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In production</span>
       </div>
       <p>A five-year-old can&rsquo;t manage an email and password, and a children&rsquo;s product can&rsquo;t afford to be careless with identity. Children sign in with a picture PIN on a device their parent has approved, and the parent stays in control of every step.</p>
+      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
       <div class="cols">
         <div><h4>How it works</h4><ul>
           <li>A parent creates a one-time device code that expires in 10 minutes, with one live code per family.</li>
@@ -356,6 +441,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <li>Approved devices can be managed by the parent, so a lost tablet is not a lost account.</li>
         </ul></div>
       </div>
+      </details>
       <div class="tags"><span class="tag">Authentication design</span><span class="tag">Keyed hashing</span><span class="tag">Row-level security</span><span class="tag">Supabase</span><span class="tag">Child privacy</span></div>
     </article>
 
@@ -366,6 +452,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In production</span>
       </div>
       <p>Parents can buy a fillable workbook once and use it for every child in the family, with each child&rsquo;s answers and drawings saved page by page. Every Friday afternoon a progress email goes to families without anyone pressing a button.</p>
+      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
       <div class="cols">
         <div><h4>Design decisions</h4><ul>
           <li>Who owns a workbook is decided only on the server, from purchases recorded by Stripe&rsquo;s own webhook. The browser is never trusted.</li>
@@ -378,6 +465,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <li>The workbook functions have automated tests.</li>
         </ul></div>
       </div>
+      </details>
       <div class="tags"><span class="tag">Stripe Checkout</span><span class="tag">Webhooks</span><span class="tag">Scheduled functions</span><span class="tag">Idempotent jobs</span><span class="tag">Serverless</span><span class="tag">Automated testing</span></div>
     </article>
 
@@ -388,6 +476,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In practice</span>
       </div>
       <p>A secondary Economics and Financial Literacy program was failing state compliance and needed to expand to five more states. I used AI analysis to map the courseware against each state&rsquo;s graduation standards, surface gaps, and drive targeted lesson redesign.</p>
+      <details class="more"><summary>How it&rsquo;s built: design decisions and architecture</summary>
       <div class="cols">
         <div><h4>Outcome</h4><ul>
           <li>Standards crosswalks for six states.</li>
@@ -414,6 +503,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         </svg>
         <figcaption>Workflow pattern: AI drafts, a person decides. This is the template for the planned crosswalk agent below.</figcaption>
       </figure>
+      </details>
       <div class="tags"><span class="tag">LLM analysis</span><span class="tag">Prompt design</span><span class="tag">Standards alignment</span><span class="tag">Human-in-the-loop</span></div>
     </article>
 
@@ -424,6 +514,11 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In production</span>
       </div>
       <p>A free, no-sign-up browser game where children style characters with outfits, hair color and makeup, then save or print their looks. Under the hood it is a compositing engine: it recolors artwork, maps printed fabrics onto garments, cleans cut-out edges, and fits every item to every character. I specified the product rules and quality bar, and directed an AI-assisted build against them.</p>
+      <div class="shotrow">
+        <figure class="shot"><button type="button" class="shot-btn" data-full="/assets/img/ai/style-studio.jpg" data-alt="Style Studio with an illustrated character and clothing options" aria-label="Enlarge screenshot: Style Studio"><img src="/assets/img/ai/style-studio.jpg" width="800" height="500" alt="Style Studio with an illustrated character and clothing options" loading="lazy" decoding="async"></button><figcaption>Live screenshot, captured October 2026. Select to enlarge.</figcaption></figure>
+        <div class="shot-cta"><p>Free to play in the browser, with no sign-up and nothing to share.</p><a class="btn-dark" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">Play Style Studio &#8599;</a></div>
+      </div>
+      <details class="more"><summary>How it&rsquo;s built: design decisions and architecture</summary>
       <div class="cols">
         <div><h4>Problem</h4><ul>
           <li>Hundreds of item and character combinations cannot each be drawn by hand.</li>
@@ -451,8 +546,8 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         </svg>
         <figcaption>Simplified rendering pipeline. The same pipeline pattern generalizes to AI-generated assets and personalized styling.</figcaption>
       </figure>
+      </details>
       <div class="tags"><span class="tag">Canvas image processing</span><span class="tag">Color science</span><span class="tag">Data-driven design</span><span class="tag">Game economy</span><span class="tag">Privacy by design</span><span class="tag">Visual QA</span><span class="tag">AI-assisted engineering</span></div>
-      <div class="btns" style="margin-top:1.3rem"><a class="btn-soft" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">Play Style Studio</a></div>
     </article>
 
     <!-- BUILD 3 -->
@@ -462,6 +557,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <span class="badge b-prod">In practice</span>
       </div>
       <p>At a learning-technology company I introduced large language model workflows and AI voiceover platforms into standard production, including interactive branching scenarios, and led the team that used them. Separately, on a multi-billion-dollar utility transformation, I embed structured prompts into role-based job-task analyses to turn engineering and system specifications into clear learning objectives.</p>
+      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
       <div class="cols">
         <div><h4>Outcome</h4><ul>
           <li>Shorter design cycles and lower multimedia production cost.</li>
@@ -472,6 +568,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
           <li>Subject-matter experts review technical accuracy before anything is published.</li>
         </ul></div>
       </div>
+      </details>
       <div class="tags"><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Microsoft Copilot</span><span class="tag">WellSaid Labs</span><span class="tag">Murf.ai</span><span class="tag">Branching scenarios</span></div>
     </article>
 
@@ -499,6 +596,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <p class="fine">Source: 19 TAC Chapter 111, Subchapter A (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, nothing you type is stored.</p>
       </div>
       <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Small sample, one author, not yet teacher-reviewed.</p>
+      <details class="more"><summary>Target architecture</summary>
       <figure class="diagram">
         <svg viewBox="0 0 760 235" role="img" aria-labelledby="d3t d3d">
           <title id="d3t">Planned RAG tutor architecture</title>
@@ -516,6 +614,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         </svg>
         <figcaption>Target architecture (dashed = not yet built). Today&rsquo;s live version retrieves with keywords and quotes the standard; embeddings, a vector index and a language model are the next steps.</figcaption>
       </figure>
+      </details>
       <div class="tags"><span class="tag">Retrieval-augmented generation</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span><span class="tag">Guardrails</span></div>
       <p class="pending">Repository link: coming once the code is cleaned up for public release.</p>
     </article>
@@ -530,6 +629,79 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
       <div class="tags"><span class="tag">Tool calling</span><span class="tag">Model Context Protocol</span><span class="tag">Human approval step</span><span class="tag">Audit logging</span></div>
       <p class="pending">Repository link: coming when the first working version is public.</p>
     </article>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="s-pill">How I work</div>
+    <h2 class="s-h2">Process, setbacks and <em>what I changed</em></h2>
+    <p class="s-body">An AI solution architect is judged on how a system behaves when things go wrong. Here is the method I follow, and the real problems it caught on my own builds.</p>
+    <ol class="flow">
+      <li><b>Frame the problem with the people who live with it</b>Teachers, parents and learners tell me what &ldquo;working&rdquo; means before I choose any tool.</li>
+      <li><b>Set the constraints first</b>Child privacy, cost, accuracy and who reviews the output. These shape the design more than the model does.</li>
+      <li><b>Write the standard before the code</b>The rules go in a document a reviewer can read, then into checks that run automatically.</li>
+      <li><b>Ship a thin slice and measure it</b>A small version with a golden question set, scored on questions the system has not seen.</li>
+      <li><b>Break it on purpose</b>Off-topic questions, messy input, daylight-saving changes, test payments. I look for the failure before a user does.</li>
+      <li><b>Harden, document the gaps, repeat</b>What is still unfinished is written down next to what works.</li>
+    </ol>
+
+    <h3 class="s-h2" style="font-size:26px;margin-top:3rem">What went wrong, and how I fixed it</h3>
+    <div class="cases">
+      <article class="case">
+        <div class="kicker">Standards tutor &middot; evaluation</div>
+        <h4>It answered everything, including &ldquo;What is the capital of Texas?&rdquo;</h4>
+        <p><b>What happened:</b> keyword search always returns something, so the first version gave a confident wrong answer to off-topic questions.</p>
+        <p><b>What I changed:</b> I wrote 12 off-topic questions, tuned a decline rule on half and tested it on the half it had never seen. The first rule declined only 2 of 6 held-out off-topic questions. I added a second signal: how many of the question&rsquo;s words exist anywhere in the standards.</p>
+        <p><b>Result:</b> all 6 held-out off-topic questions declined, with 1 of 20 real questions wrongly declined.</p>
+        <p class="take"><b>Takeaway:</b> a threshold that looks fine on the data it was tuned on can fail on new questions. Hold some back.</p>
+      </article>
+      <article class="case">
+        <div class="kicker">Standards tutor &middot; source data</div>
+        <h4>I could not get the official text, and I would not build on a paraphrase</h4>
+        <p><b>What happened:</b> automated lookups of the Texas standards were blocked or returned summaries, not the exact wording.</p>
+        <p><b>What I changed:</b> I used the official PDF instead. Parsing it exposed line-break artifacts such as &ldquo;two- dimensional,&rdquo; which I fixed, then locked the count of 288 standards by grade into a regression test. Every answer cites the rule and notes that the state publishes it for information only.</p>
+        <p class="take"><b>Takeaway:</b> ground the system in the primary source, and test the data pipeline, not just the model.</p>
+      </article>
+      <article class="case">
+        <div class="kicker">Standards tutor &middot; architecture</div>
+        <h4>Where to host it: price versus the visitor&rsquo;s first impression</h4>
+        <p><b>What happened:</b> I compared three hosts using their own pricing pages. One has no free tier, one gives about $1 of monthly credit, and the free one goes to sleep after 15 minutes, so the next visitor waits about a minute.</p>
+        <p><b>What I changed:</b> I ported the retrieval to TypeScript and ran it as a function on the site&rsquo;s existing host. The port returns the same top results and the same answer-or-decline decision on all 52 test questions as the Python original.</p>
+        <p class="take"><b>Takeaway:</b> choose the architecture by what the user experiences and what you already own, then prove the port is equivalent.</p>
+      </article>
+      <article class="case">
+        <div class="kicker">Style Studio 2.0 &middot; product quality</div>
+        <h4>Hairstyles that looked fake, shirts that showed skin</h4>
+        <p><b>What happened:</b> in preview testing, tops and bottoms were mixed up, eyeliner landed over the eyes, skin showed through shirts, lipstick missed the lips, and the hairstyle overlays looked artificial.</p>
+        <p><b>What I changed:</b> I fixed the layering and coverage problems one round at a time through preview deploys. I parked the hairstyles until proper hair art exists, instead of shipping something that looked wrong.</p>
+        <p class="take"><b>Takeaway:</b> cutting a feature is a design decision. A preview build lets a person review before anything goes live.</p>
+      </article>
+      <article class="case">
+        <div class="kicker">Assessment content &middot; guardrails</div>
+        <h4>Good-looking quiz questions with hidden patterns</h4>
+        <p><b>What happened:</b> a review of the library quizzes showed the kind of patterns students learn to game, such as the right answer being the longest choice.</p>
+        <p><b>What I changed:</b> I wrote the reviewer&rsquo;s rules down, then turned them into a validator that fails the site build. It also checks every quoted answer against the source text.</p>
+        <p class="take"><b>Takeaway:</b> a rule that depends on someone remembering it will be skipped. Automated checks catch patterns, and a person still reads for meaning.</p>
+      </article>
+      <article class="case">
+        <div class="kicker">Parent reports &middot; reliability</div>
+        <h4>&ldquo;Every Friday at 5&rdquo; changes twice a year</h4>
+        <p><b>What happened:</b> scheduled jobs run on universal time, so a fixed schedule drifts by an hour when the clocks change.</p>
+        <p><b>What I changed:</b> the job runs at both possible hours and sends only the run that lands on 5 p.m. Central. It records the week it sent, so a retry can never email a family twice.</p>
+        <p class="take"><b>Takeaway:</b> design automation so that running it twice is harmless.</p>
+      </article>
+    </div>
+
+    <h3 class="s-h2" style="font-size:26px;margin-top:3rem">Principles I design by</h3>
+    <div class="princ">
+      <span>Ground answers in a source I can cite</span>
+      <span>Declining beats guessing</span>
+      <span>Measure on questions the system has not seen</span>
+      <span>Keep a person in the loop for review</span>
+      <span>Design for the most vulnerable user first</span>
+      <span>Own the data path</span>
+    </div>
   </div>
 </section>
 
@@ -613,6 +785,11 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 
 </main>
 <footer>&copy; 2026 Kemp Advisory Group, LLC &nbsp;&bull;&nbsp; <a href="/">Back to meshayla.com</a></footer>
+<dialog id="lightbox" aria-label="Screenshot viewer">
+  <button type="button" class="lb-close" aria-label="Close screenshot">&times;</button>
+  <img alt="" width="800" height="500">
+  <p class="lb-cap"></p>
+</dialog>
 <script>
 (function(){
   var box=document.getElementById('demo'); if(!box||!window.fetch) return;
