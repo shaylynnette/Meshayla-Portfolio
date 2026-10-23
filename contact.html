@@ -431,7 +431,8 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
       Consulting engagements, contract vehicles, leadership roles in instructional design, OCM, or business process — I’m ready to bring enterprise-level learning strategy to your organization.
     </p>
     <div class="contact-btns">
-      <a href="mailto:meshayla@kempadvisory.com" class="btn-green">Start a Conversation</a>
+      <a href="mailto:meshayla@kempadvisory.com?subject=Inquiry%20from%20meshayla.com" class="btn-green">Start a Conversation</a>
+      <button type="button" class="btn-soft" id="copy-email" style="cursor:pointer;color:var(--cream);border-color:rgba(253,250,246,.2);background:rgba(253,250,246,.06);">Copy email address</button>
       <a href="https://kempadvisory.com/" target="_blank" class="btn-soft" style="color:var(--cream);border-color:rgba(253,250,246,.2);background:rgba(253,250,246,.06);">Kemp Advisory Group ↗</a>
     </div>
     <div class="contact-cards" style="grid-template-columns:repeat(4,1fr);">
@@ -482,4 +483,5 @@ document.querySelectorAll("a[href^='#']").forEach(a=>{
 });
 </script>
 
+<script>(function(){var b=document.getElementById("copy-email");if(!b)return;b.addEventListener("click",function(){var e="meshayla@kempadvisory.com";function done(){b.textContent="Copied: "+e;setTimeout(function(){b.textContent="Copy email address";},2500);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(e).then(done,function(){window.prompt("Copy this address:",e);});}else{window.prompt("Copy this address:",e);}});})();</script>
 </body></html>
