@@ -313,6 +313,19 @@ body.dlg-open{overflow:hidden;}
 }
 
 .extend{margin-top:1rem;font-size:13.5px;color:var(--muted);line-height:1.7;max-width:820px;}.extend b{color:var(--ink);}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.ptile{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,border-color .2s;}
+.ptile[hidden]{display:none;}
+.ptile:hover,.ptile:focus-visible{transform:translateY(-3px);border-color:var(--green2);}
+.pt-viz{display:flex;flex-direction:column;justify-content:center;gap:.15rem;padding:1.1rem 1.2rem;min-height:104px;background:linear-gradient(135deg,var(--green3),var(--yellow3));border-bottom:1px solid var(--border);}
+.pt-viz b{font-family:'Playfair Display',serif;font-size:36px;line-height:1;color:var(--ink);}
+.pt-viz i{font-style:normal;font-size:12.5px;font-weight:700;color:var(--charcoal);}
+.pt-body{display:flex;flex-direction:column;gap:.4rem;padding:.9rem 1.1rem 1.1rem;flex:1;align-items:flex-start;}
+.pt-body strong{font-size:15px;line-height:1.3;}
+.pt-body em{font-style:normal;font-size:13px;color:var(--muted);line-height:1.55;}
+.pt-body u{text-decoration:none;font-size:12.5px;font-weight:800;color:var(--green2);margin-top:auto;padding-top:.3rem;}
+@media(max-width:960px){.tiles{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.tiles{grid-template-columns:1fr;}}
 </style>
 <link rel="stylesheet" href="/assets/css/enhance.css">
 </head>
@@ -437,37 +450,31 @@ body.dlg-open{overflow:hidden;}
       <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
       <span class="fcount" aria-live="polite">Showing 6 of 6 projects</span>
     </div>
-    <div class="rows">
-      <div class="prow" data-status="prod" data-fitem>
-        <span class="badge b-prod">In production</span>
-        <div class="pr-t"><b>Quality gate for AI-assisted assessment content</b><span>A build-time check that fails the site when generated quiz content breaks the written quality rules.</span></div>
-        <button type="button" class="btn-soft sm" data-open="dlg-gate">Details</button>
-      </div>
-      <div class="prow" data-status="prod" data-fitem>
-        <span class="badge b-prod">In production</span>
-        <div class="pr-t"><b>Picture-PIN sign-in for young children</b><span>Passwordless sign-in with a picture PIN on parent-approved devices.</span></div>
-        <button type="button" class="btn-soft sm" data-open="dlg-pin">Details</button>
-      </div>
-      <div class="prow" data-status="prod" data-fitem>
-        <span class="badge b-prod">In production</span>
-        <div class="pr-t"><b>Paid workbooks and a weekly parent email</b><span>Server-checked ownership of purchases, and a Friday email that survives daylight saving.</span></div>
-        <button type="button" class="btn-soft sm" data-open="dlg-work">Details</button>
-      </div>
-      <div class="prow" data-status="practice" data-fitem>
-        <span class="badge b-prod">In practice</span>
-        <div class="pr-t"><b>AI-assisted multi-state standards crosswalk</b><span>AI analysis mapped a program to six states&rsquo; standards and drove its gap-filling lessons.</span></div>
-        <button type="button" class="btn-soft sm" data-open="dlg-cross">Details</button>
-      </div>
-      <div class="prow" data-status="practice" data-fitem>
-        <span class="badge b-prod">In practice</span>
-        <div class="pr-t"><b>LLM content pipelines and AI voiceover at scale</b><span>Generative AI workflows and AI voiceover in standard production, with a team 40% more efficient.</span></div>
-        <button type="button" class="btn-soft sm" data-open="dlg-llm">Details</button>
-      </div>
-      <div class="prow" data-status="build" data-fitem>
-        <span class="badge b-build">Building</span>
-        <div class="pr-t"><b>Crosswalk agent and a standards-lookup MCP server</b><span>A tool-calling agent with a human approval step and an audit trail. In development.</span></div>
-        <button type="button" class="btn-soft sm" data-open="dlg-agent">Details</button>
-      </div>
+    <div class="tiles">
+            <button type="button" class="ptile" data-status="prod" data-fitem data-open="dlg-gate">
+        <span class="pt-viz"><b>6</b><i>automated checks that fail the build</i></span>
+        <span class="pt-body"><span class="badge b-prod">In production</span><strong>Quality gate for AI-assisted assessment content</strong><em>A build-time check that fails the site when generated quiz content breaks the written quality rules.</em><u>Details &rarr;</u></span>
+      </button>
+            <button type="button" class="ptile" data-status="prod" data-fitem data-open="dlg-pin">
+        <span class="pt-viz"><b>10 min</b><i>one-time device codes</i></span>
+        <span class="pt-body"><span class="badge b-prod">In production</span><strong>Picture-PIN sign-in for young children</strong><em>Passwordless sign-in with a picture PIN on parent-approved devices.</em><u>Details &rarr;</u></span>
+      </button>
+            <button type="button" class="ptile" data-status="prod" data-fitem data-open="dlg-work">
+        <span class="pt-viz"><b>Weekly</b><i>email, safe across daylight saving</i></span>
+        <span class="pt-body"><span class="badge b-prod">In production</span><strong>Paid workbooks and a weekly parent email</strong><em>Server-checked ownership of purchases, and a Friday email that survives daylight saving.</em><u>Details &rarr;</u></span>
+      </button>
+            <button type="button" class="ptile" data-status="practice" data-fitem data-open="dlg-cross">
+        <span class="pt-viz"><b>6</b><i>states&rsquo; standards mapped</i></span>
+        <span class="pt-body"><span class="badge b-prod">In practice</span><strong>AI-assisted multi-state standards crosswalk</strong><em>AI analysis mapped a program to six states&rsquo; standards and drove its gap-filling lessons.</em><u>Details &rarr;</u></span>
+      </button>
+            <button type="button" class="ptile" data-status="practice" data-fitem data-open="dlg-llm">
+        <span class="pt-viz"><b>40%</b><i>team turnaround gain</i></span>
+        <span class="pt-body"><span class="badge b-prod">In practice</span><strong>LLM content pipelines and AI voiceover at scale</strong><em>Generative AI workflows and AI voiceover in standard production, with a team 40% more efficient.</em><u>Details &rarr;</u></span>
+      </button>
+            <button type="button" class="ptile" data-status="build" data-fitem data-open="dlg-agent">
+        <span class="pt-viz"><b>Human</b><i>approval step in the design</i></span>
+        <span class="pt-body"><span class="badge b-build">Building</span><strong>Crosswalk agent and a standards-lookup MCP server</strong><em>A tool-calling agent with a human approval step and an audit trail. In development.</em><u>Details &rarr;</u></span>
+      </button>
     </div>
     <p class="s-body" style="margin-top:1rem;font-size:13px">Client details are generalized. Where a repository is public, its link appears here.</p>
   </div>

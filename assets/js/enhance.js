@@ -94,7 +94,7 @@
   /* 5. Build filter: buttons toggle cards by data-status */
   var fwrap = document.querySelector('[data-filters]');
   if (fwrap) {
-    var cards = $$('.prow[data-fitem]');
+    var cards = $$('[data-fitem]');
     var counter = fwrap.querySelector('.fcount');
     var btns = $$('.fbtn[data-filter]', fwrap);
     btns.forEach(function (b) {
