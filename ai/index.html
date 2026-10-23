@@ -10,7 +10,14 @@
 <meta property="og:title" content="AI Solution Architecture | Meshayla Kemp">
 <meta property="og:description" content="AI-enabled learning and workforce enablement: architecture, generative AI workflows and agentic automation.">
 <meta property="og:url" content="https://www.meshayla.com/ai/">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="Meshayla Kemp">
+<meta property="og:image" content="https://www.meshayla.com/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Meshayla Kemp, Enterprise Learning Architect and AI Solution Architect">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Solution Architecture | Meshayla Kemp">
+<meta name="twitter:image" content="https://www.meshayla.com/assets/img/og-card.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNCNUQ5OUMiLz48dGV4dCB4PSIxNiIgeT0iMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxQzFBMTciPk08L3RleHQ+PC9zdmc+">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -339,9 +346,11 @@ body.dlg-open{overflow:hidden;}
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰';">&#9776;</button>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/k12/">K-12</a></li>
     <li><a href="/ai/" aria-current="page">AI</a></li>
-    <li><a href="/#resume">Resume</a></li>
+    <li><a href="/resume">Resume</a></li>
     <li><a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="#connect" class="nav-cta">Let&rsquo;s Connect</a></li>
   </ul>
@@ -415,24 +424,11 @@ body.dlg-open{overflow:hidden;}
         </div>
       </article>
       <article class="fcard" data-status="prod">
-        <a class="fimg" href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/teacher-studio.svg" width="800" height="450" alt="" loading="lazy" decoding="async"></a>
-        <div class="fbody">
-          <div class="frow"><span class="badge b-prod">Prototype</span></div>
-          <h3>Kempbell Teacher Studio: lesson planning and growth tool</h3>
-          <p>A teacher tool that turns a Texas standard into a draft lesson, scores an exit ticket and suggests tomorrow&rsquo;s groups. Runs in the browser; nothing a teacher types is sent anywhere.</p>
-          <p class="proof">7,476 ready-made questions across 1,246 K&ndash;5 standards, each machine-checked for balance and standard fit; teacher review is the next gate.</p>
-          <div class="tags"><span class="tag">Rule-based planning</span><span class="tag">Question bank + validators</span><span class="tag">Privacy by design</span><span class="tag">Documentation</span></div>
-          <div class="fact"><a class="btn-dark sm" href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener" aria-label="Open Kempbell Teacher Studio">Open the studio &#8599;</a><button type="button" class="btn-soft sm" data-open="dlg-kts">How it&rsquo;s built</button></div>
-        </div>
-      </article>
-      <article class="fcard" data-status="prod">
-        <a class="fimg" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="" loading="lazy" decoding="async"></a>
         <div class="fbody">
           <div class="frow"><span class="badge b-prod">Live</span></div>
-          <h3>GC Academy: adaptive K&ndash;5 platform</h3>
-          <p>A subscription learning platform with a parent dashboard, weekly reports and child-privacy design.</p>
-          <div class="tags"><span class="tag">Netlify + Supabase</span><span class="tag">Stripe</span><span class="tag">Child privacy</span></div>
-          <div class="fact"><a class="btn-dark sm" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener" aria-label="Open GC Academy: GC Academy home page">Open GC Academy &#8599;</a><button type="button" class="btn-soft sm" data-open="dlg-academy">How it&rsquo;s built</button></div>
+          <h3>Education products: GC Academy, Kempbell Academy and Teacher Studio</h3>
+          <p>The learning platforms and teacher tools I built live on the K&ndash;12 page, so they are not repeated here.</p>
+          <div class="fact"><a class="btn-dark sm" href="/k12/">See the K&ndash;12 products &rarr;</a></div>
         </div>
       </article>
       <article class="fcard" data-status="prod">
@@ -684,47 +680,6 @@ body.dlg-open{overflow:hidden;}
 
   </div>
 </dialog>
-<dialog class="pdialog" id="dlg-academy" aria-labelledby="dlg-academy-t">
-  <div class="pd-head"><div><div class="kicker">Product architecture</div><h3 id="dlg-academy-t">GC Academy: an adaptive K&ndash;5 learning platform</h3></div>
-    <div class="pd-act"><span class="badge b-prod">Live</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
-  <div class="pd-body">
-<p>A subscription learning platform for children, with a parent dashboard, individualized learning paths and weekly progress reports. I set the architecture and product rules, and directed an AI-assisted build against them.</p>
-      
-      <div class="dmore">
-      <div class="cols">
-        <div><h4>Problem</h4><ul>
-          <li>Parents need visibility into what a child actually learned, without extra work.</li>
-          <li>Paid content must stay behind a membership gate while a free sample stays public.</li>
-          <li>Children&rsquo;s data demands consent and privacy by design.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>Static front end with serverless functions, so there are no servers to run.</li>
-          <li>An edge function sends members-only files only to signed-in members.</li>
-          <li>Question banks pass a validator that enforces written quality rules.</li>
-          <li>Parent consent and card verification before any child information is shared.</li>
-        </ul></div>
-      </div>
-      <figure class="diagram">
-        <svg viewBox="0 0 760 290" role="img" aria-labelledby="d1t d1d">
-          <title id="d1t">GC Academy architecture</title>
-          <desc id="d1d">Learner and parent browsers connect through a Netlify edge gate and serverless functions to Supabase, Stripe and an email service.</desc>
-          <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <g class="node" tabindex="0" role="button" aria-label="Learner &amp; Parent" data-info="Children learn in the browser; parents manage children, consent and billing in a separate Parent Center."><rect class="bx p" x="15" y="105" width="165" height="80" rx="12"/><text class="tx" x="97" y="138" text-anchor="middle">Learner &amp; Parent</text><text class="tx2" x="97" y="158" text-anchor="middle">Browsers, any device</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Edge gate" data-info="Runs before a file is served and sends members-only lessons only to signed-in members; the free sample stays public."><rect class="bx g" x="250" y="25" width="215" height="75" rx="12"/><text class="tx" x="357" y="56" text-anchor="middle">Edge gate</text><text class="tx2" x="357" y="76" text-anchor="middle">Members-only content check</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Serverless functions" data-info="Small server-side functions handle sessions, checkout, billing portal, webhooks and the weekly report, so there is no server to maintain."><rect class="bx g" x="250" y="190" width="215" height="75" rx="12"/><text class="tx" x="357" y="221" text-anchor="middle">Serverless functions</text><text class="tx2" x="357" y="241" text-anchor="middle">Sessions, billing, reports</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Supabase" data-info="Postgres database for learners, progress and approved devices, with access rules enforced on the server."><rect class="bx" x="545" y="10" width="200" height="70" rx="12"/><text class="tx" x="645" y="40" text-anchor="middle">Supabase</text><text class="tx2" x="645" y="60" text-anchor="middle">Database &amp; progress records</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Stripe" data-info="Handles plans and card verification; webhooks tell the platform when a membership changes."><rect class="bx" x="545" y="110" width="200" height="70" rx="12"/><text class="tx" x="645" y="140" text-anchor="middle">Stripe</text><text class="tx2" x="645" y="160" text-anchor="middle">Plans, card verification</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Email service" data-info="Sends the weekly progress report and approval requests to parents."><rect class="bx" x="545" y="210" width="200" height="70" rx="12"/><text class="tx" x="645" y="240" text-anchor="middle">Email service</text><text class="tx2" x="645" y="260" text-anchor="middle">Weekly parent reports</text></g>
-          <path class="ln" d="M180 130 L250 70" marker-end="url(#a1)"/><path class="ln" d="M180 165 L250 215" marker-end="url(#a1)"/>
-          <path class="ln" d="M465 215 L545 55" marker-end="url(#a1)"/><path class="ln" d="M465 228 L545 145" marker-end="url(#a1)"/><path class="ln" d="M465 245 L545 245" marker-end="url(#a1)"/>
-        </svg>
-        <figcaption>Simplified architecture. Learner and parent traffic is gated at the edge; sensitive work happens in serverless functions.</figcaption>
-      </figure>
-      </div>
-      <div class="tags"><span class="tag">Netlify</span><span class="tag">Serverless functions</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Child-privacy design</span><span class="tag">AI-assisted engineering</span></div>
-<div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener">Open GC Academy &#8599;</a></div>
-  </div>
-</dialog>
 <dialog class="pdialog" id="dlg-style" aria-labelledby="dlg-style-t">
   <div class="pd-head"><div><div class="kicker">Interactive product &middot; image-processing pipeline</div><h3 id="dlg-style-t">Style Studio: a real-time virtual styling engine</h3></div>
     <div class="pd-act"><span class="badge b-prod">Live</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
@@ -860,39 +815,6 @@ body.dlg-open{overflow:hidden;}
       </div>
       </div>
       <div class="tags"><span class="tag">Stripe Checkout</span><span class="tag">Webhooks</span><span class="tag">Scheduled functions</span><span class="tag">Idempotent jobs</span><span class="tag">Serverless</span><span class="tag">Automated testing</span></div>
-
-  </div>
-</dialog>
-<dialog class="pdialog" id="dlg-kts" aria-labelledby="dlg-kts-t">
-  <div class="pd-head"><div><div class="kicker">Product design &middot; content quality &middot; documentation for low-tech users</div><h3 id="dlg-kts-t">Kempbell Teacher Studio: a planning and growth tool for teachers</h3></div>
-    <div class="pd-act"><span class="badge b-prod">Prototype</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
-  <div class="pd-body">
-<p>Teachers lose evenings to planning and rarely get a clear view of who needs what tomorrow. I built a studio that goes from a Texas standard to a draft lesson, then from exit-ticket scores to next-day groups, and I wrote the guide so a 40-year veteran who avoids software can use it without feeling lost.</p>
-      <div class="dmore">
-      <div class="cols">
-        <div><h4>What I built</h4><ul>
-          <li>Search all 2,259 Texas K&ndash;5 standards in plain words (&ldquo;fifth grade fractions&rdquo; or a code).</li>
-          <li>Draft plan: objective, success criteria, timed flow, supports for English learners, exit ticket.</li>
-          <li>Exit-ticket scores by seat number become levels and groups, each with a task.</li>
-          <li>Optional T-TESS growth plan, class view and a substitute plan.</li>
-          <li>A question bank: 3 pretest and 3 exit-ticket items per standard for Math, ELAR, Science and Social Studies, K&ndash;5 (7,476 questions, 1,246 standards).</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li><b>Rule-based, not a chatbot:</b> every output traces to a standard and a rule, so a teacher can see why.</li>
-          <li><b>Private by design:</b> no student names, no server, optional saving on the device.</li>
-          <li><b>Quality gates:</b> a validator checks answer position, length balance, choice counts, and that evidence quotes appear in the passage. It cannot judge awkward wording, so teacher review is required before release.</li>
-          <li><b>Honest limits:</b> items flagged by the writers (for example, picture-dependent items) are listed for review instead of hidden.</li>
-        </ul></div>
-      </div>
-      <h4>Documentation for every audience</h4>
-      <ul>
-        <li>A 29-page official Teacher Guide with a linked table of contents, subtitles, click-by-click screenshots and four &ldquo;pick your path&rdquo; routes from one standard to a full teaching assistant.</li>
-        <li>A Help page with a hub of short topics, so no one faces a wall of text; in-tool dotted terms explain TEKS, ELPS, PCA and other acronyms where they appear.</li>
-        <li>Charts and screenshots checked by script for overlap and legibility.</li>
-      </ul>
-      <p><a href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener">Open the studio</a> &middot; <a href="https://kempbellacademy.com/teacher-studio/guide/" target="_blank" rel="noopener">Read the guide</a></p>
-      </div>
-      <div class="tags"><span class="tag">Instructional design</span><span class="tag">Question-quality validation</span><span class="tag">Human-in-the-loop</span><span class="tag">Technical writing</span><span class="tag">UX for low-tech users</span></div>
 
   </div>
 </dialog>
