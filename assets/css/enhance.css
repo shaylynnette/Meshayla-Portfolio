@@ -123,3 +123,10 @@ nav.scrolled{box-shadow:0 6px 24px rgba(28,26,23,.10);background:rgba(253,250,24
 .hv-frame{margin-top:1.4rem;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.15);background:#000;aspect-ratio:16/9;}
 .hv-frame video{display:block;width:100%;height:100%;object-fit:cover;}
 @media(max-width:960px){.home-video{padding:2.5rem 1.5rem;}}
+.hv-still{display:none;width:100%;height:auto;}
+@media(prefers-reduced-motion:reduce){.hv-frame video{display:none;}.hv-still{display:block;}}
+.hv-tr{margin-top:1rem;text-align:left;max-width:680px;margin-inline:auto;}
+.hv-tr summary{cursor:pointer;font-weight:600;}
+.hv-tr p,.hv-dl{font-size:14px;line-height:1.6;}
+.hv-dl{margin-top:.6rem;}
+.hv-dl a{color:var(--green2,#4a7c2a);}
