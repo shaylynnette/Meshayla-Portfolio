@@ -94,7 +94,7 @@
   /* 5. Build filter: buttons toggle cards by data-status */
   var fwrap = document.querySelector('[data-filters]');
   if (fwrap) {
-    var cards = $$('.proj[data-status]');
+    var cards = $$('[data-fitem]');
     var counter = fwrap.querySelector('.fcount');
     var btns = $$('.fbtn[data-filter]', fwrap);
     btns.forEach(function (b) {
@@ -109,6 +109,31 @@
         if (counter) counter.textContent = 'Showing ' + shown + ' of ' + cards.length + ' projects';
       });
     });
+  }
+
+  /* 5b. Project detail dialogs, sub-nav spy, skills accordion on small screens */
+  $$('[data-open]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var d = document.getElementById(b.dataset.open);
+      if (d && d.showModal) { d.showModal(); document.body.classList.add('dlg-open'); }
+    });
+  });
+  $$('dialog.pdialog').forEach(function (d) {
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+    d.addEventListener('close', function () { document.body.classList.remove('dlg-open'); });
+    var x = d.querySelector('[data-close]'); if (x) x.addEventListener('click', function () { d.close(); });
+  });
+  if (window.matchMedia('(max-width:960px)').matches) $$('.srow').forEach(function (d) { d.open = false; });
+  var snLinks = $$('.subnav a[href^="#"]');
+  if (hasIO && snLinks.length) {
+    var snMap = {};
+    snLinks.forEach(function (a) { snMap[a.getAttribute('href').slice(1)] = a; });
+    var snIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { snLinks.forEach(function (a) { a.classList.remove('on'); }); snMap[e.target.id].classList.add('on'); }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(snMap).forEach(function (id) { var el = document.getElementById(id); if (el) snIO.observe(el); });
   }
 
   /* 6. Clickable architecture diagrams: select a node to see what it does */
