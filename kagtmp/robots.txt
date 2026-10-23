@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /pay/
+Disallow: /services/book/
+Disallow: /services/thank-you/
+Disallow: /index-backup-2026-10-05.html
+Disallow: /index-backup-2026-10-06.html
+Disallow: /index-prebackup-2026-10-23.html
+Disallow: /public_html/
+Disallow: /catalog/index-prebackup-2026-10-23.html
+Disallow: /educators/index-prebackup-2026-10-23.html
+Disallow: /organizations/index-prebackup-2026-10-23.html
+Disallow: /work/index-prebackup-2026-10-23.html
+
+Sitemap: https://kempadvisory.com/sitemap.xml
