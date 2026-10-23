@@ -326,6 +326,7 @@ body.dlg-open{overflow:hidden;}
 .pt-body u{text-decoration:none;font-size:12.5px;font-weight:800;color:var(--green2);margin-top:auto;padding-top:.3rem;}
 @media(max-width:960px){.tiles{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.tiles{grid-template-columns:1fr;}}
+.proof{font-size:12.5px!important;font-weight:700;color:#2F5A17!important;background:var(--green3);border-radius:8px;padding:6px 10px;}
 </style>
 <link rel="stylesheet" href="/assets/css/enhance.css">
 </head>
@@ -407,6 +408,7 @@ body.dlg-open{overflow:hidden;}
           <div class="frow"><span class="badge b-prod">Live &middot; v1</span></div>
           <h3>Standards-grounded RAG tutor</h3>
           <p>Ask about a Texas K&ndash;5 math standard and get the exact citation, or a clear &ldquo;not found.&rdquo; Built on all 288 official standards.</p>
+          <p class="proof">Tested on 52 evaluation questions and 16 adversarial inputs; no attack got through.</p>
           <div class="tags"><span class="tag">RAG</span><span class="tag">BM25 retrieval</span><span class="tag">Evaluation</span></div>
           <div class="fact"><a class="btn-dark sm" href="#demo" aria-label="Try it live: The standards tutor answering a question about rounding decimals">Try it live &uarr;</a><button type="button" class="btn-soft sm" data-open="dlg-rag">How it&rsquo;s built</button></div>
         </div>
