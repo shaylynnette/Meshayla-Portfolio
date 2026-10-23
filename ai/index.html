@@ -636,6 +636,17 @@ body.dlg-open{overflow:hidden;}
 <p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
       
       <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Evaluation limits: small sample, one author, teacher review pending.</p>
+      <div class="cols">
+        <div><h4>Failure modes, speed and cost</h4><ul>
+          <li><strong>Adversarial set (16 cases):</strong> no attacker text was obeyed or echoed, and every hostile or out-of-scope request was declined. The answerer quotes the standard, so instructions in a question can steer retrieval but not the reply.</li>
+          <li><strong>Misses, stated plainly:</strong> 3 legitimate questions were wrongly declined (two padded with an injection sentence, one misspelled). Keyword matching is the cause.</li>
+          <li><strong>Speed:</strong> retrieval plus answer ran at p50 0.3 ms and p95 0.5 ms locally. Deployed time adds network and cold start, which I have not measured.</li>
+          <li><strong>Cost:</strong> no model calls, so the marginal cost per answer is effectively zero.</li></ul></div>
+        <div><h4>Build versus buy</h4><ul>
+          <li><strong>Why keyword first:</strong> 288 standards, exact citations matter, and a deterministic baseline keeps every later change honestly comparable. Children&rsquo;s questions also stay off third-party services.</li>
+          <li><strong>When I would switch:</strong> when users phrase things loosely or misspell, as the misses above show.</li>
+          <li><strong>What it costs:</strong> a per-query fee, more latency and a new hallucination risk, so the same evaluation and adversarial suites must be passed again before it ships.</li></ul></div>
+      </div>
       <div class="dmore">
       <figure class="diagram">
         <svg viewBox="0 0 760 235" role="img" aria-labelledby="d3t d3d">
