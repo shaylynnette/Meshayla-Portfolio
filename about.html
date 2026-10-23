@@ -627,14 +627,42 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
       <div class="why-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2.5rem;"><img src="/assets/img/site/family-portrait.webp" alt="Meshayla Kemp with her husband and their three children, smiling on a rust-colored sofa" width="900" height="1190" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.16);"><img src="/assets/img/site/family-rocking-horse.webp" alt="The Kemp children posing together, the youngest on a wooden rocking horse" width="900" height="1163" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.16);"></div>
       <div><div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.85rem;"><span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>My Why</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,40px);font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:1rem;">They Are <em style="color:var(--green2);">My Why</em></h3>
-        <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I&rsquo;m a first-generation college graduate, and my &ldquo;crazy&rdquo; is that I keep chasing opportunities that seem unattainable &mdash; and I keep obtaining them.</p>
-        <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I&rsquo;m in rooms my forefathers only dreamed of. I am living their prayers. Now I pray the same for my children: <strong>no limits, and a world that is theirs to conquer</strong> as long as they keep God first and always extend a hand to help and give back.</p>
+        <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I&rsquo;m a first-generation college graduate, and I keep chasing opportunities that seem out of reach. Every door that opened was God&rsquo;s grace and the prayers of those who came before me.</p>
+        <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I&rsquo;m in rooms my forefathers only dreamed of, so I don&rsquo;t take my seat lightly. I&rsquo;m here to hold the door open for others, because the best way to lead is by example.</p>
+        <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I pray my children meet no limits, and that they always keep God first and extend a hand to help and give back.</p>
         <blockquote style="margin:1.4rem 0 0;padding:1rem 1.2rem;background:var(--green3);border-left:4px solid var(--green2);border-radius:0 12px 12px 0;">
           <p style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;line-height:1.5;color:var(--ink);margin:0 0 .4rem;">It all begins with mindset and heart. From there grows the fruit of your tree.</p>
           <span style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#2F5A17;">Matthew 7:17 &mdash; &ldquo;Every good tree bears good fruit.&rdquo;</span>
-        </blockquote></div>
+        </blockquote>
+        <div class="ft" data-fruit>
+          <p class="ft-h">What fruit is your tree bearing?</p>
+          <div class="ft-tree" aria-hidden="false"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><rect x="45" y="58" width="10" height="38" rx="4" fill="#8a5a33"/><circle cx="50" cy="38" r="34" fill="#cfe8b4"/><circle cx="30" cy="46" r="20" fill="#b9dc98"/><circle cx="70" cy="46" r="20" fill="#b9dc98"/></svg><button type="button" class="fr" style="left:18%;top:32%;background:#E9739B;" data-q="0" aria-label="Fruit 1 of 6: reveal a reflection question"></button><button type="button" class="fr" style="left:46%;top:16%;background:#8DC96E;" data-q="1" aria-label="Fruit 2 of 6: reveal a reflection question"></button><button type="button" class="fr" style="left:74%;top:30%;background:#F2B01E;" data-q="2" aria-label="Fruit 3 of 6: reveal a reflection question"></button><button type="button" class="fr" style="left:30%;top:54%;background:#F2B01E;" data-q="3" aria-label="Fruit 4 of 6: reveal a reflection question"></button><button type="button" class="fr" style="left:62%;top:56%;background:#E9739B;" data-q="4" aria-label="Fruit 5 of 6: reveal a reflection question"></button><button type="button" class="fr" style="left:50%;top:38%;background:#8DC96E;" data-q="5" aria-label="Fruit 6 of 6: reveal a reflection question"></button></div>
+          <div class="ft-q" role="status" aria-live="polite"><span class="ft-hint">Tap a fruit to reflect.</span></div>
+          <ul class="ft-list"><li>What is growing in your life right now that you are proud of?</li><li>Whose life has your kindness helped grow?</li><li>What seed did someone plant in you that you can plant in someone else?</li><li>What would you try if you knew God had already made a way?</li><li>What mindset do you need to let go of so something better can grow?</li><li>Who is watching you, and what are they learning about what is possible?</li></ul>
+        </div></div>
     </div>
   </div>
+<style>
+.ft{margin-top:1.6rem;padding:1.2rem;border:1px dashed var(--green2);border-radius:16px;background:#fff;text-align:center;}
+.ft-h{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--ink);margin:0 0 .6rem;}
+.ft-tree{position:relative;width:min(260px,100%);margin:0 auto;aspect-ratio:1;display:none;}
+.ft-tree svg{position:absolute;inset:0;width:100%;height:100%;}
+.ft .fr{position:absolute;width:13%;aspect-ratio:1;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25);cursor:pointer;transform:translate(-50%,-50%);padding:0;transition:transform .15s;}
+.ft .fr:hover,.ft .fr:focus-visible{transform:translate(-50%,-50%) scale(1.2);outline:3px solid var(--ink);outline-offset:2px;}
+.ft .fr.on{transform:translate(-50%,-50%) scale(1.25);box-shadow:0 0 0 4px rgba(141,201,110,.6);}
+@media(prefers-reduced-motion:no-preference){.ft .fr{animation:ftb 3s ease-in-out infinite;}.ft .fr:nth-child(odd){animation-delay:1.2s;}@keyframes ftb{0%,100%{margin-top:0}50%{margin-top:-3px}}}
+.ft-q{min-height:3.6em;margin:.8rem auto 0;max-width:420px;font-family:'Playfair Display',serif;font-size:18px;font-style:italic;line-height:1.45;color:var(--ink);display:none;}
+.ft-hint{font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:var(--muted);}
+.ft-list{text-align:left;margin:.6rem auto 0;max-width:460px;font-size:14px;line-height:1.7;color:var(--charcoal);}
+.ft.js .ft-tree{display:block;}.ft.js .ft-q{display:block;}.ft.js .ft-list{display:none;}
+</style>
+<script>
+(function(){var w=document.querySelector('[data-fruit]');if(!w)return;w.classList.add('js');
+var qs=[].map.call(w.querySelectorAll('.ft-list li'),function(l){return l.textContent;});
+var out=w.querySelector('.ft-q'),fr=[].slice.call(w.querySelectorAll('.fr'));
+fr.forEach(function(b){b.addEventListener('click',function(){fr.forEach(function(x){x.classList.remove('on');});b.classList.add('on');out.textContent=qs[+b.getAttribute('data-q')];});});
+})();
+</script>
   <style>@media(max-width:720px){.why-photos{grid-template-columns:1fr !important;}}</style>
 
   <!-- ⑤b COMMUNITY + WEALTH-BUILDING -->
