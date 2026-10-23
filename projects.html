@@ -414,6 +414,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
 .p-kicker{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:17px;color:#2F5A17;margin:0 0 .55rem;line-height:1.35;}
 .p-kicker small{display:block;font-family:'Nunito',sans-serif;font-style:normal;font-weight:600;font-size:12px;color:var(--muted);margin-top:2px;}
 </style>
+<link rel="stylesheet" href="/assets/css/enhance.css">
 </head>
 <body>
 <!-- NAV -->
@@ -437,9 +438,10 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
     <div class="s-pill">Portfolio</div>
     <h1 class="s-h2">Selected Work</h1>
     <p class="s-body" style="margin-bottom:2.5rem;">Seven projects. Seven different design challenges. Each one shows the full arc from problem to solution — and the thinking behind every decision.</p>
+    <div class="filters" data-filters role="group" aria-label="Filter projects by focus" style="margin:-1rem 0 2rem;"><button type="button" class="fbtn" data-filter="all" aria-pressed="true">All</button><button type="button" class="fbtn" data-filter="enterprise" aria-pressed="false">Enterprise &amp; OCM</button><button type="button" class="fbtn" data-filter="elearning" aria-pressed="false">eLearning</button><button type="button" class="fbtn" data-filter="k12" aria-pressed="false">K-12</button><button type="button" class="fbtn" data-filter="government" aria-pressed="false">Government</button><button type="button" class="fbtn" data-filter="ai" aria-pressed="false">AI-enhanced</button><span class="fcount" aria-live="polite">Showing 7 of 7 projects</span></div>
 
     <!-- FEATURED: LEAP -->
-    <div class="pf" style="display:block;">
+    <div class="pf" data-fitem data-status="elearning ai" style="display:block;">
 
       <!-- TOP: Full-width header -->
       <div style="margin-bottom:1.75rem;">
@@ -518,7 +520,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
     <!-- GRID: Projects 02–04 -->
     <div class="pgrid" style="margin-top:1.25rem;">
 
-      <div class="pc green" style="grid-column:1/-1;">
+      <div class="pc green" data-fitem data-status="enterprise" style="grid-column:1/-1;">
 
   <!-- HEADER ROW -->
   <div style="display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:start;margin-bottom:.85rem;">
@@ -662,7 +664,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
   </div>
 </div>
 
-      <div class="pc yellow">
+      <div class="pc yellow" data-fitem data-status="government">
         <div class="pc-n">03</div>
         <span class="pc-ico">🏛️</span>
         <div class="pc-type">Government • State Certification • LMS</div>
@@ -687,7 +689,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
     <div class="pgrid" style="grid-template-columns:1fr;margin-bottom:1.5rem;">
 
       <!-- Project 07: Rise Course + Infographic -->
-      <div class="pc pink" style="grid-column:1/-1;">
+      <div class="pc pink" data-fitem data-status="elearning" style="grid-column:1/-1;">
 
         <!-- TOP: Number + type + title full width -->
         <div style="margin-bottom:1rem;">
@@ -732,10 +734,10 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
           </p>
         </div>
 
-      </div>/div&gt;
+      </div>
 
     <!-- EFL K12 Project -->
-    <div class="efl-card">
+    <div class="efl-card" data-fitem data-status="k12 ai">
       <div class="efl-header">
         <div>
           <div class="efl-badge">04 • K–12 Curriculum • Multi-State Standards</div>
@@ -802,7 +804,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
 
     <!-- Project 05 -->
     <div class="pgrid">
-      <div class="pc dark">
+      <div class="pc dark" data-fitem data-status="enterprise elearning">
         <div class="pc-n">05</div>
         <span class="pc-ico">🌐</span>
         <div class="pc-type" style="color:var(--green2);">Fortune 100 • SAP Concur • Enterprise Onboarding</div>
@@ -819,7 +821,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
         </div>
       </div>
 
-      <div class="pc pink">
+      <div class="pc pink" data-fitem data-status="k12">
         <div class="pc-n">06</div>
         <span class="pc-ico">🏆</span>
         <div class="pc-type">National Achievement • K–12 Leadership</div>
@@ -1011,4 +1013,5 @@ document.querySelectorAll("a[href^='#']").forEach(a=>{
 });
 </script>
 
+<script src="/assets/js/enhance.js" defer></script>
 </body></html>

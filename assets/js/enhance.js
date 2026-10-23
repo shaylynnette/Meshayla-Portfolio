@@ -111,6 +111,33 @@
     });
   }
 
+  /* 5c. Lesson Plan Method: accessible tabs (all panels stay visible without JS) */
+  var meth = document.querySelector('[data-method]');
+  if (meth) {
+    var mtabs = $$('[role="tab"]', meth), mpanels = $$('[role="tabpanel"]', meth);
+    meth.setAttribute('data-ready', '');
+    var pick = function (i, focus) {
+      mtabs.forEach(function (t, j) {
+        var on = j === i;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        mpanels[j].hidden = !on;
+      });
+      if (focus) mtabs[i].focus();
+    };
+    mtabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { pick(i); });
+      t.addEventListener('keydown', function (e) {
+        var n = mtabs.length, k = e.key;
+        if (k === 'ArrowRight' || k === 'ArrowDown') { e.preventDefault(); pick((i + 1) % n, true); }
+        else if (k === 'ArrowLeft' || k === 'ArrowUp') { e.preventDefault(); pick((i + n - 1) % n, true); }
+        else if (k === 'Home') { e.preventDefault(); pick(0, true); }
+        else if (k === 'End') { e.preventDefault(); pick(n - 1, true); }
+      });
+    });
+    pick(0);
+  }
+
   /* 5b. Project detail dialogs, sub-nav spy, skills accordion on small screens */
   $$('[data-open]').forEach(function (b) {
     b.addEventListener('click', function () {
