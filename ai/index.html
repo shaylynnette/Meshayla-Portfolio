@@ -213,6 +213,105 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
   .proj{padding:1.3rem;}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+
+/* ===== REDESIGN: layered layout ===== */
+section{padding:3.5rem 0;}
+.hero{padding:6.5rem 0 2.2rem;}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:2.5rem;align-items:center;}
+.hero h1{font-size:clamp(32px,4.2vw,50px);}
+.hero p.lede{font-size:15.5px;margin-bottom:1.5rem;line-height:1.75;}
+.hero-demo .demo{margin-top:0;box-shadow:var(--shadow-md);}
+.demo-h{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:.15rem;}
+.demo-sub{font-size:13.5px;color:var(--muted);margin-bottom:.8rem;}
+.btn-dark.sm,.btn-soft.sm{padding:9px 18px;font-size:12.5px;cursor:pointer;font-family:inherit;}
+button.btn-soft,button.btn-dark{font-family:inherit;}
+.stats{margin-top:2rem;}
+
+.subnav{position:sticky;top:66px;z-index:900;background:rgba(253,250,246,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.subnav .wrap{display:flex;gap:.4rem;overflow-x:auto;scrollbar-width:none;}
+.subnav .wrap::-webkit-scrollbar{display:none;}
+.subnav a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;padding:13px 14px;border-bottom:3px solid transparent;}
+.subnav a:hover{color:var(--ink);}
+.subnav a.on{color:var(--ink);border-bottom-color:var(--green2);}
+.subnav a.sn-cta{margin-left:auto;color:var(--ink);}
+section[id]{scroll-margin-top:118px;}
+
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.4rem;}
+.sec-head h2{margin-bottom:0;}
+.key{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.sub-h{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:2rem 0 .8rem;}
+
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+.fcard{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);}
+.fimg{display:block;background:var(--green3);aspect-ratio:16/9;overflow:hidden;}
+.fimg img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.fbody{padding:1rem 1.15rem 1.15rem;display:flex;flex-direction:column;gap:.45rem;flex:1;}
+.fbody h3{font-size:17px;line-height:1.3;font-weight:800;}
+.fbody p{font-size:14px;color:var(--charcoal);line-height:1.6;}
+.fbody .tags{margin-top:.2rem;}
+.fact{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:auto;padding-top:.7rem;}
+
+.rows{display:grid;gap:.6rem;}
+.prow{display:grid;grid-template-columns:110px 1fr auto;gap:1rem;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:.75rem 1rem;}
+.pr-t b{display:block;font-size:14.5px;}
+.pr-t span{font-size:13px;color:var(--muted);line-height:1.5;display:block;}
+
+.steps6{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem;counter-reset:s;margin-top:1.2rem;}
+.steps6 li{counter-increment:s;background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:.8rem .8rem .9rem;font-size:12.5px;color:var(--muted);line-height:1.45;}
+.steps6 li::before{content:counter(s);display:block;width:24px;height:24px;border-radius:50%;background:var(--green2);color:#fff;font-weight:800;font-size:12px;text-align:center;line-height:24px;margin-bottom:.5rem;}
+.steps6 b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:.15rem;}
+.steps6 span{display:block;}
+.cdets{display:grid;gap:.5rem;}
+.cdet{background:var(--cream);border:1px solid var(--border);border-radius:14px;}
+.cdet>summary{cursor:pointer;list-style:none;padding:.8rem 1rem;display:flex;flex-direction:column;gap:.1rem;}
+.cdet>summary::-webkit-details-marker{display:none;}
+.cdet>summary::after{content:'+';float:right;}
+.ck{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);}
+.ct{font-size:15px;font-weight:800;}
+.cdet[open]>summary{border-bottom:1px solid var(--border);}
+.cb{padding:.9rem 1rem 1rem;font-size:14px;color:var(--charcoal);line-height:1.7;}
+.cb p{margin-bottom:.6rem;}
+
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:0;}
+.srow{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:.8rem 1rem;}
+.srow>summary{cursor:pointer;list-style:none;font-size:14px;font-weight:800;}
+.srow>summary::-webkit-details-marker{display:none;}
+.srow>summary::after{content:'+';float:right;color:var(--muted);}
+.srow[open]>summary::after{content:'\2212';}
+.srow .chips{margin-top:.7rem;}
+.legend{display:none;}
+
+.about-ai{grid-template-columns:200px 1fr;margin-top:1rem;}
+.tlwrap{margin-top:1rem;}
+.tlwrap .tl{margin-top:.5rem;}
+
+/* project dialogs */
+dialog.pdialog{border:0;border-radius:20px;padding:0;max-width:min(920px,calc(100vw - 2rem));width:100%;max-height:calc(100vh - 3rem);background:var(--cream);color:var(--ink);box-shadow:0 20px 70px rgba(0,0,0,.35);margin:auto;overflow:hidden;}
+dialog.pdialog[open]{display:flex;flex-direction:column;}
+dialog.pdialog::backdrop{background:rgba(28,26,23,.55);}
+.pd-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);background:var(--white);}
+.pd-head h3{font-family:'Playfair Display',serif;font-size:22px;line-height:1.25;}
+.pd-act{display:flex;gap:.6rem;align-items:center;}
+.pd-close{background:var(--cream);border:1px solid var(--border);border-radius:50%;width:38px;height:38px;font-size:22px;line-height:1;cursor:pointer;color:var(--ink);}
+.pd-close:hover{border-color:var(--green2);}
+.pd-body{padding:1.3rem 1.5rem 1.6rem;overflow:auto;}
+.pd-body .dmore{margin-top:1rem;}
+body.dlg-open{overflow:hidden;}
+
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:1.6rem;}
+  .hero{padding:5.5rem 0 1.6rem;}
+  section{padding:2.6rem 0;}
+  .steps6{grid-template-columns:repeat(2,1fr);}
+  .matrix{grid-template-columns:1fr;}
+  .featured{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.9rem;margin:0 -1.25rem;padding:0 1.25rem .6rem;scrollbar-width:thin;}
+  .fcard{flex:0 0 82%;scroll-snap-align:start;}
+  .prow{grid-template-columns:1fr auto;}
+  .prow .badge{grid-column:1/-1;justify-self:start;}
+  .pr-t{grid-column:1;}
+  .subnav{top:66px;}
+}
+
 </style>
 <link rel="stylesheet" href="/assets/css/enhance.css">
 </head>
@@ -235,367 +334,21 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 
 <main id="main">
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
-    <p class="roles">AI Solution Architect &nbsp;&bull;&nbsp; Generative AI &nbsp;&bull;&nbsp; Agentic Automation</p>
-    <h1>AI that helps people <em>learn, adopt and perform</em> &mdash; designed as a system, not a demo.</h1>
-    <p class="lede">I architect AI-enabled learning and workforce enablement for utilities, government, enterprise and education. Ten years of instructional design and change management mean I design for the person on the other end of the model, then build, measure and govern what ships.</p>
-    <div class="btns">
-      <a class="btn-dark" href="#builds">See the builds</a>
-      <a class="btn-soft" href="#skills">Skills matrix</a>
-    </div>
-    <p class="honesty"><strong>Status key:</strong> <span class="badge b-prod">In practice</span> delivered in real work, <span class="badge b-build">Building</span> in active development, <span class="badge b-learn">Learning</span> studying now.</p>
-    <div class="stats" role="list" aria-label="Impact highlights">
-      <div class="stat" role="listitem"><b data-count="6">6</b><span>states&rsquo; standards crosswalked with AI-assisted analysis</span></div>
-      <div class="stat" role="listitem"><b data-count="100" data-suffix="%">100%</b><span>first-submission approval on a statewide certification program</span></div>
-      <div class="stat" role="listitem"><b data-count="40" data-suffix="%">40%</b><span>team turnaround gain after introducing AI workflows</span></div>
-      <div class="stat" role="listitem"><b data-count="95" data-suffix="%">95%</b><span>participant satisfaction on an enterprise LMS curriculum</span></div>
-    </div>
-  </div>
-</header>
-
-<section id="tools" class="alt">
-  <div class="wrap">
-    <div class="s-pill">See it working</div>
-    <h2 class="s-h2">Try the <em>live tools</em></h2>
-    <p class="s-body">Four things you can open right now. No sign-up for any of them.</p>
-    <div class="tools">
-      <a class="tool" href="#demo">
-        <img src="/assets/img/ai/rag-tutor.jpg" width="800" height="434" alt="Screenshot of the standards tutor answering a question about rounding decimals with a Texas standard citation" loading="lazy" decoding="async">
-        <div class="tb"><b>Standards tutor</b><span class="d">Ask about a K&ndash;5 Texas math standard and get the citation.</span><span class="gl">Try it on this page &darr;</span></div>
-      </a>
-      <a class="tool" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">
-        <img src="/assets/img/ai/style-studio.jpg" width="800" height="500" alt="Screenshot of Style Studio showing an illustrated character with clothing, hair and makeup options" loading="lazy" decoding="async">
-        <div class="tb"><b>Style Studio</b><span class="d">A virtual styling game that runs in the browser.</span><span class="gl">Open the tool &#8599;</span></div>
-      </a>
-      <a class="tool" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener">
-        <img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="Screenshot of the GC Academy home page for grades 1 to 5" loading="lazy" decoding="async">
-        <div class="tb"><b>GC Academy</b><span class="d">The adaptive K&ndash;5 learning platform. Try the free sample.</span><span class="gl">Open the site &#8599;</span></div>
-      </a>
-      <a class="tool" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">
-        <img src="/assets/img/ai/gc-bible-study.jpg" width="800" height="600" alt="Screenshot of GC Bible Study with a daily verse and Bible lessons" loading="lazy" decoding="async">
-        <div class="tb"><b>GC Bible Study</b><span class="d">Daily verse, games and Bible lessons for kids.</span><span class="gl">Open the tool &#8599;</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="pillars">
-  <div class="wrap">
-    <div class="s-pill">What I do</div>
-    <h2 class="s-h2">Three ways I work <em>with AI</em></h2>
-    <p class="s-body">One lens runs through all of it: AI only counts when people can adopt it, trust it and perform better because of it.</p>
-    <div class="grid3">
-      <article class="card">
-        <span class="badge b-prod">In practice</span>
-        <h3>Solution Architecture</h3>
-        <p>Turning a messy business problem into a clear system: data flows, human review points, risk and rollout.</p>
-        <ul>
-          <li>Architecture diagrams and decision records</li>
-          <li>Human-in-the-loop workflow design</li>
-          <li>Change management and adoption planning</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="badge b-prod">In practice</span> <span class="badge b-build">Building</span>
-        <h3>Generative AI Engineering</h3>
-        <p>Structured prompting, content pipelines and quality checks that cut cycle time without lowering the bar.</p>
-        <ul>
-          <li>Prompt design for job-task analysis and scenarios</li>
-          <li>AI voiceover and content production pipelines</li>
-          <li>Retrieval-grounded answers with citations (in build)</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="badge b-build">Building</span>
-        <h3>Agentic Development</h3>
-        <p>Multi-step agents that use tools, hand work back to a person, and leave a record of what they did.</p>
-        <ul>
-          <li>Reusable agent skills for recurring workflows</li>
-          <li>Tool calling and MCP servers (in build)</li>
-          <li>Evaluation harnesses and guardrails</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="builds" class="alt">
-  <div class="wrap">
-    <div class="s-pill">Featured builds</div>
-    <h2 class="s-h2">Systems I have <em>designed and shipped</em></h2>
-    <p class="s-body">Client details are generalized. Where a repository will be public, a link appears here as soon as it is.</p>
-    <div class="filters" data-filters role="group" aria-label="Filter projects by status">
-      <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All projects</button>
-      <button type="button" class="fbtn" data-filter="prod,practice" aria-pressed="false">Completed</button>
-      <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
-      <span class="fcount" aria-live="polite">Showing 10 of 10 projects</span>
-    <button type="button" class="fbtn fexp" id="toggle-details" aria-pressed="false">Expand all details</button>
-    </div>
-
-    <!-- BUILD 1 -->
-    <article class="proj" data-status="prod">
-      <div class="proj-head">
-        <div><div class="kicker">Product architecture</div><h3>GC Academy: an adaptive K&ndash;5 learning platform</h3></div>
-        <span class="badge b-prod">In production</span>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="roles">AI Solution Architect &nbsp;&bull;&nbsp; GenAI Engineer &nbsp;&bull;&nbsp; Agentic AI Developer</p>
+        <h1>AI that helps people <em>learn, adopt and perform</em>: designed as a system, not a demo.</h1>
+        <p class="lede">I architect AI-enabled learning and workforce enablement for utilities, government, enterprise and education. Ten years of instructional design and change management shape how I build, measure and govern what ships.</p>
+        <div class="btns">
+          <a class="btn-dark" href="#work">See selected work</a>
+          <a class="btn-soft" href="/assets/Meshayla-Kemp-Resume.pdf" download>Download r&eacute;sum&eacute;</a>
+        </div>
       </div>
-      <p>A subscription learning platform for children, with a parent dashboard, individualized learning paths and weekly progress reports. I set the architecture and product rules, and directed an AI-assisted build against them.</p>
-      <div class="shotrow">
-        <figure class="shot"><button type="button" class="shot-btn" data-full="/assets/img/ai/gc-academy.jpg" data-alt="GC Academy home page: Learn. Grow. Shine." aria-label="Enlarge screenshot: GC Academy home page"><img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="GC Academy home page: Learn. Grow. Shine." loading="lazy" decoding="async"></button><figcaption>Live screenshot, captured October 2026. Select to enlarge.</figcaption></figure>
-        <div class="shot-cta"><p>The public site, with a free sample to try. Parents get a separate Parent Center.</p><a class="btn-dark" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener">Open GC Academy &#8599;</a></div>
-      </div>
-      <details class="more"><summary>How it&rsquo;s built: design decisions and architecture</summary>
-      <div class="cols">
-        <div><h4>Problem</h4><ul>
-          <li>Parents need visibility into what a child actually learned, without extra work.</li>
-          <li>Paid content must stay behind a membership gate while a free sample stays public.</li>
-          <li>Children&rsquo;s data demands consent and privacy by design.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>Static front end with serverless functions, so there are no servers to run.</li>
-          <li>An edge function sends members-only files only to signed-in members.</li>
-          <li>Question banks pass a validator that enforces written quality rules.</li>
-          <li>Parent consent and card verification before any child information is shared.</li>
-        </ul></div>
-      </div>
-      <figure class="diagram">
-        <svg viewBox="0 0 760 290" role="img" aria-labelledby="d1t d1d">
-          <title id="d1t">GC Academy architecture</title>
-          <desc id="d1d">Learner and parent browsers connect through a Netlify edge gate and serverless functions to Supabase, Stripe and an email service.</desc>
-          <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <g class="node" tabindex="0" role="button" aria-label="Learner &amp; Parent" data-info="Children learn in the browser; parents manage children, consent and billing in a separate Parent Center."><rect class="bx p" x="15" y="105" width="165" height="80" rx="12"/><text class="tx" x="97" y="138" text-anchor="middle">Learner &amp; Parent</text><text class="tx2" x="97" y="158" text-anchor="middle">Browsers, any device</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Edge gate" data-info="Runs before a file is served and sends members-only lessons only to signed-in members; the free sample stays public."><rect class="bx g" x="250" y="25" width="215" height="75" rx="12"/><text class="tx" x="357" y="56" text-anchor="middle">Edge gate</text><text class="tx2" x="357" y="76" text-anchor="middle">Members-only content check</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Serverless functions" data-info="Small server-side functions handle sessions, checkout, billing portal, webhooks and the weekly report, so there is no server to maintain."><rect class="bx g" x="250" y="190" width="215" height="75" rx="12"/><text class="tx" x="357" y="221" text-anchor="middle">Serverless functions</text><text class="tx2" x="357" y="241" text-anchor="middle">Sessions, billing, reports</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Supabase" data-info="Postgres database for learners, progress and approved devices, with access rules enforced on the server."><rect class="bx" x="545" y="10" width="200" height="70" rx="12"/><text class="tx" x="645" y="40" text-anchor="middle">Supabase</text><text class="tx2" x="645" y="60" text-anchor="middle">Database &amp; progress records</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Stripe" data-info="Handles plans and card verification; webhooks tell the platform when a membership changes."><rect class="bx" x="545" y="110" width="200" height="70" rx="12"/><text class="tx" x="645" y="140" text-anchor="middle">Stripe</text><text class="tx2" x="645" y="160" text-anchor="middle">Plans, card verification</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Email service" data-info="Sends the weekly progress report and approval requests to parents."><rect class="bx" x="545" y="210" width="200" height="70" rx="12"/><text class="tx" x="645" y="240" text-anchor="middle">Email service</text><text class="tx2" x="645" y="260" text-anchor="middle">Weekly parent reports</text></g>
-          <path class="ln" d="M180 130 L250 70" marker-end="url(#a1)"/><path class="ln" d="M180 165 L250 215" marker-end="url(#a1)"/>
-          <path class="ln" d="M465 215 L545 55" marker-end="url(#a1)"/><path class="ln" d="M465 228 L545 145" marker-end="url(#a1)"/><path class="ln" d="M465 245 L545 245" marker-end="url(#a1)"/>
-        </svg>
-        <figcaption>Simplified architecture. Learner and parent traffic is gated at the edge; sensitive work happens in serverless functions.</figcaption>
-      </figure>
-      </details>
-      <div class="tags"><span class="tag">Netlify</span><span class="tag">Serverless functions</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Child-privacy design</span><span class="tag">AI-assisted engineering</span></div>
-    </article>
-
-    <!-- BUILD: QUALITY GATE -->
-    <article class="proj" data-status="prod">
-      <div class="proj-head">
-        <div><div class="kicker">Guardrails &middot; evaluation of generated content</div><h3>An automated quality gate for AI-assisted assessment content</h3></div>
-        <span class="badge b-prod">In production</span>
-      </div>
-      <p>Generated quiz questions look fine until a teacher reads them closely. I wrote the standard an instructional-materials reviewer would apply, then turned it into code that fails the site build when a question set breaks the rules. Nothing reaches a child unless it passes.</p>
-      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
-      <div class="cols">
-        <div><h4>What it checks</h4><ul>
-          <li>Every quoted answer choice appears word for word in the book chapter it cites.</li>
-          <li>Each question is tagged to a real standard, and the set covers at least four, with none over 45%.</li>
-          <li>The right answer is not the longest choice more than 40% of the time, or stuck in one slot.</li>
-          <li>Reading level: question and choice length limits by grade band; no &ldquo;all of the above.&rdquo;</li>
-          <li>A bank at least 1.4&times; the questions drawn, so a retake is mostly new.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>The rules live in a written standard first, then in code, so the two cannot drift apart.</li>
-          <li>Checks run at build time and have automated tests, so a bad set fails before it can publish.</li>
-          <li>The same validator is reused for unit tests and exams, so there is one source of truth.</li>
-          <li>A human still reads every new set once. The checks catch patterns, not meaning, and I say so in the docs.</li>
-        </ul></div>
-      </div>
-      </details>
-      <p class="pending">Known gap: older lesson questions have not yet been audited against these rules.</p>
-      <div class="tags"><span class="tag">Guardrails</span><span class="tag">Output validation</span><span class="tag">Automated testing</span><span class="tag">Build-time enforcement</span><span class="tag">Educational measurement</span><span class="tag">JavaScript</span></div>
-    </article>
-
-    <!-- BUILD: BIBLE + DICTIONARY -->
-    <article class="proj" data-status="prod">
-      <div class="proj-head">
-        <div><div class="kicker">Content platform &middot; data engineering &middot; privacy by design</div><h3>A kid-safe Bible reader, dictionary and thesaurus, hosted on our own site</h3></div>
-        <span class="badge b-prod">In production</span>
-      </div>
-      <p>Children can read the whole World English Bible (public domain), tap any word, and see a definition written for their age. The reading tools sit inside GC Academy, and a Bible lessons course adds short pages, retellings and small games. Everything is stored and served from our own site, so a child&rsquo;s lookups never go to a third-party service.</p>
-      <div class="shotrow">
-        <figure class="shot"><button type="button" class="shot-btn" data-full="/assets/img/ai/gc-bible-study.jpg" data-alt="GC Bible Study page with Bible lessons and a daily verse" aria-label="Enlarge screenshot: GC Bible Study page"><img src="/assets/img/ai/gc-bible-study.jpg" width="800" height="600" alt="GC Bible Study page with Bible lessons and a daily verse" loading="lazy" decoding="async"></button><figcaption>Live screenshot, captured October 2026. Select to enlarge.</figcaption></figure>
-        <div class="shot-cta"><p>Daily verse, games and Bible lessons. The tap-a-word reader and dictionary live inside GC Academy for signed-in learners.</p><a class="btn-dark" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">Open GC Bible Study &#8599;</a></div>
-      </div>
-      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
-      <div class="cols">
-        <div><h4>What I built</h4><ul>
-          <li>All 66 books as structured data, with tap-to-define on every word and a reader that can jump straight to a lesson&rsquo;s verses.</li>
-          <li>A dictionary of about 22,000 words from Open English WordNet, filtered for kids, plus 400+ hand-written entries with simple examples.</li>
-          <li>A thesaurus that groups synonyms by meaning, from the same open data.</li>
-          <li>A Bible lessons course in six units, with five game types: catch, order, sort, pop and match.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>Dictionary and thesaurus are split into 26 small files, one per letter, and loaded only when needed. The page stays fast on a phone.</li>
-          <li>No third-party lookups: definitions come from files on our own site.</li>
-          <li>Games have large targets, no timer pressure, can be skipped, and respect reduced-motion settings.</li>
-          <li>Sources and licenses are tracked: public-domain Bible text, CC BY data credited on the page.</li>
-        </ul></div>
-      </div>
-      </details>
-      <div class="tags"><span class="tag">JavaScript</span><span class="tag">Structured data</span><span class="tag">Sharded static data</span><span class="tag">Open data licensing</span><span class="tag">Child privacy</span><span class="tag">Accessibility</span></div>
-    </article>
-
-    <!-- BUILD: PICTURE PIN SIGN-IN -->
-    <article class="proj" data-status="prod">
-      <div class="proj-head">
-        <div><div class="kicker">Security design &middot; identity for young children</div><h3>Sign-in for children who can&rsquo;t use passwords: picture PIN and approved devices</h3></div>
-        <span class="badge b-prod">In production</span>
-      </div>
-      <p>A five-year-old can&rsquo;t manage an email and password, and a children&rsquo;s product can&rsquo;t afford to be careless with identity. Children sign in with a picture PIN on a device their parent has approved, and the parent stays in control of every step.</p>
-      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
-      <div class="cols">
-        <div><h4>How it works</h4><ul>
-          <li>A parent creates a one-time device code that expires in 10 minutes, with one live code per family.</li>
-          <li>The child picks four pictures instead of typing a password.</li>
-          <li>Wrong tries are counted per child, so guessing slows down and stops.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>The server stores a keyed hash of the pictures, never the pictures themselves, and the device code is stored hashed too.</li>
-          <li>Database access rules are on, and only the server can write sign-in records.</li>
-          <li>Approved devices can be managed by the parent, so a lost tablet is not a lost account.</li>
-        </ul></div>
-      </div>
-      </details>
-      <div class="tags"><span class="tag">Authentication design</span><span class="tag">Keyed hashing</span><span class="tag">Row-level security</span><span class="tag">Supabase</span><span class="tag">Child privacy</span></div>
-    </article>
-
-    <!-- BUILD: WORKBOOKS + WEEKLY REPORT -->
-    <article class="proj" data-status="prod">
-      <div class="proj-head">
-        <div><div class="kicker">Commerce &middot; scheduled automation</div><h3>Paid digital workbooks and a weekly progress email for parents</h3></div>
-        <span class="badge b-prod">In production</span>
-      </div>
-      <p>Parents can buy a fillable workbook once and use it for every child in the family, with each child&rsquo;s answers and drawings saved page by page. Every Friday afternoon a progress email goes to families without anyone pressing a button.</p>
-      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
-      <div class="cols">
-        <div><h4>Design decisions</h4><ul>
-          <li>Who owns a workbook is decided only on the server, from purchases recorded by Stripe&rsquo;s own webhook. The browser is never trusted.</li>
-          <li>A child&rsquo;s pages can be read or saved only by that child&rsquo;s own family.</li>
-          <li>A guard blocks test-mode payments from running on the live site.</li>
-        </ul></div>
-        <div><h4>The Friday email</h4><ul>
-          <li>A scheduled job that sends at 5 p.m. Central all year, even when clocks change.</li>
-          <li>Safe to re-run: it sends at most once per family per week.</li>
-          <li>The workbook functions have automated tests.</li>
-        </ul></div>
-      </div>
-      </details>
-      <div class="tags"><span class="tag">Stripe Checkout</span><span class="tag">Webhooks</span><span class="tag">Scheduled functions</span><span class="tag">Idempotent jobs</span><span class="tag">Serverless</span><span class="tag">Automated testing</span></div>
-    </article>
-
-    <!-- BUILD 2 -->
-    <article class="proj" data-status="practice">
-      <div class="proj-head">
-        <div><div class="kicker">Generative AI workflow</div><h3>AI-assisted multi-state standards crosswalk</h3></div>
-        <span class="badge b-prod">In practice</span>
-      </div>
-      <p>A secondary Economics and Financial Literacy program was failing state compliance and needed to expand to five more states. I used AI analysis to map the courseware against each state&rsquo;s graduation standards, surface gaps, and drive targeted lesson redesign.</p>
-      <details class="more"><summary>How it&rsquo;s built: design decisions and architecture</summary>
-      <div class="cols">
-        <div><h4>Outcome</h4><ul>
-          <li>Standards crosswalks for six states.</li>
-          <li>Gap analysis, new gap-filling lessons and a master curriculum map.</li>
-          <li>State approval with 100% compliance on the program.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>AI proposes mappings; a subject-matter reviewer approves every one.</li>
-          <li>Gaps are measured against depth-of-knowledge levels, not keywords alone.</li>
-          <li>Every output lands in a document the state reviewer can verify.</li>
-        </ul></div>
-      </div>
-      <figure class="diagram">
-        <svg viewBox="0 0 760 175" role="img" aria-labelledby="d2t d2d">
-          <title id="d2t">Standards crosswalk workflow</title>
-          <desc id="d2d">Course inventory and state standards feed structured AI prompts that draft a crosswalk and gap list, which a human reviews before lesson redesign.</desc>
-          <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <g class="node" tabindex="0" role="button" aria-label="Course inventory and standards" data-info="The existing lessons and objectives, plus each state’s standards documents, are the two inputs."><rect class="bx" x="10" y="45" width="130" height="85" rx="12"/><text class="tx" x="75" y="80" text-anchor="middle">Course</text><text class="tx" x="75" y="97" text-anchor="middle">inventory</text><text class="tx2" x="75" y="116" text-anchor="middle">+ state standards</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Structured AI prompts" data-info="Reusable prompts compare each lesson with each standard and return a mapping in a fixed format."><rect class="bx y" x="170" y="45" width="130" height="85" rx="12"/><text class="tx" x="235" y="80" text-anchor="middle">Structured</text><text class="tx" x="235" y="97" text-anchor="middle">AI prompts</text><text class="tx2" x="235" y="116" text-anchor="middle">map &amp; compare</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Draft crosswalk" data-info="The model’s proposed mappings and a list of standards with no matching lesson."><rect class="bx y" x="330" y="45" width="130" height="85" rx="12"/><text class="tx" x="395" y="80" text-anchor="middle">Draft</text><text class="tx" x="395" y="97" text-anchor="middle">crosswalk</text><text class="tx2" x="395" y="116" text-anchor="middle">+ gap list</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Human review" data-info="A subject-matter reviewer approves or corrects every mapping before anything moves on."><rect class="bx p" x="490" y="45" width="130" height="85" rx="12"/><text class="tx" x="555" y="80" text-anchor="middle">Human</text><text class="tx" x="555" y="97" text-anchor="middle">review</text><text class="tx2" x="555" y="116" text-anchor="middle">approve / correct</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Redesign and approval" data-info="New or revised lessons, assessments and the documents a state reviewer needs to verify compliance."><rect class="bx g" x="650" y="45" width="100" height="85" rx="12"/><text class="tx" x="700" y="80" text-anchor="middle">Redesign</text><text class="tx" x="700" y="97" text-anchor="middle">&amp; approval</text><text class="tx2" x="700" y="116" text-anchor="middle">documents</text></g>
-          <path class="ln" d="M140 88 L170 88" marker-end="url(#a2)"/><path class="ln" d="M300 88 L330 88" marker-end="url(#a2)"/><path class="ln" d="M460 88 L490 88" marker-end="url(#a2)"/><path class="ln" d="M620 88 L650 88" marker-end="url(#a2)"/>
-        </svg>
-        <figcaption>Workflow pattern: AI drafts, a person decides. This is the template for the planned crosswalk agent below.</figcaption>
-      </figure>
-      </details>
-      <div class="tags"><span class="tag">LLM analysis</span><span class="tag">Prompt design</span><span class="tag">Standards alignment</span><span class="tag">Human-in-the-loop</span></div>
-    </article>
-
-    <!-- BUILD: STYLE STUDIO -->
-    <article class="proj" data-status="prod">
-      <div class="proj-head">
-        <div><div class="kicker">Interactive product &middot; image-processing pipeline</div><h3>Style Studio: a real-time virtual styling engine</h3></div>
-        <span class="badge b-prod">In production</span>
-      </div>
-      <p>A free, no-sign-up browser game where children style characters with outfits, hair color and makeup, then save or print their looks. Under the hood it is a compositing engine: it recolors artwork, maps printed fabrics onto garments, cleans cut-out edges, and fits every item to every character. I specified the product rules and quality bar, and directed an AI-assisted build against them.</p>
-      <div class="shotrow">
-        <figure class="shot"><button type="button" class="shot-btn" data-full="/assets/img/ai/style-studio.jpg" data-alt="Style Studio with an illustrated character and clothing options" aria-label="Enlarge screenshot: Style Studio"><img src="/assets/img/ai/style-studio.jpg" width="800" height="500" alt="Style Studio with an illustrated character and clothing options" loading="lazy" decoding="async"></button><figcaption>Live screenshot, captured October 2026. Select to enlarge.</figcaption></figure>
-        <div class="shot-cta"><p>Free to play in the browser, with no sign-up and nothing to share.</p><a class="btn-dark" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">Play Style Studio &#8599;</a></div>
-      </div>
-      <details class="more"><summary>How it&rsquo;s built: design decisions and architecture</summary>
-      <div class="cols">
-        <div><h4>Problem</h4><ul>
-          <li>Hundreds of item and character combinations cannot each be drawn by hand.</li>
-          <li>Layered clothing showed skin patches, ragged edges and misaligned makeup.</li>
-          <li>Children&rsquo;s play needs privacy by default: no accounts, chat or sharing.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>One data-driven catalog; new items are data, not new code.</li>
-          <li>Recoloring and fabric mapping reuse one artwork shape for many colors and prints.</li>
-          <li>Edge cleanup pass: despeckle, contour smoothing, fringe removal.</li>
-          <li>Lip and makeup masks derived per character from color analysis, not hand-drawn.</li>
-          <li>Looks stay on the device; unlocks use codes behind a grown-up gate.</li>
-        </ul></div>
-      </div>
-      <figure class="diagram">
-        <svg viewBox="0 0 760 150" role="img" aria-labelledby="d4t d4d">
-          <title id="d4t">Style Studio rendering pipeline</title>
-          <desc id="d4d">Artwork and a data catalog feed a canvas compositing engine that recolors, maps prints, cleans edges and fits items per character, producing a saved look.</desc>
-          <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <g class="node" tabindex="0" role="button" aria-label="Artwork" data-info="Layered art for each character and garment, prepared to a shared size and alignment spec."><rect class="bx" x="10" y="30" width="140" height="85" rx="12"/><text class="tx" x="80" y="66" text-anchor="middle">Artwork</text><text class="tx2" x="80" y="86" text-anchor="middle">per-character layers</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Item catalog" data-info="A data file describes every item, its price, tier and available colors or prints; new items need no new code."><rect class="bx" x="180" y="30" width="140" height="85" rx="12"/><text class="tx" x="250" y="66" text-anchor="middle">Item catalog</text><text class="tx2" x="250" y="86" text-anchor="middle">data-driven shop</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Compositing engine" data-info="Draws layers on a canvas in real time: recolors art, maps printed fabric, cleans edges, fits each item to each character and builds lip and makeup masks."><rect class="bx y" x="350" y="30" width="210" height="85" rx="12"/><text class="tx" x="455" y="60" text-anchor="middle">Compositing engine</text><text class="tx2" x="455" y="80" text-anchor="middle">recolor &middot; print mapping</text><text class="tx2" x="455" y="96" text-anchor="middle">edge cleanup &middot; fit &middot; masks</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Saved look" data-info="Looks are stored on the device, can be shared as a short code and can be printed. Nothing is uploaded."><rect class="bx g" x="590" y="30" width="160" height="85" rx="12"/><text class="tx" x="670" y="60" text-anchor="middle">Saved look</text><text class="tx2" x="670" y="80" text-anchor="middle">on device, look codes,</text><text class="tx2" x="670" y="96" text-anchor="middle">print</text></g>
-          <path class="ln" d="M150 72 L180 72" marker-end="url(#a4)"/><path class="ln" d="M320 72 L350 72" marker-end="url(#a4)"/><path class="ln" d="M560 72 L590 72" marker-end="url(#a4)"/>
-        </svg>
-        <figcaption>Simplified rendering pipeline. The same pipeline pattern generalizes to AI-generated assets and personalized styling.</figcaption>
-      </figure>
-      </details>
-      <div class="tags"><span class="tag">Canvas image processing</span><span class="tag">Color science</span><span class="tag">Data-driven design</span><span class="tag">Game economy</span><span class="tag">Privacy by design</span><span class="tag">Visual QA</span><span class="tag">AI-assisted engineering</span></div>
-    </article>
-
-    <!-- BUILD 3 -->
-    <article class="proj" data-status="practice">
-      <div class="proj-head">
-        <div><div class="kicker">Enterprise generative AI</div><h3>LLM content pipelines and AI voiceover at scale</h3></div>
-        <span class="badge b-prod">In practice</span>
-      </div>
-      <p>At a learning-technology company I introduced large language model workflows and AI voiceover platforms into standard production, including interactive branching scenarios, and led the team that used them. Separately, on a multi-billion-dollar utility transformation, I embed structured prompts into role-based job-task analyses to turn engineering and system specifications into clear learning objectives.</p>
-      <details class="more"><summary>How it&rsquo;s built: design decisions</summary>
-      <div class="cols">
-        <div><h4>Outcome</h4><ul>
-          <li>Shorter design cycles and lower multimedia production cost.</li>
-          <li>A 40% gain in team turnaround efficiency across the team I led.</li>
-        </ul></div>
-        <div><h4>Design decisions</h4><ul>
-          <li>Prompts are structured and reusable, so quality does not depend on one person.</li>
-          <li>Subject-matter experts review technical accuracy before anything is published.</li>
-        </ul></div>
-      </div>
-      </details>
-      <div class="tags"><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Microsoft Copilot</span><span class="tag">WellSaid Labs</span><span class="tag">Murf.ai</span><span class="tag">Branching scenarios</span></div>
-    </article>
-
-    <!-- BUILD 4 (planned) -->
-    <article class="proj" data-status="build">
-      <div class="proj-head">
-        <div><div class="kicker">Flagship &middot; first version live &middot; embeddings and a language model next</div><h3>Standards-grounded RAG tutor, with an evaluation set</h3></div>
-        <span class="badge b-build">Building</span>
-      </div>
-      <p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
-      <div class="demo" id="demo" hidden>
-        <h4>Try it &mdash; live</h4>
+      <div class="hero-demo">
+<div class="demo" id="demo" hidden>
+        <h2 class="demo-h">Try it live</h2><p class="demo-sub">Ask about any K&ndash;5 Texas math standard.</p>
         <form id="demo-form" autocomplete="off">
           <label for="demo-q" class="skip" style="position:absolute;left:-999px">Ask about a K&ndash;5 Texas math standard</label>
           <input type="text" id="demo-q" maxlength="300" placeholder="e.g. fifth grade rounding decimals" required>
@@ -610,105 +363,129 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <div class="out" id="demo-out" role="status" aria-live="polite"></div>
         <p class="fine">Source: 19 TAC Chapter 111, Subchapter A (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, nothing you type is stored.</p>
       </div>
-      <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Small sample, one author, not yet teacher-reviewed.</p>
-      <details class="more"><summary>Target architecture</summary>
-      <figure class="diagram">
-        <svg viewBox="0 0 760 235" role="img" aria-labelledby="d3t d3d">
-          <title id="d3t">Planned RAG tutor architecture</title>
-          <desc id="d3d">Public standards are chunked, embedded and indexed. A retriever feeds a language model that answers with citations. An evaluation harness and guardrails surround it.</desc>
-          <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <g class="node" tabindex="0" role="button" aria-label="Public standards" data-info="Planned: public Texas standards text, with every passage keeping its source identifier."><rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Chunk and embed" data-info="Planned: split standards into passages small enough to retrieve precisely, and convert them to embeddings."><rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Vector index" data-info="Planned: a Postgres vector index that finds the passages closest in meaning to a question."><rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Retriever" data-info="Planned: selects the top passages for a question and passes them, with their sources, to the model."><rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Language model" data-info="Planned: writes the answer using only the retrieved passages and cites each one."><rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Evaluation harness" data-info="Planned: a golden question set that scores whether the right passage was found and whether the answer is grounded."><rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Guardrails" data-info="Planned: the tutor declines when the standards do not support an answer and keeps a child-safe tone."><rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text></g>
-          <path class="ln" d="M130 58 L155 58" marker-end="url(#a3)"/><path class="ln" d="M275 58 L300 58" marker-end="url(#a3)"/><path class="ln" d="M420 58 L445 58" marker-end="url(#a3)"/><path class="ln" d="M565 58 L590 58" marker-end="url(#a3)"/>
-          <path class="ln" d="M670 95 L670 140" marker-end="url(#a3)"/><path class="ln" d="M590 75 L415 160" marker-end="url(#a3)"/>
-        </svg>
-        <figcaption>Target architecture (dashed = not yet built). Today&rsquo;s live version retrieves with keywords and quotes the standard; embeddings, a vector index and a language model are the next steps.</figcaption>
-      </figure>
-      </details>
-      <div class="tags"><span class="tag">Retrieval-augmented generation</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span><span class="tag">Guardrails</span></div>
-      <p class="pending">Repository link: coming once the code is cleaned up for public release.</p>
-    </article>
-
-    <!-- BUILD 5 (planned) -->
-    <article class="proj" data-status="build">
-      <div class="proj-head">
-        <div><div class="kicker">Flagship in build &middot; public repository planned</div><h3>Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
-        <span class="badge b-build">Building</span>
       </div>
-      <p>The crosswalk workflow above, rebuilt as a tool-calling agent on public standards only: it reads a lesson set, calls a standards-lookup tool exposed through the Model Context Protocol (MCP), drafts the mapping and gap report, then pauses for human approval. Every run writes an audit trail.</p>
-      <div class="tags"><span class="tag">Tool calling</span><span class="tag">Model Context Protocol</span><span class="tag">Human approval step</span><span class="tag">Audit logging</span></div>
-      <p class="pending">Repository link: coming when the first working version is public.</p>
-    </article>
+    </div>
+    <div class="stats" role="list" aria-label="Impact highlights">
+      <div class="stat" role="listitem"><b data-count="6">6</b><span>states&rsquo; standards crosswalked with AI-assisted analysis</span></div>
+      <div class="stat" role="listitem"><b data-count="100" data-suffix="%">100%</b><span>first-submission approval, statewide certification program</span></div>
+      <div class="stat" role="listitem"><b data-count="40" data-suffix="%">40%</b><span>team turnaround gain after introducing AI workflows</span></div>
+      <div class="stat" role="listitem"><b data-count="95" data-suffix="%">95%</b><span>participant satisfaction, enterprise LMS curriculum</span></div>
+    </div>
   </div>
-</section>
+</header>
 
-<section id="process">
+<nav class="subnav" aria-label="On this page">
   <div class="wrap">
-    <div class="s-pill">How I work</div>
-    <h2 class="s-h2">Process, setbacks and <em>what I changed</em></h2>
-    <p class="s-body">An AI solution architect is judged on how a system behaves when things go wrong. Here is the method I follow, and the real problems it caught on my own builds.</p>
-    <ol class="flow">
-      <li><b>Frame the problem with the people who live with it</b>Teachers, parents and learners tell me what &ldquo;working&rdquo; means before I choose any tool.</li>
-      <li><b>Set the constraints first</b>Child privacy, cost, accuracy and who reviews the output. These shape the design more than the model does.</li>
-      <li><b>Write the standard before the code</b>The rules go in a document a reviewer can read, then into checks that run automatically.</li>
-      <li><b>Ship a thin slice and measure it</b>A small version with a golden question set, scored on questions the system has not seen.</li>
-      <li><b>Break it on purpose</b>Off-topic questions, messy input, daylight-saving changes, test payments. I look for the failure before a user does.</li>
-      <li><b>Harden, document the gaps, repeat</b>What is still unfinished is written down next to what works.</li>
-    </ol>
+    <a href="#work">Selected work</a><a href="#process">How I work</a><a href="#skills">Skills</a><a href="#about">About</a><a class="sn-cta" href="#connect">Contact</a>
+  </div>
+</nav>
 
-    <h3 class="s-h2" style="font-size:26px;margin-top:3rem">What went wrong, and how I fixed it</h3>
-    <div class="cases">
-      <article class="case">
-        <div class="kicker">Standards tutor &middot; evaluation</div>
-        <h4>It answered everything, including &ldquo;What is the capital of Texas?&rdquo;</h4>
-        <p><b>What happened:</b> keyword search always returns something, so the first version gave a confident wrong answer to off-topic questions.</p>
-        <p><b>What I changed:</b> I wrote 12 off-topic questions, tuned a decline rule on half and tested it on the half it had never seen. The first rule declined only 2 of 6 held-out off-topic questions. I added a second signal: how many of the question&rsquo;s words exist anywhere in the standards.</p>
-        <p><b>Result:</b> all 6 held-out off-topic questions declined, with 1 of 20 real questions wrongly declined.</p>
-        <p class="take"><b>Takeaway:</b> a threshold that looks fine on the data it was tuned on can fail on new questions. Hold some back.</p>
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="s-pill">Selected work</div><h2 class="s-h2">Systems I have <em>designed and shipped</em></h2></div>
+      <p class="key"><span class="badge b-prod">In production</span> live with real users <span class="badge b-build">Building</span> in development</p>
+    </div>
+    <div class="featured" role="list" aria-label="Featured projects" tabindex="0">
+      <article class="fcard" data-status="build">
+        <a class="fimg" href="#demo" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/rag-tutor.jpg" width="800" height="434" alt="" loading="lazy" decoding="async"></a>
+        <div class="fbody">
+          <div class="frow"><span class="badge b-build">Building</span></div>
+          <h3>Standards-grounded RAG tutor</h3>
+          <p>Ask about a Texas K&ndash;5 math standard and get the exact citation, or a clear &ldquo;not found.&rdquo; Built on all 288 official standards.</p>
+          <div class="tags"><span class="tag">RAG</span><span class="tag">BM25 retrieval</span><span class="tag">Evaluation</span></div>
+          <div class="fact"><a class="btn-dark sm" href="#demo" aria-label="Try it live: The standards tutor answering a question about rounding decimals">Try it live &uarr;</a><button type="button" class="btn-soft sm" data-open="dlg-rag">How it&rsquo;s built</button></div>
+        </div>
       </article>
-      <article class="case">
-        <div class="kicker">Standards tutor &middot; source data</div>
-        <h4>I could not get the official text, and I would not build on a paraphrase</h4>
-        <p><b>What happened:</b> automated lookups of the Texas standards were blocked or returned summaries, not the exact wording.</p>
-        <p><b>What I changed:</b> I used the official PDF instead. Parsing it exposed line-break artifacts such as &ldquo;two- dimensional,&rdquo; which I fixed, then locked the count of 288 standards by grade into a regression test. Every answer cites the rule and notes that the state publishes it for information only.</p>
-        <p class="take"><b>Takeaway:</b> ground the system in the primary source, and test the data pipeline, not just the model.</p>
+      <article class="fcard" data-status="prod">
+        <a class="fimg" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="" loading="lazy" decoding="async"></a>
+        <div class="fbody">
+          <div class="frow"><span class="badge b-prod">In production</span></div>
+          <h3>GC Academy: adaptive K&ndash;5 platform</h3>
+          <p>A subscription learning platform with a parent dashboard, weekly reports and child-privacy design.</p>
+          <div class="tags"><span class="tag">Netlify + Supabase</span><span class="tag">Stripe</span><span class="tag">Child privacy</span></div>
+          <div class="fact"><a class="btn-dark sm" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener" aria-label="Open GC Academy: GC Academy home page">Open GC Academy &#8599;</a><button type="button" class="btn-soft sm" data-open="dlg-academy">How it&rsquo;s built</button></div>
+        </div>
       </article>
-      <article class="case">
-        <div class="kicker">Standards tutor &middot; architecture</div>
-        <h4>Where to host it: price versus the visitor&rsquo;s first impression</h4>
-        <p><b>What happened:</b> I compared three hosts using their own pricing pages. One has no free tier, one gives about $1 of monthly credit, and the free one goes to sleep after 15 minutes, so the next visitor waits about a minute.</p>
-        <p><b>What I changed:</b> I ported the retrieval to TypeScript and ran it as a function on the site&rsquo;s existing host. The port returns the same top results and the same answer-or-decline decision on all 52 test questions as the Python original.</p>
-        <p class="take"><b>Takeaway:</b> choose the architecture by what the user experiences and what you already own, then prove the port is equivalent.</p>
+      <article class="fcard" data-status="prod">
+        <a class="fimg" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/style-studio.jpg" width="800" height="500" alt="" loading="lazy" decoding="async"></a>
+        <div class="fbody">
+          <div class="frow"><span class="badge b-prod">In production</span></div>
+          <h3>Style Studio: real-time styling engine</h3>
+          <p>A virtual styling game that runs in the browser. Free, with no sign-up.</p>
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Image pipeline</span><span class="tag">Browser-based</span></div>
+          <div class="fact"><a class="btn-dark sm" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener" aria-label="Play Style Studio: Style Studio with an illustrated character and clothing options">Play Style Studio &#8599;</a><button type="button" class="btn-soft sm" data-open="dlg-style">How it&rsquo;s built</button></div>
+        </div>
       </article>
-      <article class="case">
-        <div class="kicker">Style Studio 2.0 &middot; product quality</div>
-        <h4>Hairstyles that looked fake, shirts that showed skin</h4>
-        <p><b>What happened:</b> in preview testing, tops and bottoms were mixed up, eyeliner landed over the eyes, skin showed through shirts, lipstick missed the lips, and the hairstyle overlays looked artificial.</p>
-        <p><b>What I changed:</b> I fixed the layering and coverage problems one round at a time through preview deploys. I parked the hairstyles until proper hair art exists, instead of shipping something that looked wrong.</p>
-        <p class="take"><b>Takeaway:</b> cutting a feature is a design decision. A preview build lets a person review before anything goes live.</p>
-      </article>
-      <article class="case">
-        <div class="kicker">Assessment content &middot; guardrails</div>
-        <h4>Good-looking quiz questions with hidden patterns</h4>
-        <p><b>What happened:</b> a review of the library quizzes showed the kind of patterns students learn to game, such as the right answer being the longest choice.</p>
-        <p><b>What I changed:</b> I wrote the reviewer&rsquo;s rules down, then turned them into a validator that fails the site build. It also checks every quoted answer against the source text.</p>
-        <p class="take"><b>Takeaway:</b> a rule that depends on someone remembering it will be skipped. Automated checks catch patterns, and a person still reads for meaning.</p>
-      </article>
-      <article class="case">
-        <div class="kicker">Parent reports &middot; reliability</div>
-        <h4>&ldquo;Every Friday at 5&rdquo; changes twice a year</h4>
-        <p><b>What happened:</b> scheduled jobs run on universal time, so a fixed schedule drifts by an hour when the clocks change.</p>
-        <p><b>What I changed:</b> the job runs at both possible hours and sends only the run that lands on 5 p.m. Central. It records the week it sent, so a retry can never email a family twice.</p>
-        <p class="take"><b>Takeaway:</b> design automation so that running it twice is harmless.</p>
+      <article class="fcard" data-status="prod">
+        <a class="fimg" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/gc-bible-study.jpg" width="800" height="600" alt="" loading="lazy" decoding="async"></a>
+        <div class="fbody">
+          <div class="frow"><span class="badge b-prod">In production</span></div>
+          <h3>Kid-safe Bible reader, dictionary and thesaurus</h3>
+          <p>The full World English Bible with tap-a-word definitions, a 22,000-word dictionary and a thesaurus, all hosted on our own site.</p>
+          <div class="tags"><span class="tag">Open data</span><span class="tag">Sharded static data</span><span class="tag">Accessibility</span></div>
+          <div class="fact"><a class="btn-dark sm" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener" aria-label="Open Bible Study: GC Bible Study page with Bible lessons and a daily verse">Open Bible Study &#8599;</a><button type="button" class="btn-soft sm" data-open="dlg-bible">How it&rsquo;s built</button></div>
+        </div>
       </article>
     </div>
 
-    <h3 class="s-h2" style="font-size:26px;margin-top:3rem">Principles I design by</h3>
+    <h3 class="sub-h">More work</h3>
+    <div class="filters" data-filters role="group" aria-label="Filter projects by status">
+      <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="fbtn" data-filter="prod,practice" aria-pressed="false">Completed</button>
+      <button type="button" class="fbtn" data-filter="build" aria-pressed="false">Building</button>
+      <span class="fcount" aria-live="polite">Showing 6 of 6 projects</span>
+    </div>
+    <div class="rows">
+      <div class="prow" data-status="prod" data-fitem>
+        <span class="badge b-prod">In production</span>
+        <div class="pr-t"><b>Quality gate for AI-assisted assessment content</b><span>A build-time check that fails the site when generated quiz content breaks the written quality rules.</span></div>
+        <button type="button" class="btn-soft sm" data-open="dlg-gate">Details</button>
+      </div>
+      <div class="prow" data-status="prod" data-fitem>
+        <span class="badge b-prod">In production</span>
+        <div class="pr-t"><b>Picture-PIN sign-in for young children</b><span>Passwordless sign-in with a picture PIN on parent-approved devices.</span></div>
+        <button type="button" class="btn-soft sm" data-open="dlg-pin">Details</button>
+      </div>
+      <div class="prow" data-status="prod" data-fitem>
+        <span class="badge b-prod">In production</span>
+        <div class="pr-t"><b>Paid workbooks and a weekly parent email</b><span>Server-checked ownership of purchases, and a Friday email that survives daylight saving.</span></div>
+        <button type="button" class="btn-soft sm" data-open="dlg-work">Details</button>
+      </div>
+      <div class="prow" data-status="practice" data-fitem>
+        <span class="badge b-prod">In practice</span>
+        <div class="pr-t"><b>AI-assisted multi-state standards crosswalk</b><span>AI analysis mapped a program to six states&rsquo; standards and drove its gap-filling lessons.</span></div>
+        <button type="button" class="btn-soft sm" data-open="dlg-cross">Details</button>
+      </div>
+      <div class="prow" data-status="practice" data-fitem>
+        <span class="badge b-prod">In practice</span>
+        <div class="pr-t"><b>LLM content pipelines and AI voiceover at scale</b><span>Generative AI workflows and AI voiceover in standard production, with a team 40% more efficient.</span></div>
+        <button type="button" class="btn-soft sm" data-open="dlg-llm">Details</button>
+      </div>
+      <div class="prow" data-status="build" data-fitem>
+        <span class="badge b-build">Building</span>
+        <div class="pr-t"><b>Crosswalk agent and a standards-lookup MCP server</b><span>A tool-calling agent with a human approval step and an audit trail. In development.</span></div>
+        <button type="button" class="btn-soft sm" data-open="dlg-agent">Details</button>
+      </div>
+    </div>
+    <p class="s-body" style="margin-top:1rem;font-size:13px">Client details are generalized. Where a repository is public, its link appears here.</p>
+  </div>
+</section>
+
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="s-pill">How I work</div>
+    <h2 class="s-h2">Process, setbacks and <em>what I changed</em></h2>
+    <ol class="steps6"><li><b>Frame the problem</b><span>with teachers, parents and learners</span></li><li><b>Set constraints first</b><span>privacy, cost, accuracy, review</span></li><li><b>Write the standard first</b><span>rules, then automatic checks</span></li><li><b>Ship thin, then measure</b><span>golden questions, held-out test</span></li><li><b>Break it on purpose</b><span>off-topic, messy input, edge cases</span></li><li><b>Harden and document</b><span>write down what is unfinished</span></li></ol>
+    <h3 class="sub-h">What went wrong, and how I fixed it</h3>
+    <div class="cdets">
+      <details class="cdet" open><summary><span class="ck">Standards tutor &middot; evaluation</span><span class="ct">It answered everything, including &ldquo;What is the capital of Texas?&rdquo;</span></summary><div class="cb"><p><b>What happened:</b> keyword search always returns something, so the first version gave a confident wrong answer to off-topic questions.</p><p><b>What I changed:</b> I wrote 12 off-topic questions, tuned a decline rule on half and tested it on the half it had never seen. The first rule declined only 2 of 6 held-out off-topic questions. I added a second signal: how many of the question&rsquo;s words exist anywhere in the standards.</p><p><b>Result:</b> all 6 held-out off-topic questions declined, with 1 of 20 real questions wrongly declined.</p><p class="take"><b>Takeaway:</b> a threshold that looks fine on the data it was tuned on can fail on new questions. Hold some back.</p></div></details>
+      <details class="cdet"><summary><span class="ck">Standards tutor &middot; source data</span><span class="ct">I could not get the official text, and I would not build on a paraphrase</span></summary><div class="cb"><p><b>What happened:</b> automated lookups of the Texas standards were blocked or returned summaries, not the exact wording.</p><p><b>What I changed:</b> I used the official PDF instead. Parsing it exposed line-break artifacts such as &ldquo;two- dimensional,&rdquo; which I fixed, then locked the count of 288 standards by grade into a regression test. Every answer cites the rule and notes that the state publishes it for information only.</p><p class="take"><b>Takeaway:</b> ground the system in the primary source, and test the data pipeline, not just the model.</p></div></details>
+      <details class="cdet"><summary><span class="ck">Standards tutor &middot; architecture</span><span class="ct">Where to host it: price versus the visitor&rsquo;s first impression</span></summary><div class="cb"><p><b>What happened:</b> I compared three hosts using their own pricing pages. One has no free tier, one gives about $1 of monthly credit, and the free one goes to sleep after 15 minutes, so the next visitor waits about a minute.</p><p><b>What I changed:</b> I ported the retrieval to TypeScript and ran it as a function on the site&rsquo;s existing host. The port returns the same top results and the same answer-or-decline decision on all 52 test questions as the Python original.</p><p class="take"><b>Takeaway:</b> choose the architecture by what the user experiences and what you already own, then prove the port is equivalent.</p></div></details>
+      <details class="cdet"><summary><span class="ck">Style Studio 2.0 &middot; product quality</span><span class="ct">Hairstyles that looked fake, shirts that showed skin</span></summary><div class="cb"><p><b>What happened:</b> in preview testing, tops and bottoms were mixed up, eyeliner landed over the eyes, skin showed through shirts, lipstick missed the lips, and the hairstyle overlays looked artificial.</p><p><b>What I changed:</b> I fixed the layering and coverage problems one round at a time through preview deploys. I parked the hairstyles until proper hair art exists, instead of shipping something that looked wrong.</p><p class="take"><b>Takeaway:</b> cutting a feature is a design decision. A preview build lets a person review before anything goes live.</p></div></details>
+      <details class="cdet"><summary><span class="ck">Assessment content &middot; guardrails</span><span class="ct">Good-looking quiz questions with hidden patterns</span></summary><div class="cb"><p><b>What happened:</b> a review of the library quizzes showed the kind of patterns students learn to game, such as the right answer being the longest choice.</p><p><b>What I changed:</b> I wrote the reviewer&rsquo;s rules down, then turned them into a validator that fails the site build. It also checks every quoted answer against the source text.</p><p class="take"><b>Takeaway:</b> a rule that depends on someone remembering it will be skipped. Automated checks catch patterns, and a person still reads for meaning.</p></div></details>
+      <details class="cdet"><summary><span class="ck">Parent reports &middot; reliability</span><span class="ct">&ldquo;Every Friday at 5&rdquo; changes twice a year</span></summary><div class="cb"><p><b>What happened:</b> scheduled jobs run on universal time, so a fixed schedule drifts by an hour when the clocks change.</p><p><b>What I changed:</b> the job runs at both possible hours and sends only the run that lands on 5 p.m. Central. It records the week it sent, so a retry can never email a family twice.</p><p class="take"><b>Takeaway:</b> design automation so that running it twice is harmless.</p></div></details>
+    </div>
     <div class="princ">
       <span>Ground answers in a source I can cite</span>
       <span>Declining beats guessing</span>
@@ -722,53 +499,55 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 
 <section id="skills">
   <div class="wrap">
-    <div class="s-pill">Skills matrix</div>
-    <h2 class="s-h2">Skills, <em>by layer</em></h2>
-    <div class="legend"><span class="badge b-prod">In practice</span> delivered in real work <span class="badge b-build">Building</span> in active development <span class="badge b-learn">Learning</span> studying now</div>
+    <div class="sec-head">
+      <div><div class="s-pill">Skills</div><h2 class="s-h2">Skills, <em>by layer</em></h2></div>
+      <p class="key"><span class="badge b-prod">In practice</span> delivered in real work <span class="badge b-build">Building</span> in development <span class="badge b-learn">Learning</span> studying now</p>
+    </div>
     <div class="matrix">
-      <div class="row"><h3>Models &amp; prompting</h3><div class="chips">
+      <details class="srow" open><summary>Models &amp; prompting</summary><div class="chips">
         <span class="chip">ChatGPT <span class="badge b-prod">In practice</span></span>
         <span class="chip">Claude <span class="badge b-prod">In practice</span></span>
         <span class="chip">Microsoft Copilot <span class="badge b-prod">In practice</span></span>
         <span class="chip">Structured prompt design <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Model APIs <span class="badge b-build">Building</span></span></div></div>
-      <div class="row"><h3>Retrieval &amp; data</h3><div class="chips">
+        <span class="chip">Model APIs <span class="badge b-build">Building</span></span></div></details>
+      <details class="srow" open><summary>Retrieval &amp; data</summary><div class="chips">
         <span class="chip">Postgres / Supabase <span class="badge b-prod">In practice</span></span>
         <span class="chip">Embeddings &amp; vector search <span class="badge b-build">Building</span></span>
-        <span class="chip">Chunking strategies <span class="badge b-build">Building</span></span></div></div>
-      <div class="row"><h3>Agents &amp; tools</h3><div class="chips">
+        <span class="chip">Chunking strategies <span class="badge b-build">Building</span></span></div></details>
+      <details class="srow" open><summary>Agents &amp; tools</summary><div class="chips">
         <span class="chip">Reusable agent skills <span class="badge b-prod">In practice</span></span>
         <span class="chip">Tool calling <span class="badge b-build">Building</span></span>
         <span class="chip">MCP servers <span class="badge b-build">Building</span></span>
-        <span class="chip">Multi-agent orchestration <span class="badge b-learn">Learning</span></span></div></div>
-      <div class="row"><h3>Evaluation &amp; safety</h3><div class="chips">
+        <span class="chip">Multi-agent orchestration <span class="badge b-learn">Learning</span></span></div></details>
+      <details class="srow" open><summary>Evaluation &amp; safety</summary><div class="chips">
         <span class="chip">Human-in-the-loop design <span class="badge b-prod">In practice</span></span>
         <span class="chip">Content quality validators <span class="badge b-prod">In practice</span></span>
         <span class="chip">Golden-set evaluation <span class="badge b-build">Building</span></span>
-        <span class="chip">Child privacy &amp; consent design <span class="badge b-prod">In practice</span></span></div></div>
-      <div class="row"><h3>Languages &amp; runtimes</h3><div class="chips">
+        <span class="chip">Child privacy &amp; consent design <span class="badge b-prod">In practice</span></span></div></details>
+      <details class="srow" open><summary>Languages &amp; runtimes</summary><div class="chips">
         <span class="chip">JavaScript, HTML, CSS <span class="badge b-prod">In practice</span></span>
         <span class="chip">SQL (Postgres) <span class="badge b-prod">In practice</span></span>
         <span class="chip">Node.js <span class="badge b-prod">In practice</span></span>
         <span class="chip">Python <span class="badge b-build">Building</span></span>
         <span class="chip">TypeScript <span class="badge b-build">Building</span></span>
-        <span class="chip">D3 data visualization <span class="badge b-learn">Learning</span></span></div></div>
-      <div class="row"><h3>API &amp; test tooling</h3><div class="chips">
+        <span class="chip">D3 data visualization <span class="badge b-learn">Learning</span></span></div></details>
+      <details class="srow" open><summary>API &amp; test tooling</summary><div class="chips">
         <span class="chip">Git &amp; GitHub <span class="badge b-prod">In practice</span></span>
         <span class="chip">Chrome DevTools <span class="badge b-prod">In practice</span></span>
         <span class="chip">Bash <span class="badge b-build">Building</span></span>
         <span class="chip">Postman <span class="badge b-learn">Learning</span></span>
-        <span class="chip">Wireframing &amp; user testing <span class="badge b-prod">In practice</span></span></div></div>
-      <div class="row"><h3>Delivery &amp; platform</h3><div class="chips">
+        <span class="chip">Wireframing &amp; user testing <span class="badge b-prod">In practice</span></span></div></details>
+      <details class="srow" open><summary>Delivery &amp; platform</summary><div class="chips">
         <span class="chip">Netlify &amp; serverless <span class="badge b-prod">In practice</span></span>
         <span class="chip">GitHub workflow <span class="badge b-prod">In practice</span></span>
         <span class="chip">Stripe integration <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Cloud AI services <span class="badge b-learn">Learning</span></span></div></div>
-      <div class="row"><h3>Adoption &amp; change</h3><div class="chips">
+        <span class="chip">Cloud AI services <span class="badge b-learn">Learning</span></span></div></details>
+      <details class="srow" open><summary>Adoption &amp; change</summary><div class="chips">
         <span class="chip">Organizational change management <span class="badge b-prod">In practice</span></span>
         <span class="chip">Training &amp; enablement design <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Kirkpatrick-aligned measurement <span class="badge b-prod">In practice</span></span></div></div>
+        <span class="chip">Kirkpatrick-aligned measurement <span class="badge b-prod">In practice</span></span></div></details>
     </div>
+  </div>
   </div>
 </section>
 
@@ -779,20 +558,18 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     <div class="about-ai">
       <img src="/assets/img/ai/meshayla.jpg" width="520" height="625" alt="Meshayla Kemp" loading="lazy" decoding="async">
       <div>
-        <p>I started as a classroom teacher and have spent more than ten years building learning for K&ndash;12 schools, corporations, government agencies and utilities. That work taught me what makes a learning system succeed: clear standards, careful review, and respect for the people who use it.</p>
-        <p>Now I build AI systems the same way. I ground them in sources I can cite, measure them before I trust them, and design for the most vulnerable user first. In my own products, that user is a child.</p>
+        <p>I started as a classroom teacher and have spent more than ten years building learning for schools, corporations, government agencies and utilities. That taught me what makes a system succeed: clear standards, careful review, and respect for the people who use it.</p>
+        <p>Now I build AI the same way: grounded in sources I can cite, measured before I trust it, and designed for the most vulnerable user first. In my own products, that user is a child.</p>
         <div class="facts" aria-label="Quick facts">
-          <span>10+ years in learning and change</span>
           <span>Texas-certified educator</span>
           <span>MBA and M.Ed. in Educational Technology</span>
           <span>Founder, <a href="https://kempadvisory.com" target="_blank" rel="noopener">Kemp Advisory Group</a></span>
-          <span>Tyler, Texas</span>
+          <span>Executive Director (non-voting), Cornerstone Clay CDC</span>
+          <span>Educators Rising 2022: four students recognized nationally</span>
+          <span>Author in progress: <em>AI for Educators</em></span>
         </div>
-      </div>
-    </div>
-
-    <h3 class="s-h2" style="font-size:26px;margin-top:3rem">Where I&rsquo;ve applied AI at work</h3>
-    <ol class="tl">
+        <details class="more tlwrap"><summary>Where I&rsquo;ve applied AI at work (5 roles)</summary>
+          <ol class="tl">
       <li>
         <div class="when">Aug 2025 &ndash; present</div>
         <h4>Principal Learning Architect</h4>
@@ -824,34 +601,10 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
         <p>Wrote and facilitated curriculum for a 17,000-student district, then taught and led the education and training program.</p>
       </li>
     </ol>
-    <h3 class="s-h2" style="font-size:26px;margin-top:2.5rem">Beyond the day job</h3>
-    <div class="cases">
-      <article class="case">
-        <div class="kicker">Educators Rising national conference &middot; 2022</div>
-        <h4>Four of my students recognized nationally</h4>
-        <p>As the education and training teacher at Chapel Hill ISD, I coached students to the national conference in Washington, D.C., where they were recognized in public speaking, interactive bulletin board design and children&rsquo;s literature.</p>
-      </article>
-      <article class="case">
-        <div class="kicker">Community leadership</div>
-        <h4>Executive Director (non-voting), Cornerstone Clay CDC</h4>
-        <p>A nonprofit community development corporation focused on affordable housing, financial literacy and homeownership education across Texas.</p>
-      </article>
+        </details>
+        <div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="/assets/Meshayla-Kemp-Resume.pdf" download>Download r&eacute;sum&eacute; (PDF)</a><a class="btn-soft" href="/resume.html">Read the full r&eacute;sum&eacute;</a></div>
+      </div>
     </div>
-    <div class="btns" style="margin-top:2rem"><a class="btn-soft" href="/resume.html">Read the full r&eacute;sum&eacute;</a> <a class="btn-dark" href="/assets/Meshayla-Kemp-Resume.pdf" download>Download r&eacute;sum&eacute; (PDF)</a></div>
-  </div>
-</section>
-
-<section id="log">
-  <div class="wrap">
-    <div class="s-pill">Building in public</div>
-    <h2 class="s-h2">What I am <em>learning next</em></h2>
-    <p class="s-body">I am writing a book, <em>AI for Educators</em>, and sharing builds as they happen. Here is the current path, in order:</p>
-    <ol class="steps">
-      <li>Ship the standards-grounded RAG tutor with its evaluation set.</li>
-      <li>Ship the crosswalk agent and the standards-lookup MCP server.</li>
-      <li>Publish a short write-up for each, with results and what failed.</li>
-      <li>Add recognized cloud AI credentials as I complete them.</li>
-    </ol>
   </div>
 </section>
 
@@ -861,6 +614,7 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
     <p>Consulting engagements, contract vehicles, or leadership roles in AI-enabled learning and enablement.</p>
     <div class="btns" style="justify-content:center">
       <a class="btn-soft" href="mailto:meshayla@kempadvisory.com">Email me</a>
+      <a class="btn-soft" href="tel:+18333871777">1 (833) 387-1777</a>
       <a class="btn-soft" href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn-soft" href="https://kempadvisory.com" target="_blank" rel="noopener">Kemp Advisory Group</a>
     </div>
@@ -869,11 +623,288 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 
 </main>
 <footer>&copy; 2026 Kemp Advisory Group, LLC &nbsp;&bull;&nbsp; <a href="/">Back to meshayla.com</a></footer>
-<dialog id="lightbox" aria-label="Screenshot viewer">
-  <button type="button" class="lb-close" aria-label="Close screenshot">&times;</button>
-  <img alt="" width="800" height="500">
-  <p class="lb-cap"></p>
+
+<div id="dialogs">
+<dialog class="pdialog" id="dlg-rag" aria-labelledby="dlg-rag-t">
+  <div class="pd-head"><div><div class="kicker">Flagship &middot; first version live &middot; embeddings and a language model next</div><h3 id="dlg-rag-t">Standards-grounded RAG tutor, with an evaluation set</h3></div>
+    <div class="pd-act"><span class="badge b-build">Building</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
+      
+      <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Small sample, one author, not yet teacher-reviewed.</p>
+      <div class="dmore">
+      <figure class="diagram">
+        <svg viewBox="0 0 760 235" role="img" aria-labelledby="d3t d3d">
+          <title id="d3t">Planned RAG tutor architecture</title>
+          <desc id="d3d">Public standards are chunked, embedded and indexed. A retriever feeds a language model that answers with citations. An evaluation harness and guardrails surround it.</desc>
+          <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <g class="node" tabindex="0" role="button" aria-label="Public standards" data-info="Planned: public Texas standards text, with every passage keeping its source identifier."><rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Chunk and embed" data-info="Planned: split standards into passages small enough to retrieve precisely, and convert them to embeddings."><rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Vector index" data-info="Planned: a Postgres vector index that finds the passages closest in meaning to a question."><rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Retriever" data-info="Planned: selects the top passages for a question and passes them, with their sources, to the model."><rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Language model" data-info="Planned: writes the answer using only the retrieved passages and cites each one."><rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Evaluation harness" data-info="Planned: a golden question set that scores whether the right passage was found and whether the answer is grounded."><rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Guardrails" data-info="Planned: the tutor declines when the standards do not support an answer and keeps a child-safe tone."><rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text></g>
+          <path class="ln" d="M130 58 L155 58" marker-end="url(#a3)"/><path class="ln" d="M275 58 L300 58" marker-end="url(#a3)"/><path class="ln" d="M420 58 L445 58" marker-end="url(#a3)"/><path class="ln" d="M565 58 L590 58" marker-end="url(#a3)"/>
+          <path class="ln" d="M670 95 L670 140" marker-end="url(#a3)"/><path class="ln" d="M590 75 L415 160" marker-end="url(#a3)"/>
+        </svg>
+        <figcaption>Target architecture (dashed = not yet built). Today&rsquo;s live version retrieves with keywords and quotes the standard; embeddings, a vector index and a language model are the next steps.</figcaption>
+      </figure>
+      </div>
+      <div class="tags"><span class="tag">Retrieval-augmented generation</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span><span class="tag">Guardrails</span></div>
+      <p class="pending">Repository link: coming once the code is cleaned up for public release.</p>
+
+  </div>
 </dialog>
+<dialog class="pdialog" id="dlg-academy" aria-labelledby="dlg-academy-t">
+  <div class="pd-head"><div><div class="kicker">Product architecture</div><h3 id="dlg-academy-t">GC Academy: an adaptive K&ndash;5 learning platform</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In production</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>A subscription learning platform for children, with a parent dashboard, individualized learning paths and weekly progress reports. I set the architecture and product rules, and directed an AI-assisted build against them.</p>
+      
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>Problem</h4><ul>
+          <li>Parents need visibility into what a child actually learned, without extra work.</li>
+          <li>Paid content must stay behind a membership gate while a free sample stays public.</li>
+          <li>Children&rsquo;s data demands consent and privacy by design.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>Static front end with serverless functions, so there are no servers to run.</li>
+          <li>An edge function sends members-only files only to signed-in members.</li>
+          <li>Question banks pass a validator that enforces written quality rules.</li>
+          <li>Parent consent and card verification before any child information is shared.</li>
+        </ul></div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 290" role="img" aria-labelledby="d1t d1d">
+          <title id="d1t">GC Academy architecture</title>
+          <desc id="d1d">Learner and parent browsers connect through a Netlify edge gate and serverless functions to Supabase, Stripe and an email service.</desc>
+          <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <g class="node" tabindex="0" role="button" aria-label="Learner &amp; Parent" data-info="Children learn in the browser; parents manage children, consent and billing in a separate Parent Center."><rect class="bx p" x="15" y="105" width="165" height="80" rx="12"/><text class="tx" x="97" y="138" text-anchor="middle">Learner &amp; Parent</text><text class="tx2" x="97" y="158" text-anchor="middle">Browsers, any device</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Edge gate" data-info="Runs before a file is served and sends members-only lessons only to signed-in members; the free sample stays public."><rect class="bx g" x="250" y="25" width="215" height="75" rx="12"/><text class="tx" x="357" y="56" text-anchor="middle">Edge gate</text><text class="tx2" x="357" y="76" text-anchor="middle">Members-only content check</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Serverless functions" data-info="Small server-side functions handle sessions, checkout, billing portal, webhooks and the weekly report, so there is no server to maintain."><rect class="bx g" x="250" y="190" width="215" height="75" rx="12"/><text class="tx" x="357" y="221" text-anchor="middle">Serverless functions</text><text class="tx2" x="357" y="241" text-anchor="middle">Sessions, billing, reports</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Supabase" data-info="Postgres database for learners, progress and approved devices, with access rules enforced on the server."><rect class="bx" x="545" y="10" width="200" height="70" rx="12"/><text class="tx" x="645" y="40" text-anchor="middle">Supabase</text><text class="tx2" x="645" y="60" text-anchor="middle">Database &amp; progress records</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Stripe" data-info="Handles plans and card verification; webhooks tell the platform when a membership changes."><rect class="bx" x="545" y="110" width="200" height="70" rx="12"/><text class="tx" x="645" y="140" text-anchor="middle">Stripe</text><text class="tx2" x="645" y="160" text-anchor="middle">Plans, card verification</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Email service" data-info="Sends the weekly progress report and approval requests to parents."><rect class="bx" x="545" y="210" width="200" height="70" rx="12"/><text class="tx" x="645" y="240" text-anchor="middle">Email service</text><text class="tx2" x="645" y="260" text-anchor="middle">Weekly parent reports</text></g>
+          <path class="ln" d="M180 130 L250 70" marker-end="url(#a1)"/><path class="ln" d="M180 165 L250 215" marker-end="url(#a1)"/>
+          <path class="ln" d="M465 215 L545 55" marker-end="url(#a1)"/><path class="ln" d="M465 228 L545 145" marker-end="url(#a1)"/><path class="ln" d="M465 245 L545 245" marker-end="url(#a1)"/>
+        </svg>
+        <figcaption>Simplified architecture. Learner and parent traffic is gated at the edge; sensitive work happens in serverless functions.</figcaption>
+      </figure>
+      </div>
+      <div class="tags"><span class="tag">Netlify</span><span class="tag">Serverless functions</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Child-privacy design</span><span class="tag">AI-assisted engineering</span></div>
+<div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener">Open GC Academy &#8599;</a></div>
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-style" aria-labelledby="dlg-style-t">
+  <div class="pd-head"><div><div class="kicker">Interactive product &middot; image-processing pipeline</div><h3 id="dlg-style-t">Style Studio: a real-time virtual styling engine</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In production</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>A free, no-sign-up browser game where children style characters with outfits, hair color and makeup, then save or print their looks. Under the hood it is a compositing engine: it recolors artwork, maps printed fabrics onto garments, cleans cut-out edges, and fits every item to every character. I specified the product rules and quality bar, and directed an AI-assisted build against them.</p>
+      
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>Problem</h4><ul>
+          <li>Hundreds of item and character combinations cannot each be drawn by hand.</li>
+          <li>Layered clothing showed skin patches, ragged edges and misaligned makeup.</li>
+          <li>Children&rsquo;s play needs privacy by default: no accounts, chat or sharing.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>One data-driven catalog; new items are data, not new code.</li>
+          <li>Recoloring and fabric mapping reuse one artwork shape for many colors and prints.</li>
+          <li>Edge cleanup pass: despeckle, contour smoothing, fringe removal.</li>
+          <li>Lip and makeup masks derived per character from color analysis, not hand-drawn.</li>
+          <li>Looks stay on the device; unlocks use codes behind a grown-up gate.</li>
+        </ul></div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 150" role="img" aria-labelledby="d4t d4d">
+          <title id="d4t">Style Studio rendering pipeline</title>
+          <desc id="d4d">Artwork and a data catalog feed a canvas compositing engine that recolors, maps prints, cleans edges and fits items per character, producing a saved look.</desc>
+          <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <g class="node" tabindex="0" role="button" aria-label="Artwork" data-info="Layered art for each character and garment, prepared to a shared size and alignment spec."><rect class="bx" x="10" y="30" width="140" height="85" rx="12"/><text class="tx" x="80" y="66" text-anchor="middle">Artwork</text><text class="tx2" x="80" y="86" text-anchor="middle">per-character layers</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Item catalog" data-info="A data file describes every item, its price, tier and available colors or prints; new items need no new code."><rect class="bx" x="180" y="30" width="140" height="85" rx="12"/><text class="tx" x="250" y="66" text-anchor="middle">Item catalog</text><text class="tx2" x="250" y="86" text-anchor="middle">data-driven shop</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Compositing engine" data-info="Draws layers on a canvas in real time: recolors art, maps printed fabric, cleans edges, fits each item to each character and builds lip and makeup masks."><rect class="bx y" x="350" y="30" width="210" height="85" rx="12"/><text class="tx" x="455" y="60" text-anchor="middle">Compositing engine</text><text class="tx2" x="455" y="80" text-anchor="middle">recolor &middot; print mapping</text><text class="tx2" x="455" y="96" text-anchor="middle">edge cleanup &middot; fit &middot; masks</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Saved look" data-info="Looks are stored on the device, can be shared as a short code and can be printed. Nothing is uploaded."><rect class="bx g" x="590" y="30" width="160" height="85" rx="12"/><text class="tx" x="670" y="60" text-anchor="middle">Saved look</text><text class="tx2" x="670" y="80" text-anchor="middle">on device, look codes,</text><text class="tx2" x="670" y="96" text-anchor="middle">print</text></g>
+          <path class="ln" d="M150 72 L180 72" marker-end="url(#a4)"/><path class="ln" d="M320 72 L350 72" marker-end="url(#a4)"/><path class="ln" d="M560 72 L590 72" marker-end="url(#a4)"/>
+        </svg>
+        <figcaption>Simplified rendering pipeline. The same pipeline pattern generalizes to AI-generated assets and personalized styling.</figcaption>
+      </figure>
+      </div>
+      <div class="tags"><span class="tag">Canvas image processing</span><span class="tag">Color science</span><span class="tag">Data-driven design</span><span class="tag">Game economy</span><span class="tag">Privacy by design</span><span class="tag">Visual QA</span><span class="tag">AI-assisted engineering</span></div>
+<div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="https://gisellechanel.com/arcade/style-studio/" target="_blank" rel="noopener">Play Style Studio &#8599;</a></div>
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-bible" aria-labelledby="dlg-bible-t">
+  <div class="pd-head"><div><div class="kicker">Content platform &middot; data engineering &middot; privacy by design</div><h3 id="dlg-bible-t">A kid-safe Bible reader, dictionary and thesaurus, hosted on our own site</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In production</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>Children can read the whole World English Bible (public domain), tap any word, and see a definition written for their age. The reading tools sit inside GC Academy, and a Bible lessons course adds short pages, retellings and small games. Everything is stored and served from our own site, so a child&rsquo;s lookups never go to a third-party service.</p>
+      
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>What I built</h4><ul>
+          <li>All 66 books as structured data, with tap-to-define on every word and a reader that can jump straight to a lesson&rsquo;s verses.</li>
+          <li>A dictionary of about 22,000 words from Open English WordNet, filtered for kids, plus 400+ hand-written entries with simple examples.</li>
+          <li>A thesaurus that groups synonyms by meaning, from the same open data.</li>
+          <li>A Bible lessons course in six units, with five game types: catch, order, sort, pop and match.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>Dictionary and thesaurus are split into 26 small files, one per letter, and loaded only when needed. The page stays fast on a phone.</li>
+          <li>No third-party lookups: definitions come from files on our own site.</li>
+          <li>Games have large targets, no timer pressure, can be skipped, and respect reduced-motion settings.</li>
+          <li>Sources and licenses are tracked: public-domain Bible text, CC BY data credited on the page.</li>
+        </ul></div>
+      </div>
+      </div>
+      <div class="tags"><span class="tag">JavaScript</span><span class="tag">Structured data</span><span class="tag">Sharded static data</span><span class="tag">Open data licensing</span><span class="tag">Child privacy</span><span class="tag">Accessibility</span></div>
+<div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="https://gisellechanel.com/bible-study/" target="_blank" rel="noopener">Open Bible Study &#8599;</a></div>
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-gate" aria-labelledby="dlg-gate-t">
+  <div class="pd-head"><div><div class="kicker">Guardrails &middot; evaluation of generated content</div><h3 id="dlg-gate-t">An automated quality gate for AI-assisted assessment content</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In production</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>Generated quiz questions look fine until a teacher reads them closely. I wrote the standard an instructional-materials reviewer would apply, then turned it into code that fails the site build when a question set breaks the rules. Nothing reaches a child unless it passes.</p>
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>What it checks</h4><ul>
+          <li>Every quoted answer choice appears word for word in the book chapter it cites.</li>
+          <li>Each question is tagged to a real standard, and the set covers at least four, with none over 45%.</li>
+          <li>The right answer is not the longest choice more than 40% of the time, or stuck in one slot.</li>
+          <li>Reading level: question and choice length limits by grade band; no &ldquo;all of the above.&rdquo;</li>
+          <li>A bank at least 1.4&times; the questions drawn, so a retake is mostly new.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>The rules live in a written standard first, then in code, so the two cannot drift apart.</li>
+          <li>Checks run at build time and have automated tests, so a bad set fails before it can publish.</li>
+          <li>The same validator is reused for unit tests and exams, so there is one source of truth.</li>
+          <li>A human still reads every new set once. The checks catch patterns, not meaning, and I say so in the docs.</li>
+        </ul></div>
+      </div>
+      </div>
+      <p class="pending">Known gap: older lesson questions have not yet been audited against these rules.</p>
+      <div class="tags"><span class="tag">Guardrails</span><span class="tag">Output validation</span><span class="tag">Automated testing</span><span class="tag">Build-time enforcement</span><span class="tag">Educational measurement</span><span class="tag">JavaScript</span></div>
+
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-pin" aria-labelledby="dlg-pin-t">
+  <div class="pd-head"><div><div class="kicker">Security design &middot; identity for young children</div><h3 id="dlg-pin-t">Sign-in for children who can&rsquo;t use passwords: picture PIN and approved devices</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In production</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>A five-year-old can&rsquo;t manage an email and password, and a children&rsquo;s product can&rsquo;t afford to be careless with identity. Children sign in with a picture PIN on a device their parent has approved, and the parent stays in control of every step.</p>
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>How it works</h4><ul>
+          <li>A parent creates a one-time device code that expires in 10 minutes, with one live code per family.</li>
+          <li>The child picks four pictures instead of typing a password.</li>
+          <li>Wrong tries are counted per child, so guessing slows down and stops.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>The server stores a keyed hash of the pictures, never the pictures themselves, and the device code is stored hashed too.</li>
+          <li>Database access rules are on, and only the server can write sign-in records.</li>
+          <li>Approved devices can be managed by the parent, so a lost tablet is not a lost account.</li>
+        </ul></div>
+      </div>
+      </div>
+      <div class="tags"><span class="tag">Authentication design</span><span class="tag">Keyed hashing</span><span class="tag">Row-level security</span><span class="tag">Supabase</span><span class="tag">Child privacy</span></div>
+
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-work" aria-labelledby="dlg-work-t">
+  <div class="pd-head"><div><div class="kicker">Commerce &middot; scheduled automation</div><h3 id="dlg-work-t">Paid digital workbooks and a weekly progress email for parents</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In production</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>Parents can buy a fillable workbook once and use it for every child in the family, with each child&rsquo;s answers and drawings saved page by page. Every Friday afternoon a progress email goes to families without anyone pressing a button.</p>
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>Design decisions</h4><ul>
+          <li>Who owns a workbook is decided only on the server, from purchases recorded by Stripe&rsquo;s own webhook. The browser is never trusted.</li>
+          <li>A child&rsquo;s pages can be read or saved only by that child&rsquo;s own family.</li>
+          <li>A guard blocks test-mode payments from running on the live site.</li>
+        </ul></div>
+        <div><h4>The Friday email</h4><ul>
+          <li>A scheduled job that sends at 5 p.m. Central all year, even when clocks change.</li>
+          <li>Safe to re-run: it sends at most once per family per week.</li>
+          <li>The workbook functions have automated tests.</li>
+        </ul></div>
+      </div>
+      </div>
+      <div class="tags"><span class="tag">Stripe Checkout</span><span class="tag">Webhooks</span><span class="tag">Scheduled functions</span><span class="tag">Idempotent jobs</span><span class="tag">Serverless</span><span class="tag">Automated testing</span></div>
+
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-cross" aria-labelledby="dlg-cross-t">
+  <div class="pd-head"><div><div class="kicker">Generative AI workflow</div><h3 id="dlg-cross-t">AI-assisted multi-state standards crosswalk</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In practice</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>A secondary Economics and Financial Literacy program was failing state compliance and needed to expand to five more states. I used AI analysis to map the courseware against each state&rsquo;s graduation standards, surface gaps, and drive targeted lesson redesign.</p>
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>Outcome</h4><ul>
+          <li>Standards crosswalks for six states.</li>
+          <li>Gap analysis, new gap-filling lessons and a master curriculum map.</li>
+          <li>State approval with 100% compliance on the program.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>AI proposes mappings; a subject-matter reviewer approves every one.</li>
+          <li>Gaps are measured against depth-of-knowledge levels, not keywords alone.</li>
+          <li>Every output lands in a document the state reviewer can verify.</li>
+        </ul></div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 175" role="img" aria-labelledby="d2t d2d">
+          <title id="d2t">Standards crosswalk workflow</title>
+          <desc id="d2d">Course inventory and state standards feed structured AI prompts that draft a crosswalk and gap list, which a human reviews before lesson redesign.</desc>
+          <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
+          <g class="node" tabindex="0" role="button" aria-label="Course inventory and standards" data-info="The existing lessons and objectives, plus each state’s standards documents, are the two inputs."><rect class="bx" x="10" y="45" width="130" height="85" rx="12"/><text class="tx" x="75" y="80" text-anchor="middle">Course</text><text class="tx" x="75" y="97" text-anchor="middle">inventory</text><text class="tx2" x="75" y="116" text-anchor="middle">+ state standards</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Structured AI prompts" data-info="Reusable prompts compare each lesson with each standard and return a mapping in a fixed format."><rect class="bx y" x="170" y="45" width="130" height="85" rx="12"/><text class="tx" x="235" y="80" text-anchor="middle">Structured</text><text class="tx" x="235" y="97" text-anchor="middle">AI prompts</text><text class="tx2" x="235" y="116" text-anchor="middle">map &amp; compare</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Draft crosswalk" data-info="The model’s proposed mappings and a list of standards with no matching lesson."><rect class="bx y" x="330" y="45" width="130" height="85" rx="12"/><text class="tx" x="395" y="80" text-anchor="middle">Draft</text><text class="tx" x="395" y="97" text-anchor="middle">crosswalk</text><text class="tx2" x="395" y="116" text-anchor="middle">+ gap list</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Human review" data-info="A subject-matter reviewer approves or corrects every mapping before anything moves on."><rect class="bx p" x="490" y="45" width="130" height="85" rx="12"/><text class="tx" x="555" y="80" text-anchor="middle">Human</text><text class="tx" x="555" y="97" text-anchor="middle">review</text><text class="tx2" x="555" y="116" text-anchor="middle">approve / correct</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Redesign and approval" data-info="New or revised lessons, assessments and the documents a state reviewer needs to verify compliance."><rect class="bx g" x="650" y="45" width="100" height="85" rx="12"/><text class="tx" x="700" y="80" text-anchor="middle">Redesign</text><text class="tx" x="700" y="97" text-anchor="middle">&amp; approval</text><text class="tx2" x="700" y="116" text-anchor="middle">documents</text></g>
+          <path class="ln" d="M140 88 L170 88" marker-end="url(#a2)"/><path class="ln" d="M300 88 L330 88" marker-end="url(#a2)"/><path class="ln" d="M460 88 L490 88" marker-end="url(#a2)"/><path class="ln" d="M620 88 L650 88" marker-end="url(#a2)"/>
+        </svg>
+        <figcaption>Workflow pattern: AI drafts, a person decides. This is the template for the planned crosswalk agent below.</figcaption>
+      </figure>
+      </div>
+      <div class="tags"><span class="tag">LLM analysis</span><span class="tag">Prompt design</span><span class="tag">Standards alignment</span><span class="tag">Human-in-the-loop</span></div>
+
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-llm" aria-labelledby="dlg-llm-t">
+  <div class="pd-head"><div><div class="kicker">Enterprise generative AI</div><h3 id="dlg-llm-t">LLM content pipelines and AI voiceover at scale</h3></div>
+    <div class="pd-act"><span class="badge b-prod">In practice</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>At a learning-technology company I introduced large language model workflows and AI voiceover platforms into standard production, including interactive branching scenarios, and led the team that used them. Separately, on a multi-billion-dollar utility transformation, I embed structured prompts into role-based job-task analyses to turn engineering and system specifications into clear learning objectives.</p>
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>Outcome</h4><ul>
+          <li>Shorter design cycles and lower multimedia production cost.</li>
+          <li>A 40% gain in team turnaround efficiency across the team I led.</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li>Prompts are structured and reusable, so quality does not depend on one person.</li>
+          <li>Subject-matter experts review technical accuracy before anything is published.</li>
+        </ul></div>
+      </div>
+      </div>
+      <div class="tags"><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Microsoft Copilot</span><span class="tag">WellSaid Labs</span><span class="tag">Murf.ai</span><span class="tag">Branching scenarios</span></div>
+
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-agent" aria-labelledby="dlg-agent-t">
+  <div class="pd-head"><div><div class="kicker">Flagship in build &middot; public repository planned</div><h3 id="dlg-agent-t">Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
+    <div class="pd-act"><span class="badge b-build">Building</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>The crosswalk workflow above, rebuilt as a tool-calling agent on public standards only: it reads a lesson set, calls a standards-lookup tool exposed through the Model Context Protocol (MCP), drafts the mapping and gap report, then pauses for human approval. Every run writes an audit trail.</p>
+      <div class="tags"><span class="tag">Tool calling</span><span class="tag">Model Context Protocol</span><span class="tag">Human approval step</span><span class="tag">Audit logging</span></div>
+      <p class="pending">Repository link: coming when the first working version is public.</p>
+
+  </div>
+</dialog>
+</div>
+<noscript><style>dialog.pdialog{display:block;position:static;margin:1rem auto;max-width:900px}.pd-close{display:none}</style></noscript>
 <script>
 (function(){
   var box=document.getElementById('demo'); if(!box||!window.fetch) return;
