@@ -415,6 +415,17 @@ body.dlg-open{overflow:hidden;}
         </div>
       </article>
       <article class="fcard" data-status="prod">
+        <a class="fimg" href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/teacher-studio.svg" width="800" height="450" alt="" loading="lazy" decoding="async"></a>
+        <div class="fbody">
+          <div class="frow"><span class="badge b-prod">Prototype</span></div>
+          <h3>Kempbell Teacher Studio: lesson planning and growth tool</h3>
+          <p>A teacher tool that turns a Texas standard into a draft lesson, scores an exit ticket and suggests tomorrow&rsquo;s groups. Runs in the browser; nothing a teacher types is sent anywhere.</p>
+          <p class="proof">7,476 ready-made questions across 1,246 K&ndash;5 standards, each machine-checked for balance and standard fit; teacher review is the next gate.</p>
+          <div class="tags"><span class="tag">Rule-based planning</span><span class="tag">Question bank + validators</span><span class="tag">Privacy by design</span><span class="tag">Documentation</span></div>
+          <div class="fact"><a class="btn-dark sm" href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener" aria-label="Open Kempbell Teacher Studio">Open the studio &#8599;</a><button type="button" class="btn-soft sm" data-open="dlg-kts">How it&rsquo;s built</button></div>
+        </div>
+      </article>
+      <article class="fcard" data-status="prod">
         <a class="fimg" href="https://gisellechanel.com/academy-info/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/gc-academy.jpg" width="800" height="500" alt="" loading="lazy" decoding="async"></a>
         <div class="fbody">
           <div class="frow"><span class="badge b-prod">Live</span></div>
@@ -849,6 +860,39 @@ body.dlg-open{overflow:hidden;}
       </div>
       </div>
       <div class="tags"><span class="tag">Stripe Checkout</span><span class="tag">Webhooks</span><span class="tag">Scheduled functions</span><span class="tag">Idempotent jobs</span><span class="tag">Serverless</span><span class="tag">Automated testing</span></div>
+
+  </div>
+</dialog>
+<dialog class="pdialog" id="dlg-kts" aria-labelledby="dlg-kts-t">
+  <div class="pd-head"><div><div class="kicker">Product design &middot; content quality &middot; documentation for low-tech users</div><h3 id="dlg-kts-t">Kempbell Teacher Studio: a planning and growth tool for teachers</h3></div>
+    <div class="pd-act"><span class="badge b-prod">Prototype</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-body">
+<p>Teachers lose evenings to planning and rarely get a clear view of who needs what tomorrow. I built a studio that goes from a Texas standard to a draft lesson, then from exit-ticket scores to next-day groups, and I wrote the guide so a 40-year veteran who avoids software can use it without feeling lost.</p>
+      <div class="dmore">
+      <div class="cols">
+        <div><h4>What I built</h4><ul>
+          <li>Search all 2,259 Texas K&ndash;5 standards in plain words (&ldquo;fifth grade fractions&rdquo; or a code).</li>
+          <li>Draft plan: objective, success criteria, timed flow, supports for English learners, exit ticket.</li>
+          <li>Exit-ticket scores by seat number become levels and groups, each with a task.</li>
+          <li>Optional T-TESS growth plan, class view and a substitute plan.</li>
+          <li>A question bank: 3 pretest and 3 exit-ticket items per standard for Math, ELAR, Science and Social Studies, K&ndash;5 (7,476 questions, 1,246 standards).</li>
+        </ul></div>
+        <div><h4>Design decisions</h4><ul>
+          <li><b>Rule-based, not a chatbot:</b> every output traces to a standard and a rule, so a teacher can see why.</li>
+          <li><b>Private by design:</b> no student names, no server, optional saving on the device.</li>
+          <li><b>Quality gates:</b> a validator checks answer position, length balance, choice counts, and that evidence quotes appear in the passage. It cannot judge awkward wording, so teacher review is required before release.</li>
+          <li><b>Honest limits:</b> items flagged by the writers (for example, picture-dependent items) are listed for review instead of hidden.</li>
+        </ul></div>
+      </div>
+      <h4>Documentation for every audience</h4>
+      <ul>
+        <li>A 29-page official Teacher Guide with a linked table of contents, subtitles, click-by-click screenshots and four &ldquo;pick your path&rdquo; routes from one standard to a full teaching assistant.</li>
+        <li>A Help page with a hub of short topics, so no one faces a wall of text; in-tool dotted terms explain TEKS, ELPS, PCA and other acronyms where they appear.</li>
+        <li>Charts and screenshots checked by script for overlap and legibility.</li>
+      </ul>
+      <p><a href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener">Open the studio</a> &middot; <a href="https://kempbellacademy.com/teacher-studio/guide/" target="_blank" rel="noopener">Read the guide</a></p>
+      </div>
+      <div class="tags"><span class="tag">Instructional design</span><span class="tag">Question-quality validation</span><span class="tag">Human-in-the-loop</span><span class="tag">Technical writing</span><span class="tag">UX for low-tech users</span></div>
 
   </div>
 </dialog>
