@@ -1,0 +1,60 @@
+/* Case-study pages and project-card result lines */
+.p-result{display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap;background:var(--green3);border:1px solid var(--green2);border-radius:12px;padding:.55rem .9rem;margin:0 0 .8rem;font-size:13px;font-weight:700;color:var(--ink);line-height:1.5;}
+.p-result span{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2F5A17;}
+.p-more{display:inline-block;margin:.2rem 0 .9rem;font-size:12.5px;font-weight:800;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--green2);}
+.p-more:hover{background:var(--green3);}
+.cs-main{padding-top:76px;}
+.cs-wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem;}
+.cs-hero{background:var(--pink3);padding:3rem 0 2.2rem;border-bottom:1px solid var(--border);}
+.crumbs{font-size:12px;color:var(--muted);margin-bottom:1.2rem;}
+.crumbs a{color:var(--muted);text-decoration:none;}
+.crumbs a:hover{color:var(--ink);}
+.crumbs span{margin:0 .25rem;}
+.cs-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.4vw,52px);line-height:1.12;font-weight:700;color:var(--ink);letter-spacing:-.4px;margin-bottom:1rem;}
+.cs-outcome{font-size:clamp(17px,2vw,21px);line-height:1.6;color:var(--charcoal);max-width:760px;margin-bottom:1.2rem;}
+.cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:-1.4rem;position:relative;}
+.cs-stat{background:var(--white,#fff);border:1px solid var(--border);border-radius:18px;padding:1.1rem 1.2rem;box-shadow:0 8px 24px rgba(28,26,23,.06);}
+.cs-stat b{display:block;font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);line-height:1.1;color:var(--ink);}
+.cs-stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:.35rem;line-height:1.5;}
+.cs-body{padding-top:2.2rem;padding-bottom:3rem;}
+.cs-block{margin-bottom:2.2rem;}
+.cs-block h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.6vw,30px);color:var(--ink);margin-bottom:.8rem;}
+.cs-block p{font-size:15px;line-height:1.85;color:var(--charcoal);max-width:760px;}
+.cs-list{margin-left:1.2rem;max-width:780px;}
+.cs-list li{font-size:15px;line-height:1.8;color:var(--charcoal);margin-bottom:.55rem;}
+.cs-btns{display:flex;flex-wrap:wrap;gap:.7rem;}
+.cs-leap{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1rem;}
+.cs-leap div{background:var(--green3);border:1px solid var(--green2);border-radius:16px;padding:1rem;}
+.cs-leap b{font-family:'Playfair Display',serif;font-size:34px;display:block;line-height:1;}
+.cs-leap span{font-weight:800;font-size:13px;display:block;margin:.3rem 0;}
+.cs-leap em{font-size:12.5px;color:var(--charcoal);line-height:1.5;}
+.cs-note{font-size:14px;margin-top:.5rem;}
+.cs-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.cs-compare div{border-radius:16px;padding:1.1rem 1.3rem;border:1px solid var(--border);}
+.cs-compare .old{background:#FFF1F1;}
+.cs-compare .new{background:var(--green3);border-color:var(--green2);}
+.cs-compare h3{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.6rem;}
+.cs-compare ul{margin-left:1.1rem;}
+.cs-compare li{font-size:13.5px;line-height:1.65;margin-bottom:.35rem;}
+.cs-cta{background:var(--ink);color:var(--cream);border-radius:22px;padding:2rem;margin:2.5rem 0 1.5rem;}
+.cs-cta h2{color:var(--cream);}
+.cs-cta p{color:rgba(253,250,246,.8);margin-bottom:1.1rem;}
+.cs-next{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:13.5px;font-weight:700;}
+.cs-next a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--green2);}
+@media(max-width:720px){.cs-stats{grid-template-columns:1fr;margin-top:1rem;}.cs-leap{grid-template-columns:1fr 1fr;}.cs-compare{grid-template-columns:1fr;}}
+
+.cs-kicker{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(18px,2.2vw,24px);color:#2F5A17;margin-bottom:.4rem;}
+.cs-kicker small{display:block;font-family:'Nunito',sans-serif;font-style:normal;font-weight:600;font-size:13px;color:var(--muted);margin-top:3px;}
+
+.cs-by{display:flex;align-items:center;gap:.7rem;margin:0 0 1rem;font-size:13.5px;color:var(--charcoal);}
+.cs-by img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--green2);}
+.cs-cta{display:flex;align-items:center;gap:1.6rem;}
+.cs-cta-photo{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--green2);flex:none;}
+@media(max-width:720px){.cs-cta{flex-direction:column;align-items:flex-start;}.cs-cta-photo{width:104px;height:104px;}}
+
+/* Base styles pad every <section>; case-study blocks are laid out by .cs-wrap instead */
+.cs-block{padding:0;}
+.cs-btns a{text-decoration:none;}
+.cs-cta .plink{background:var(--green2);color:var(--ink);}
+.cs-cta .plink:hover{background:var(--green);}
+.cs-cta .doc-btn{color:var(--ink);}
