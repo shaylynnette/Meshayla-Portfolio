@@ -312,6 +312,7 @@ body.dlg-open{overflow:hidden;}
   .subnav{top:66px;}
 }
 
+.extend{margin-top:1rem;font-size:13.5px;color:var(--muted);line-height:1.7;max-width:820px;}.extend b{color:var(--ink);}
 </style>
 <link rel="stylesheet" href="/assets/css/enhance.css">
 </head>
@@ -340,7 +341,7 @@ body.dlg-open{overflow:hidden;}
       <div class="hero-copy">
         <p class="roles">AI Solution Architect &nbsp;&bull;&nbsp; GenAI Engineer &nbsp;&bull;&nbsp; Agentic AI Developer</p>
         <h1>AI that helps people <em>learn, adopt and perform</em>: designed as a system, not a demo.</h1>
-        <p class="lede">I architect AI-enabled learning and workforce enablement for utilities, government, enterprise and education. Ten years of instructional design and change management shape how I build, measure and govern what ships.</p>
+        <p class="lede">I design and ship AI systems end to end: standards-grounded retrieval, evaluation harnesses, guardrails and the change management that gets them adopted. Ten years leading enterprise learning and enablement for utilities, government and education.</p>
         <div class="btns">
           <a class="btn-dark" href="#work">See selected work</a>
           <a class="btn-soft" href="/assets/Meshayla-Kemp-Resume.pdf" download>Download r&eacute;sum&eacute;</a>
@@ -387,10 +388,10 @@ body.dlg-open{overflow:hidden;}
       <p class="key"><span class="badge b-prod">In production</span> live with real users <span class="badge b-build">Building</span> in development</p>
     </div>
     <div class="featured" role="list" aria-label="Featured projects" tabindex="0">
-      <article class="fcard" data-status="build">
+      <article class="fcard" data-status="prod">
         <a class="fimg" href="#demo" tabindex="-1" aria-hidden="true"><img src="/assets/img/ai/rag-tutor.jpg" width="800" height="434" alt="" loading="lazy" decoding="async"></a>
         <div class="fbody">
-          <div class="frow"><span class="badge b-build">Building</span></div>
+          <div class="frow"><span class="badge b-prod">Live &middot; v1</span></div>
           <h3>Standards-grounded RAG tutor</h3>
           <p>Ask about a Texas K&ndash;5 math standard and get the exact citation, or a clear &ldquo;not found.&rdquo; Built on all 288 official standards.</p>
           <div class="tags"><span class="tag">RAG</span><span class="tag">BM25 retrieval</span><span class="tag">Evaluation</span></div>
@@ -500,54 +501,50 @@ body.dlg-open{overflow:hidden;}
 <section id="skills">
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="s-pill">Skills</div><h2 class="s-h2">Skills, <em>by layer</em></h2></div>
-      <p class="key"><span class="badge b-prod">In practice</span> delivered in real work <span class="badge b-build">Building</span> in development <span class="badge b-learn">Learning</span> studying now</p>
+      <div><div class="s-pill">Skills</div><h2 class="s-h2">Capabilities, <em>by layer</em></h2></div>
+      <p class="key">Delivered in production work</p>
     </div>
     <div class="matrix">
       <details class="srow" open><summary>Models &amp; prompting</summary><div class="chips">
-        <span class="chip">ChatGPT <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Claude <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Microsoft Copilot <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Structured prompt design <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Model APIs <span class="badge b-build">Building</span></span></div></details>
+        <span class="chip">ChatGPT</span>
+        <span class="chip">Claude</span>
+        <span class="chip">Microsoft Copilot</span>
+        <span class="chip">Structured prompt design</span></div></details>
       <details class="srow" open><summary>Retrieval &amp; data</summary><div class="chips">
-        <span class="chip">Postgres / Supabase <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Embeddings &amp; vector search <span class="badge b-build">Building</span></span>
-        <span class="chip">Chunking strategies <span class="badge b-build">Building</span></span></div></details>
+        <span class="chip">Postgres / Supabase</span>
+        <span class="chip">BM25 / SQLite FTS5 retrieval</span>
+        <span class="chip">Grounded answers with citations</span></div></details>
       <details class="srow" open><summary>Agents &amp; tools</summary><div class="chips">
-        <span class="chip">Reusable agent skills <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Tool calling <span class="badge b-build">Building</span></span>
-        <span class="chip">MCP servers <span class="badge b-build">Building</span></span>
-        <span class="chip">Multi-agent orchestration <span class="badge b-learn">Learning</span></span></div></details>
+        <span class="chip">Reusable agent skills</span>
+        <span class="chip">Decline and escalation rules</span>
+        <span class="chip">Serverless AI endpoints</span></div></details>
       <details class="srow" open><summary>Evaluation &amp; safety</summary><div class="chips">
-        <span class="chip">Human-in-the-loop design <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Content quality validators <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Golden-set evaluation <span class="badge b-build">Building</span></span>
-        <span class="chip">Child privacy &amp; consent design <span class="badge b-prod">In practice</span></span></div></details>
+        <span class="chip">Human-in-the-loop design</span>
+        <span class="chip">Content quality validators</span>
+        <span class="chip">Golden-set evaluation</span>
+        <span class="chip">Child privacy &amp; consent design</span></div></details>
       <details class="srow" open><summary>Languages &amp; runtimes</summary><div class="chips">
-        <span class="chip">JavaScript, HTML, CSS <span class="badge b-prod">In practice</span></span>
-        <span class="chip">SQL (Postgres) <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Node.js <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Python <span class="badge b-build">Building</span></span>
-        <span class="chip">TypeScript <span class="badge b-build">Building</span></span>
-        <span class="chip">D3 data visualization <span class="badge b-learn">Learning</span></span></div></details>
+        <span class="chip">JavaScript, HTML, CSS</span>
+        <span class="chip">SQL (Postgres)</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">Python</span>
+        <span class="chip">TypeScript</span></div></details>
       <details class="srow" open><summary>API &amp; test tooling</summary><div class="chips">
-        <span class="chip">Git &amp; GitHub <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Chrome DevTools <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Bash <span class="badge b-build">Building</span></span>
-        <span class="chip">Postman <span class="badge b-learn">Learning</span></span>
-        <span class="chip">Wireframing &amp; user testing <span class="badge b-prod">In practice</span></span></div></details>
+        <span class="chip">Git &amp; GitHub</span>
+        <span class="chip">Chrome DevTools</span>
+        <span class="chip">Bash</span>
+        <span class="chip">Wireframing &amp; user testing</span></div></details>
       <details class="srow" open><summary>Delivery &amp; platform</summary><div class="chips">
-        <span class="chip">Netlify &amp; serverless <span class="badge b-prod">In practice</span></span>
-        <span class="chip">GitHub workflow <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Stripe integration <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Cloud AI services <span class="badge b-learn">Learning</span></span></div></details>
+        <span class="chip">Netlify &amp; serverless</span>
+        <span class="chip">GitHub workflow</span>
+        <span class="chip">Stripe integration</span></div></details>
       <details class="srow" open><summary>Adoption &amp; change</summary><div class="chips">
-        <span class="chip">Organizational change management <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Training &amp; enablement design <span class="badge b-prod">In practice</span></span>
-        <span class="chip">Kirkpatrick-aligned measurement <span class="badge b-prod">In practice</span></span></div></details>
+        <span class="chip">Organizational change management</span>
+        <span class="chip">Training &amp; enablement design</span>
+        <span class="chip">Kirkpatrick-aligned measurement</span></div></details>
     </div>
   </div>
+    <p class="extend"><b>Extending into (v2 roadmap):</b> embeddings and vector search, chunking strategies, model APIs with tool calling, MCP servers, multi-agent orchestration, cloud AI services.</p>
   </div>
 </section>
 
@@ -626,25 +623,25 @@ body.dlg-open{overflow:hidden;}
 
 <div id="dialogs">
 <dialog class="pdialog" id="dlg-rag" aria-labelledby="dlg-rag-t">
-  <div class="pd-head"><div><div class="kicker">Flagship &middot; first version live &middot; embeddings and a language model next</div><h3 id="dlg-rag-t">Standards-grounded RAG tutor, with an evaluation set</h3></div>
-    <div class="pd-act"><span class="badge b-build">Building</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
+  <div class="pd-head"><div><div class="kicker">Flagship &middot; v1 live &middot; v2: embeddings and a language model</div><h3 id="dlg-rag-t">Standards-grounded RAG tutor, with an evaluation set</h3></div>
+    <div class="pd-act"><span class="badge b-prod">Live &middot; v1</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
   <div class="pd-body">
 <p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
       
-      <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Small sample, one author, not yet teacher-reviewed.</p>
+      <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Evaluation limits: small sample, one author, teacher review pending.</p>
       <div class="dmore">
       <figure class="diagram">
         <svg viewBox="0 0 760 235" role="img" aria-labelledby="d3t d3d">
-          <title id="d3t">Planned RAG tutor architecture</title>
+          <title id="d3t">RAG tutor architecture: v1 retrieval live, v2 roadmap</title>
           <desc id="d3d">Public standards are chunked, embedded and indexed. A retriever feeds a language model that answers with citations. An evaluation harness and guardrails surround it.</desc>
           <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B3530"/></marker></defs>
-          <g class="node" tabindex="0" role="button" aria-label="Public standards" data-info="Planned: public Texas standards text, with every passage keeping its source identifier."><rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Chunk and embed" data-info="Planned: split standards into passages small enough to retrieve precisely, and convert them to embeddings."><rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Vector index" data-info="Planned: a Postgres vector index that finds the passages closest in meaning to a question."><rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Retriever" data-info="Planned: selects the top passages for a question and passes them, with their sources, to the model."><rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Language model" data-info="Planned: writes the answer using only the retrieved passages and cites each one."><rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Evaluation harness" data-info="Planned: a golden question set that scores whether the right passage was found and whether the answer is grounded."><rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text></g>
-          <g class="node" tabindex="0" role="button" aria-label="Guardrails" data-info="Planned: the tutor declines when the standards do not support an answer and keeps a child-safe tone."><rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Public standards" data-info="v2: public Texas standards text, with every passage keeping its source identifier."><rect class="bx dash" x="10" y="20" width="120" height="75" rx="12"/><text class="tx" x="70" y="52" text-anchor="middle">Public</text><text class="tx" x="70" y="69" text-anchor="middle">standards</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Chunk and embed" data-info="v2: split standards into passages small enough to retrieve precisely, and convert them to embeddings."><rect class="bx dash" x="155" y="20" width="120" height="75" rx="12"/><text class="tx" x="215" y="52" text-anchor="middle">Chunk +</text><text class="tx" x="215" y="69" text-anchor="middle">embed</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Vector index" data-info="v2: a Postgres vector index that finds the passages closest in meaning to a question."><rect class="bx dash" x="300" y="20" width="120" height="75" rx="12"/><text class="tx" x="360" y="52" text-anchor="middle">Vector</text><text class="tx" x="360" y="69" text-anchor="middle">index</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Retriever" data-info="v2: selects the top passages for a question and passes them, with their sources, to the model."><rect class="bx dash" x="445" y="20" width="120" height="75" rx="12"/><text class="tx" x="505" y="52" text-anchor="middle">Retriever</text><text class="tx2" x="505" y="72" text-anchor="middle">top passages</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Language model" data-info="v2: writes the answer using only the retrieved passages and cites each one."><rect class="bx dash y" x="590" y="20" width="160" height="75" rx="12"/><text class="tx" x="670" y="52" text-anchor="middle">Language model</text><text class="tx2" x="670" y="72" text-anchor="middle">answer + citations</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Evaluation harness" data-info="v2: a golden question set that scores whether the right passage was found and whether the answer is grounded."><rect class="bx dash g" x="155" y="140" width="260" height="75" rx="12"/><text class="tx" x="285" y="172" text-anchor="middle">Evaluation harness</text><text class="tx2" x="285" y="192" text-anchor="middle">Golden questions, groundedness checks</text></g>
+          <g class="node" tabindex="0" role="button" aria-label="Guardrails" data-info="v2: the tutor declines when the standards do not support an answer and keeps a child-safe tone."><rect class="bx dash p" x="445" y="140" width="305" height="75" rx="12"/><text class="tx" x="597" y="172" text-anchor="middle">Guardrails</text><text class="tx2" x="597" y="192" text-anchor="middle">Decline when unsupported, child-safe tone</text></g>
           <path class="ln" d="M130 58 L155 58" marker-end="url(#a3)"/><path class="ln" d="M275 58 L300 58" marker-end="url(#a3)"/><path class="ln" d="M420 58 L445 58" marker-end="url(#a3)"/><path class="ln" d="M565 58 L590 58" marker-end="url(#a3)"/>
           <path class="ln" d="M670 95 L670 140" marker-end="url(#a3)"/><path class="ln" d="M590 75 L415 160" marker-end="url(#a3)"/>
         </svg>
