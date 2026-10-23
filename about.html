@@ -476,6 +476,8 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
 
 
 <!-- MY STORY -->
+<nav class="jumpbar" aria-label="On this page"><a href="#mystory">My story</a><a href="#why">My why</a><a href="#community">Community &amp; purpose</a><a href="#philosophy">How I work</a><a href="/contact" class="jb-cta">Let&rsquo;s talk</a></nav>
+<style>.anch{display:block;position:relative;top:-90px;visibility:hidden;height:0;}.jumpbar{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;padding:.9rem 1.5rem;background:var(--cream,#fdfaf6);border-bottom:1px solid rgba(0,0,0,.08);position:sticky;top:60px;z-index:20;}.jumpbar a{font-size:12px;font-weight:800;letter-spacing:.5px;text-decoration:none;color:var(--ink);padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;}.jumpbar a:hover{background:var(--ink);color:#fff;}.jumpbar .jb-cta{background:var(--ink);color:#fff;}#mystory{scroll-margin-top:110px;}#philosophy{scroll-margin-top:110px;}</style>
 <section id="mystory" style="overflow:hidden;">
 
   <!-- ① HERO: Typographic full-width gradient -->
@@ -625,7 +627,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
   <div style="background:var(--white);padding:4.5rem 3.5rem;">
     <div style="max-width:860px;margin:0 auto;">
       <div class="why-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2.5rem;"><img src="/assets/img/site/family-portrait.webp" alt="Meshayla Kemp with her husband and their three children, smiling on a rust-colored sofa" width="900" height="1190" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.16);"><img src="/assets/img/site/family-rocking-horse.webp" alt="The Kemp children posing together, the youngest on a wooden rocking horse" width="900" height="1163" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.16);"></div>
-      <div><div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.85rem;"><span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>My Why</div>
+      <div><span id="why" class="anch"></span><div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.85rem;"><span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>My Why</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,40px);font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:1rem;">They Are <em style="color:var(--green2);">My Why</em></h3>
         <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I&rsquo;m a first-generation college graduate, and I keep chasing opportunities that seem out of reach. Every door that opened was God&rsquo;s grace and the prayers of those who came before me.</p>
         <p style="font-size:15px;line-height:1.85;color:var(--charcoal);margin-bottom:1rem;">I&rsquo;m in rooms my forefathers only dreamed of, so I don&rsquo;t take my seat lightly. I&rsquo;m here to hold the door open for others, because the best way to lead is by example.</p>
@@ -667,7 +669,7 @@ fr.forEach(function(b){b.addEventListener('click',function(){fr.forEach(function
 
   <!-- ⑤b COMMUNITY + WEALTH-BUILDING -->
   <div style="background:linear-gradient(145deg,var(--green3),var(--yellow3));padding:4.5rem 3.5rem;">
-    <div style="max-width:1000px;margin:0 auto;">
+    <span id="community" class="anch"></span><div style="max-width:1000px;margin:0 auto;">
       <div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.85rem;"><span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>Community &amp; Purpose</div>
       <h3 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,40px);font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:1rem;">Building Wealth That <em style="color:var(--green2);">Lasts Generations</em></h3>
       <p style="font-size:15px;line-height:1.85;color:var(--charcoal);max-width:760px;margin-bottom:1.8rem;">I love giving back to my community, and I&rsquo;m committed to promoting generational wealth in low-income and economically disadvantaged communities. That means providing new skillsets and tools to people who never knew they existed, and teaching how to use them.</p>
