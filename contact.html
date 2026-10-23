@@ -20,7 +20,11 @@
 <meta name="twitter:title" content="Contact Meshayla Kemp | Consulting &amp; Leadership Roles">
 <meta name="twitter:description" content="Contact Meshayla Kemp for instructional design, organizational change management and AI-enabled learning consulting, or for leadership roles. Based in Tyler, Texas, serving clients nationwide.">
 <meta name="twitter:image" content="https://www.meshayla.com/assets/img/og-card.png">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNCNUQ5OUMiLz48dGV4dCB4PSIxNiIgeT0iMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxQzFBMTciPk08L3RleHQ+PC9zdmc+">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -431,9 +435,17 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
       Consulting engagements, contract vehicles, leadership roles in instructional design, OCM, or business process — I’m ready to bring enterprise-level learning strategy to your organization.
     </p>
     <div class="contact-btns">
-      <a href="mailto:meshayla@kempadvisory.com" class="btn-green">Start a Conversation</a>
+      <a href="https://calendly.com/meshayla-kempadvisory/30min" target="_blank" rel="noopener" class="btn-green">Book a 30-minute call</a>
+      <a href="mailto:meshayla@kempadvisory.com?subject=Inquiry%20from%20meshayla.com" class="btn-soft" style="color:var(--cream);border-color:rgba(253,250,246,.2);background:rgba(253,250,246,.06);">Send an email</a>
+      <button type="button" class="btn-soft" id="copy-email" style="cursor:pointer;color:var(--cream);border-color:rgba(253,250,246,.2);background:rgba(253,250,246,.06);">Copy email address</button>
       <a href="https://kempadvisory.com/" target="_blank" class="btn-soft" style="color:var(--cream);border-color:rgba(253,250,246,.2);background:rgba(253,250,246,.06);">Kemp Advisory Group ↗</a>
     </div>
+    <div class="ct-help">
+      <div><h2>What I take on</h2><ul><li>Training and change management for system rollouts</li><li>AI-enabled learning tools and workflows</li><li>Curriculum and standards alignment for K&ndash;12</li><li>Grant writing and plain-language public guides</li></ul></div>
+      <div><h2>How we would work</h2><ul><li>Remote, nationwide</li><li>Fixed-price scopes with written deliverables</li><li>Government purchase cards accepted</li><li>Prime contracts, subcontracting and teaming</li></ul></div>
+      <div><h2>Good to know</h2><ul><li>Woman- and minority-owned small business, Tyler, Texas</li><li>Registered in SAM.gov</li><li>Delivered through Kemp Advisory Group, LLC</li></ul></div>
+    </div>
+    <style>.ct-help{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;text-align:left;margin:2.4rem auto 0;max-width:1000px;}.ct-help h2{font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);margin-bottom:.6rem;}.ct-help ul{list-style:none;display:grid;gap:.45rem;}.ct-help li{font-size:13.5px;line-height:1.55;color:rgba(253,250,246,.78);padding-left:1.1rem;position:relative;}.ct-help li::before{content:"\2713";position:absolute;left:0;color:var(--green);}@media(max-width:960px){.ct-help{grid-template-columns:1fr;}}</style>
     <div class="contact-cards" style="grid-template-columns:repeat(4,1fr);">
       <div class="cc">
         <div class="cc-ico">✉️</div>
@@ -482,4 +494,5 @@ document.querySelectorAll("a[href^='#']").forEach(a=>{
 });
 </script>
 
+<script>(function(){var b=document.getElementById("copy-email");if(!b)return;b.addEventListener("click",function(){var e="meshayla@kempadvisory.com";function done(){b.textContent="Copied: "+e;setTimeout(function(){b.textContent="Copy email address";},2500);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(e).then(done,function(){window.prompt("Copy this address:",e);});}else{window.prompt("Copy this address:",e);}});})();</script>
 </body></html>
