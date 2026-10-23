@@ -363,7 +363,7 @@ body.dlg-open{overflow:hidden;}
       </div>
       <div class="hero-demo">
 <div class="demo" id="demo" hidden>
-        <h2 class="demo-h">Try it live</h2><p class="demo-sub">Ask about any K&ndash;5 Texas math standard.</p>
+        <h2 class="demo-h">Try it live</h2><p class="demo-sub">Ask about any K&ndash;5 Texas standard: reading, math, science, social studies and more.</p>
         <form id="demo-form" autocomplete="off">
           <label for="demo-q" class="skip" style="position:absolute;left:-999px">Ask about a K&ndash;5 Texas math standard</label>
           <input type="text" id="demo-q" maxlength="300" placeholder="e.g. fifth grade rounding decimals" required>
@@ -371,12 +371,13 @@ body.dlg-open{overflow:hidden;}
         </form>
         <div class="ex" id="demo-ex" aria-label="Example questions">
           <button type="button">fifth grade rounding decimals</button>
-          <button type="button">third graders equivalent fractions</button>
-          <button type="button">kindergarten identifying coins</button>
-          <button type="button">What is the capital of Texas?</button>
+          <button type="button">third grade science energy</button>
+          <button type="button">Alamo and the Texas Revolution</button>
+          <button type="button">kindergarten rhyming words</button>
+          <button type="button">Explain photosynthesis for fifth graders</button>
         </div>
         <div class="out" id="demo-out" role="status" aria-live="polite"></div>
-        <p class="fine">Source: 19 TAC Chapter 111, Subchapter A (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, nothing you type is stored.</p>
+        <p class="fine">Source: Texas Essential Knowledge and Skills, K&ndash;5, revised June 2024 (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, nothing you type is stored.</p>
       </div>
       </div>
     </div>
@@ -407,10 +408,10 @@ body.dlg-open{overflow:hidden;}
         <div class="fbody">
           <div class="frow"><span class="badge b-prod">Live &middot; v1</span></div>
           <h3>Standards-grounded RAG tutor</h3>
-          <p>Ask about a Texas K&ndash;5 math standard and get the exact citation, or a clear &ldquo;not found.&rdquo; Built on all 288 official standards.</p>
-          <p class="proof">Tested on 52 evaluation questions and 16 adversarial inputs; no attack got through.</p>
+          <p>Ask about a Texas K&ndash;5 standard in any of 10 subjects and get the exact citation, or a clear &ldquo;not found.&rdquo; Built on 2,259 official standards.</p>
+          <p class="proof">Tested on 92 evaluation questions and 16 adversarial inputs; none could change what it says.</p>
           <div class="tags"><span class="tag">RAG</span><span class="tag">BM25 retrieval</span><span class="tag">Evaluation</span></div>
-          <div class="fact"><a class="btn-dark sm" href="#demo" aria-label="Try it live: The standards tutor answering a question about rounding decimals">Try it live &uarr;</a><button type="button" class="btn-soft sm" data-open="dlg-rag">How it&rsquo;s built</button></div>
+          <div class="fact"><a class="btn-dark sm" href="#demo" aria-label="Try it live: The standards tutor answering a question about rounding decimals">Try it live &uarr;</a><button type="button" class="btn-soft sm" data-open="dlg-rag">How it&rsquo;s built</button><a class="btn-soft sm" href="https://github.com/shaylynnette/standards-grounded-rag-tutor" target="_blank" rel="noopener">Source &#8599;</a></div>
         </div>
       </article>
       <article class="fcard" data-status="prod">
@@ -478,7 +479,7 @@ body.dlg-open{overflow:hidden;}
         <span class="pt-body"><span class="badge b-build">Building</span><strong>Crosswalk agent and a standards-lookup MCP server</strong><em>A tool-calling agent with a human approval step and an audit trail. In development.</em><u>Details &rarr;</u></span>
       </button>
     </div>
-    <p class="s-body" style="margin-top:1rem;font-size:13px">Client details are generalized. Where a repository is public, its link appears here.</p>
+    <p class="s-body" style="margin-top:1rem;font-size:13px">Client details are generalized. The tutor&rsquo;s source is public; other repositories are private.</p>
   </div>
 </section>
 
@@ -489,8 +490,8 @@ body.dlg-open{overflow:hidden;}
     <ol class="steps6"><li><b>Frame the problem</b><span>with teachers, parents and learners</span></li><li><b>Set constraints first</b><span>privacy, cost, accuracy, review</span></li><li><b>Write the standard first</b><span>rules, then automatic checks</span></li><li><b>Ship thin, then measure</b><span>golden questions, held-out test</span></li><li><b>Break it on purpose</b><span>off-topic, messy input, edge cases</span></li><li><b>Harden and document</b><span>write down what is unfinished</span></li></ol>
     <h3 class="sub-h">What went wrong, and how I fixed it</h3>
     <div class="cdets">
-      <details class="cdet" open><summary><span class="ck">Standards tutor &middot; evaluation</span><span class="ct">It answered everything, including &ldquo;What is the capital of Texas?&rdquo;</span></summary><div class="cb"><p><b>What happened:</b> keyword search always returns something, so the first version gave a confident wrong answer to off-topic questions.</p><p><b>What I changed:</b> I wrote 12 off-topic questions, tuned a decline rule on half and tested it on the half it had never seen. The first rule declined only 2 of 6 held-out off-topic questions. I added a second signal: how many of the question&rsquo;s words exist anywhere in the standards.</p><p><b>Result:</b> all 6 held-out off-topic questions declined, with 1 of 20 real questions wrongly declined.</p><p class="take"><b>Takeaway:</b> a threshold that looks fine on the data it was tuned on can fail on new questions. Hold some back.</p></div></details>
-      <details class="cdet"><summary><span class="ck">Standards tutor &middot; source data</span><span class="ct">I could not get the official text, and I would not build on a paraphrase</span></summary><div class="cb"><p><b>What happened:</b> automated lookups of the Texas standards were blocked or returned summaries, not the exact wording.</p><p><b>What I changed:</b> I used the official PDF instead. Parsing it exposed line-break artifacts such as &ldquo;two- dimensional,&rdquo; which I fixed, then locked the count of 288 standards by grade into a regression test. Every answer cites the rule and notes that the state publishes it for information only.</p><p class="take"><b>Takeaway:</b> ground the system in the primary source, and test the data pipeline, not just the model.</p></div></details>
+      <details class="cdet" open><summary><span class="ck">Standards tutor &middot; evaluation</span><span class="ct">It answered everything, including &ldquo;What is the capital of Texas?&rdquo;</span></summary><div class="cb"><p><b>What happened:</b> keyword search always returns something, so the first version gave a confident wrong answer to off-topic questions.</p><p><b>What I changed:</b> I wrote 12 off-topic questions, tuned a decline rule on half and tested it on the half it had never seen. The first rule declined only 2 of 6 held-out off-topic questions. I added a second signal: how many of the question&rsquo;s words exist anywhere in the standards.</p><p><b>Result:</b> all 6 held-out off-topic questions declined, with 1 of 20 real questions wrongly declined.</p><p><b>Then it got harder:</b> when I loaded all ten subjects, trivia such as &ldquo;What is the capital of Texas?&rdquo; matched a social studies standard that mentions a state capital, and the tutor answered it. I recalibrated on the new dev questions, reported the held-out numbers as they came out, and recorded the capital question as a known failure instead of removing it from the tests. A relevance check is the planned fix.</p><p class="take"><b>Takeaway:</b> a threshold that looks fine on the data it was tuned on can fail on new questions, and again when the corpus grows. Hold some back and re-measure.</p></div></details>
+      <details class="cdet"><summary><span class="ck">Standards tutor &middot; source data</span><span class="ct">I could not get the official text, and I would not build on a paraphrase</span></summary><div class="cb"><p><b>What happened:</b> automated lookups of the Texas standards were blocked or returned summaries, not the exact wording.</p><p><b>What I changed:</b> I used the official PDF instead. Parsing it exposed line-break artifacts such as &ldquo;two- dimensional,&rdquo; which I fixed, then locked the counts into a regression test. When I later loaded ten subjects, I checked the new parser against the old math parse: 287 of 288 records were identical, and the one difference was a double period in TEA&rsquo;s own file. Every answer cites the rule and notes that the state publishes it for information only.</p><p class="take"><b>Takeaway:</b> ground the system in the primary source, and test the data pipeline, not just the model.</p></div></details>
       <details class="cdet"><summary><span class="ck">Standards tutor &middot; architecture</span><span class="ct">Where to host it: price versus the visitor&rsquo;s first impression</span></summary><div class="cb"><p><b>What happened:</b> I compared three hosts using their own pricing pages. One has no free tier, one gives about $1 of monthly credit, and the free one goes to sleep after 15 minutes, so the next visitor waits about a minute.</p><p><b>What I changed:</b> I ported the retrieval to TypeScript and ran it as a function on the site&rsquo;s existing host. The port returns the same top results and the same answer-or-decline decision on all 52 test questions as the Python original.</p><p class="take"><b>Takeaway:</b> choose the architecture by what the user experiences and what you already own, then prove the port is equivalent.</p></div></details>
       <details class="cdet"><summary><span class="ck">Style Studio 2.0 &middot; product quality</span><span class="ct">Hairstyles that looked fake, shirts that showed skin</span></summary><div class="cb"><p><b>What happened:</b> in preview testing, tops and bottoms were mixed up, eyeliner landed over the eyes, skin showed through shirts, lipstick missed the lips, and the hairstyle overlays looked artificial.</p><p><b>What I changed:</b> I fixed the layering and coverage problems one round at a time through preview deploys. I parked the hairstyles until proper hair art exists, instead of shipping something that looked wrong.</p><p class="take"><b>Takeaway:</b> cutting a feature is a design decision. A preview build lets a person review before anything goes live.</p></div></details>
       <details class="cdet"><summary><span class="ck">Assessment content &middot; guardrails</span><span class="ct">Good-looking quiz questions with hidden patterns</span></summary><div class="cb"><p><b>What happened:</b> a review of the library quizzes showed the kind of patterns students learn to game, such as the right answer being the longest choice.</p><p><b>What I changed:</b> I wrote the reviewer&rsquo;s rules down, then turned them into a validator that fails the site build. It also checks every quoted answer against the source text.</p><p class="take"><b>Takeaway:</b> a rule that depends on someone remembering it will be skipped. Automated checks catch patterns, and a person still reads for meaning.</p></div></details>
@@ -634,17 +635,17 @@ body.dlg-open{overflow:hidden;}
   <div class="pd-head"><div><div class="kicker">Flagship &middot; v1 live &middot; v2: embeddings and a language model</div><h3 id="dlg-rag-t">Standards-grounded RAG tutor, with an evaluation set</h3></div>
     <div class="pd-act"><span class="badge b-prod">Live &middot; v1</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
   <div class="pd-body">
-<p>Ask a question about Texas K&ndash;5 math and get the matching standard with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 288 official standards and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
+<p>Ask a question about the Texas K&ndash;5 standards and get the matching one with its 19 TAC citation, or a clear &ldquo;I can&rsquo;t find that.&rdquo; The first version uses keyword retrieval (BM25) over all 2,259 official standards in ten subjects and quotes the standard rather than generating text, so every answer is grounded by construction. The evaluation set matters as much as the app: it measures whether the right standard is found and whether the system declines when it should.</p>
       
-      <p class="pending" id="demo-results"><strong>Held-out results (20 answerable and 6 off-topic questions I wrote):</strong> the right standard was the top result for 16 of 20 and in the top three for all 20; all 6 off-topic questions were declined; 1 of 20 real questions was wrongly declined. Evaluation limits: small sample, one author, teacher review pending.</p>
+      <p class="pending" id="demo-results"><strong>Held-out results (40 answerable and 5 off-topic questions I wrote):</strong> the right standard was the top result for 35 of 40 and in the top five for 38 of 40; 4 of 5 off-topic questions were declined; 1 of 40 real questions was wrongly declined. Evaluation limits: small sample, one author, teacher review pending, and most non-math subjects have only 3 to 7 questions. <strong>Loading all ten subjects made decline harder:</strong> with math alone every off-topic question was declined, but trivia such as &ldquo;What is the capital of Texas?&rdquo; now matches a standard that mentions a state capital and gets a loosely related answer. That is a known failure.</p>
       <div class="cols">
         <div><h4>Failure modes, speed and cost</h4><ul>
-          <li><strong>Adversarial set (16 cases):</strong> no attacker text was obeyed or echoed, and every hostile or out-of-scope request was declined. The answerer quotes the standard, so instructions in a question can steer retrieval but not the reply.</li>
-          <li><strong>Misses, stated plainly:</strong> 3 legitimate questions were wrongly declined (two padded with an injection sentence, one misspelled). Keyword matching is the cause.</li>
-          <li><strong>Speed:</strong> retrieval plus answer ran at p50 0.3 ms and p95 0.5 ms locally. Deployed time adds network and cold start, which I have not measured.</li>
+          <li><strong>Adversarial set (16 cases):</strong> no attacker text was obeyed or echoed, and pure instruction-override attempts were declined. The answerer quotes the standard, so instructions in a question can steer retrieval but not the reply.</li>
+          <li><strong>Misses, stated plainly:</strong> 2 legitimate questions were wrongly declined (one padded with an injection sentence, one misspelled), and 2 out-of-scope inputs (the capital question and a SQL-style string) were answered with a loosely related standard. Keyword matching is the cause.</li>
+          <li><strong>Speed:</strong> retrieval plus answer ran at p50 0.4 ms and p95 0.7 ms locally. Deployed time adds network and cold start, which I have not measured.</li>
           <li><strong>Cost:</strong> no model calls, so the marginal cost per answer is effectively zero.</li></ul></div>
         <div><h4>Build versus buy</h4><ul>
-          <li><strong>Why keyword first:</strong> 288 standards, exact citations matter, and a deterministic baseline keeps every later change honestly comparable. Children&rsquo;s questions also stay off third-party services.</li>
+          <li><strong>Why keyword first:</strong> a bounded corpus, exact citations matter, and a deterministic baseline keeps every later change honestly comparable. Children&rsquo;s questions also stay off third-party services.</li>
           <li><strong>When I would switch:</strong> when users phrase things loosely or misspell, as the misses above show.</li>
           <li><strong>What it costs:</strong> a per-query fee, more latency and a new hallucination risk, so the same evaluation and adversarial suites must be passed again before it ships.</li></ul></div>
       </div>
@@ -668,7 +669,7 @@ body.dlg-open{overflow:hidden;}
       </figure>
       </div>
       <div class="tags"><span class="tag">Retrieval-augmented generation</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span><span class="tag">Guardrails</span></div>
-      <p class="pending">Repository link: coming once the code is cleaned up for public release.</p>
+      <div class="btns" style="margin-top:1rem"><a class="btn-dark" href="https://github.com/shaylynnette/standards-grounded-rag-tutor" target="_blank" rel="noopener">View source on GitHub &#8599;</a></div><p class="pending">Source is free to read and run. Commercial use needs a license (PolyForm Noncommercial).</p>
 
   </div>
 </dialog>
@@ -910,7 +911,7 @@ body.dlg-open{overflow:hidden;}
   </div>
 </dialog>
 <dialog class="pdialog" id="dlg-agent" aria-labelledby="dlg-agent-t">
-  <div class="pd-head"><div><div class="kicker">Flagship in build &middot; public repository planned</div><h3 id="dlg-agent-t">Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
+  <div class="pd-head"><div><div class="kicker">Flagship in build &middot; repository to follow</div><h3 id="dlg-agent-t">Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
     <div class="pd-act"><span class="badge b-build">Building</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
   <div class="pd-body">
 <p>The crosswalk workflow above, rebuilt as a tool-calling agent on public standards only: it reads a lesson set, calls a standards-lookup tool exposed through the Model Context Protocol (MCP), drafts the mapping and gap report, then pauses for human approval. Every run writes an audit trail.</p>
@@ -932,7 +933,7 @@ body.dlg-open{overflow:hidden;}
     if(d.error){out.appendChild(el('div','no',d.error));return;}
     out.appendChild(el('div',d.answered?'ans':'no',d.answer));
     if(d.answered&&d.matches&&d.matches.length){
-      var ul=el('ul'); d.matches.forEach(function(m){ul.appendChild(el('li',null,m.teks_code+' \u2014 '+m.citation+' ('+m.strand+')'));});
+      var ul=el('ul'); d.matches.forEach(function(m){ul.appendChild(el('li',null,m.teks_code+' \u2014 '+m.citation+' ('+(m.subject?m.subject+', ':'')+m.strand+')'));});
       out.appendChild(el('p',null,'Closest standards:')); out.appendChild(ul);
     }
   }
