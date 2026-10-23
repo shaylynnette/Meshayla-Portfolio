@@ -410,7 +410,7 @@ body.dlg-open{overflow:hidden;}
           <p>Ask about a Texas K&ndash;5 math standard and get the exact citation, or a clear &ldquo;not found.&rdquo; Built on all 288 official standards.</p>
           <p class="proof">Tested on 52 evaluation questions and 16 adversarial inputs; no attack got through.</p>
           <div class="tags"><span class="tag">RAG</span><span class="tag">BM25 retrieval</span><span class="tag">Evaluation</span></div>
-          <div class="fact"><a class="btn-dark sm" href="#demo" aria-label="Try it live: The standards tutor answering a question about rounding decimals">Try it live &uarr;</a><button type="button" class="btn-soft sm" data-open="dlg-rag">How it&rsquo;s built</button></div>
+          <div class="fact"><a class="btn-dark sm" href="#demo" aria-label="Try it live: The standards tutor answering a question about rounding decimals">Try it live &uarr;</a><button type="button" class="btn-soft sm" data-open="dlg-rag">How it&rsquo;s built</button><a class="btn-soft sm" href="https://github.com/shaylynnette/standards-grounded-rag-tutor" target="_blank" rel="noopener">Source &#8599;</a></div>
         </div>
       </article>
       <article class="fcard" data-status="prod">
@@ -478,7 +478,7 @@ body.dlg-open{overflow:hidden;}
         <span class="pt-body"><span class="badge b-build">Building</span><strong>Crosswalk agent and a standards-lookup MCP server</strong><em>A tool-calling agent with a human approval step and an audit trail. In development.</em><u>Details &rarr;</u></span>
       </button>
     </div>
-    <p class="s-body" style="margin-top:1rem;font-size:13px">Client details are generalized. Where a repository is public, its link appears here.</p>
+    <p class="s-body" style="margin-top:1rem;font-size:13px">Client details are generalized. The tutor&rsquo;s source is public; other repositories are private.</p>
   </div>
 </section>
 
@@ -668,7 +668,7 @@ body.dlg-open{overflow:hidden;}
       </figure>
       </div>
       <div class="tags"><span class="tag">Retrieval-augmented generation</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span><span class="tag">Guardrails</span></div>
-      <p class="pending">Repository link: coming once the code is cleaned up for public release.</p>
+      <div class="btns" style="margin-top:1rem"><a class="btn-dark" href="https://github.com/shaylynnette/standards-grounded-rag-tutor" target="_blank" rel="noopener">View source on GitHub &#8599;</a></div><p class="pending">Source is free to read and run. Commercial use needs a license (PolyForm Noncommercial).</p>
 
   </div>
 </dialog>
@@ -910,7 +910,7 @@ body.dlg-open{overflow:hidden;}
   </div>
 </dialog>
 <dialog class="pdialog" id="dlg-agent" aria-labelledby="dlg-agent-t">
-  <div class="pd-head"><div><div class="kicker">Flagship in build &middot; public repository planned</div><h3 id="dlg-agent-t">Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
+  <div class="pd-head"><div><div class="kicker">Flagship in build &middot; repository to follow</div><h3 id="dlg-agent-t">Standards-crosswalk agent and a standards-lookup MCP server</h3></div>
     <div class="pd-act"><span class="badge b-build">Building</span><button type="button" class="pd-close" data-close aria-label="Close details">&times;</button></div></div>
   <div class="pd-body">
 <p>The crosswalk workflow above, rebuilt as a tool-calling agent on public standards only: it reads a lesson set, calls a standards-lookup tool exposed through the Model Context Protocol (MCP), drafts the mapping and gap report, then pauses for human approval. Every run writes an audit trail.</p>
