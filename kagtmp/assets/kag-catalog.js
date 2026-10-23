@@ -35,6 +35,7 @@ window.KAG_CATALOG = [
      --------------------------------------------------------------- */
   {
     id: "ai-for-educators-book",
+    thumb: "/assets/img/t/ai-for-educators-cover.jpg",
     title: "AI for Educators",
     subtitle: "The Practical Guide to Teaching Smarter, Saving Time, and Getting Your Life Back",
     type: "book",
@@ -291,6 +292,7 @@ window.KAG_CATALOG = [
   },
   {
     id: "cs-utility",
+    thumb: "/assets/img/home/substation.jpg",
     title: "Utility Technology Transformation",
     type: "case-study",
     audiences: ["organizations"],

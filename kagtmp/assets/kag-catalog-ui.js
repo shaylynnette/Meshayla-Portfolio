@@ -58,7 +58,10 @@
   /* ---------- cards ---------- */
   function cover(item) {
     var label = '<span class="cover-type">' + esc(TYPE_NAME[item.type] || "") + "</span>";
-    if (item.thumb && item.type !== "book") {
+    if (item.thumb && item.type === "book") {
+      return '<div class="cover bookimg">' + label + '<img src="' + esc(item.thumb) + '" alt="Cover of ' + esc(item.title) + '" width="100" height="150" loading="lazy" decoding="async"></div>';
+    }
+    if (item.thumb) {
       return '<div class="cover shot">' + label + '<img src="' + esc(item.thumb) + '" alt="" width="640" height="400" loading="lazy" decoding="async"></div>';
     }
     if (item.type === "case-study" && /%$/.test(item.metric || "")) {

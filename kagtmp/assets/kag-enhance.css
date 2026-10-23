@@ -167,3 +167,9 @@ html{scroll-behavior:smooth;scroll-padding-top:128px}
 .cap-pill{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:60;display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;background:var(--navy,#0B1F3A);color:#fff!important;font:600 13.5px/1 'DM Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(11,31,58,.35);border:1.5px solid var(--gold,#C9993A);transition:transform .15s}
 .cap-pill:hover,.cap-pill:focus-visible{transform:translateY(-2px);background:#12305a}
 @media(max-width:480px){.cap-pill span{display:none}.cap-pill{padding:13px}}
+
+.cover.bookimg{background:linear-gradient(135deg,var(--navy) 0%,#1d3a63 100%);height:168px;justify-content:center;align-items:center;padding:0}
+.cover.bookimg img{height:136px;width:auto;border-radius:2px 5px 5px 2px;box-shadow:6px 8px 18px rgba(0,0,0,.4);display:block}
+.cover.bookimg .cover-type{color:var(--gold-light,#E3C477)}
+@media(min-width:861px){.nav-links{gap:16px}.nav-links a{font-size:14px}.nav-search input{width:96px}.nav-links .nav-btn{padding-left:16px;padding-right:16px}}
+@media(min-width:1061px) and (max-width:1240px){.nav-search{display:none}.nav-links{gap:14px}}
