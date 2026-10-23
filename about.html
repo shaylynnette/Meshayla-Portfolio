@@ -477,74 +477,113 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
 <!-- MY STORY -->
 <section id="mystory" style="overflow:hidden;">
 
-  <!-- ① HERO: Seated photo left + headline right -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:580px;">
-    <div style="position:relative;overflow:hidden;">
-      <img src="/assets/img/site/img-06773b5eab.webp" alt="Meshayla Kemp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;min-height:580px;filter:blur(0.4px) contrast(0.96) brightness(1.02) saturate(1.05);" width="414" height="414" decoding="async" loading="lazy">
-      <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--cream) 100%);pointer-events:none;"></div>
-    </div>
-    <div style="background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem;">
-      <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.9rem;">
-        <span style="width:22px;height:3px;border-radius:2px;background:var(--green2);display:inline-block;"></span>My Story
+  <!-- ① HERO: Typographic full-width gradient -->
+  <div style="background:linear-gradient(145deg,var(--pink3) 0%,var(--yellow3) 45%,var(--green3) 100%);padding:6rem 3.5rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(247,197,216,.5),transparent 70%);top:-150px;right:-80px;pointer-events:none;"></div>
+    <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(181,217,156,.4),transparent 70%);bottom:-80px;left:5%;pointer-events:none;"></div>
+    <div style="max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--charcoal);margin-bottom:1.25rem;background:var(--white);padding:8px 20px;border-radius:50px;box-shadow:var(--shadow);">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--green2);display:inline-block;animation:pulse 2s infinite;"></span>My Story
       </div>
-      <h2 style="font-family:&#39;Playfair Display&#39;,serif;font-size:clamp(38px,4.5vw,62px);font-weight:700;line-height:1.05;color:var(--ink);letter-spacing:-.5px;margin-bottom:1rem;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,82px);font-weight:700;line-height:1.05;color:var(--ink);letter-spacing:-1.5px;margin-bottom:1.25rem;">
         Born to Teach.<br><em style="font-style:italic;color:var(--green2);">Built to Lead.</em>
       </h2>
-      <div style="width:48px;height:3px;background:linear-gradient(90deg,var(--pink2),var(--yellow2));border-radius:2px;margin-bottom:1.5rem;"></div>
-      <p style="font-size:15px;line-height:1.9;color:var(--charcoal);margin-bottom:1rem;">
-        I can’t recall a time I wasn’t teaching someone something. Long before enterprise contracts and graduate degrees, I was setting up classrooms in my grandparents’ living room every Sunday after church — assigning seats to my cousins, pulling out pencils, and genuinely believing that helping someone understand something was the most important thing I could do.
+      <div style="width:64px;height:4px;background:linear-gradient(90deg,var(--pink2),var(--yellow2),var(--green2));border-radius:4px;margin:0 auto 1.75rem;"></div>
+      <p style="font-size:17px;line-height:1.9;color:var(--charcoal);max-width:680px;margin:0 auto 1rem;">
+        I can&rsquo;t recall a time I wasn&rsquo;t teaching someone something. Long before enterprise contracts and graduate degrees, I was setting up classrooms in my grandparents&rsquo; living room every Sunday after church &mdash; assigning seats, passing out pencils, genuinely believing that helping someone understand something was the most worthwhile thing a person could do.
       </p>
-      <p style="font-size:15px;line-height:1.9;color:var(--charcoal);">
+      <p style="font-size:17px;line-height:1.9;color:var(--charcoal);max-width:680px;margin:0 auto;">
         That little girl never left. She just grew up and found bigger classrooms. The drive is exactly the same: <strong>find the best way to reach someone, build their confidence, and watch them grow.</strong>
       </p>
     </div>
   </div>
 
-  <!-- ② THEN & NOW: dark background, childhood polaroid -->
-  <div style="background:var(--ink);padding:4rem 3.5rem;position:relative;overflow:hidden;">
-    <div style="position:absolute;width:350px;height:350px;border-radius:50%;background:rgba(181,217,156,.05);top:-80px;right:-60px;pointer-events:none;"></div>
-    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;">
-      <div>
-        <div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--green2);margin-bottom:.85rem;">
-          <span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>The Beginning
-        </div>
-        <h3 style="font-family:&#39;Playfair Display&#39;,serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--cream);line-height:1.3;margin-bottom:1rem;letter-spacing:-.2px;">Sunday School Started It All</h3>
-        <p style="font-size:14px;line-height:1.9;color:rgba(253,250,246,.72);margin-bottom:.85rem;">
-          That little girl with the tiara — she was already a teacher. She just didn’t have a classroom yet. Every Sunday she made one. She assigned seats, gave lessons, and genuinely believed that helping people understand things was one of the most worthwhile things a person could do.
-        </p>
-        <p style="font-size:14px;line-height:1.9;color:rgba(253,250,246,.72);">
-          <strong style="color:var(--cream);">She was right.</strong> She still shows up every day with that same conviction — just with a longer résumé, a deeper toolkit, and a clearer understanding of how transformative learning truly is when it’s designed well.
-        </p>
+  <!-- ② CHALKBOARD SCENE: Sunday School origin story -->
+  <div style="background:#3A5240;position:relative;padding:4rem 3.5rem;overflow:hidden;">
+    <!-- Chalkboard texture: subtle noise via overlapping gradients -->
+    <div style="position:absolute;inset:0;opacity:.06;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0px,rgba(255,255,255,.04) 1px,transparent 1px,transparent 40px),repeating-linear-gradient(0deg,rgba(255,255,255,.08) 0px,rgba(255,255,255,.04) 1px,transparent 1px,transparent 40px);pointer-events:none;"></div>
+    <!-- Chalk ledge at bottom -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:12px;background:#5C3A1E;opacity:.7;"></div>
+    <!-- Corner worn spots -->
+    <div style="position:absolute;top:0;left:0;width:80px;height:80px;background:radial-gradient(circle at top left,rgba(255,255,255,.05),transparent);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:12px;right:0;width:100px;height:60px;background:radial-gradient(circle at bottom right,rgba(255,255,255,.04),transparent);pointer-events:none;"></div>
+
+    <div style="max-width:1100px;margin:0 auto;position:relative;z-index:2;">
+
+      <!-- Chalkboard header label -->
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span style="font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.2);padding:5px 18px;border-radius:50px;">The Beginning</span>
       </div>
-      <!-- Polaroid childhood photo -->
-      <div style="flex-shrink:0;">
-        <div style="background:var(--white);border-radius:4px;padding:12px 12px 44px;box-shadow:0 20px 56px rgba(0,0,0,.45);transform:rotate(-3deg);transition:transform .35s ease;" onmouseover="this.style.transform=&#39;rotate(0deg) scale(1.03)&#39;" onmouseout="this.style.transform=&#39;rotate(-3deg)&#39;">
-          <img src="/assets/img/site/img-5d27c73b55.webp" alt="Young Meshayla — already a teacher" style="width:220px;height:220px;object-fit:cover;object-position:left 15%;display:block;border-radius:2px;" width="414" height="414" decoding="async" loading="lazy">
-          <div style="text-align:center;padding-top:8px;">
-            <span style="font-family:&#39;Playfair Display&#39;,serif;font-size:12px;font-style:italic;color:var(--muted);">~7 years old ✨</span>
+
+      <!-- CONTENT: photo floats left, text wraps right -->
+      <div style="display:flex;gap:2.5rem;align-items:flex-start;">
+
+        <!-- Photo: polaroid on chalkboard -->
+        <div style="flex-shrink:0;position:relative;">
+          <!-- Tape effect top -->
+          <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:60px;height:18px;background:rgba(255,230,102,.55);border-radius:2px;z-index:3;transform:translateX(-50%) rotate(-1deg);"></div>
+          <!-- Polaroid frame -->
+          <div style="background:rgba(255,255,255,.95);padding:10px 10px 36px;border-radius:3px;box-shadow:0 8px 32px rgba(0,0,0,.5),0 2px 6px rgba(0,0,0,.3);transform:rotate(2deg);transition:transform .3s ease;position:relative;"
+               onmouseover="this.style.transform='rotate(0deg) scale(1.03)'"
+               onmouseout="this.style.transform='rotate(2deg)'">
+            <img src="/assets/img/site/img-78e9f32172.webp"
+                 alt="Young Meshayla — born to teach"
+                 style="width:180px;height:230px;object-fit:cover;object-position:center top;display:block;border-radius:1px;" width="217" height="414" decoding="async" loading="lazy">
+            <!-- Chalk-style caption on polaroid white space -->
+            <div style="text-align:center;padding-top:6px;">
+              <span style="font-family:'Playfair Display',serif;font-size:11px;font-style:italic;color:#555;display:block;line-height:1.4;">&ldquo;One day, I&rsquo;m going<br>to be a teacher.&rdquo;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text: chalk-white, wraps around photo -->
+        <div style="flex:1;">
+          <!-- Chalk headline -->
+          <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,38px);font-weight:600;color:rgba(255,255,255,.95);line-height:1.3;margin-bottom:1.1rem;letter-spacing:-.2px;text-shadow:1px 1px 3px rgba(0,0,0,.3);">
+            After Church at Grandma&rsquo;s&mdash;<br>She Made a Classroom
+          </h3>
+          <!-- Chalk underline doodle simulation -->
+          <div style="width:120px;height:3px;background:rgba(255,255,255,.35);border-radius:2px;margin-bottom:1.25rem;position:relative;">
+            <div style="position:absolute;right:-30px;top:0;width:28px;height:3px;background:rgba(255,255,255,.15);border-radius:2px;"></div>
+          </div>
+          <p style="font-size:14px;line-height:1.95;color:rgba(255,255,255,.82);margin-bottom:1rem;">
+            That little girl with the bow in her hair wasn&rsquo;t waiting for a classroom. She made one. Every Sunday after church, while the adults gathered and the food was laid out at her grandmother&rsquo;s house, she was in the other room &mdash; worksheets already copied, seats already assigned, lesson already planned. Her cousins were her students whether they knew it or not.
+          </p>
+          <p style="font-size:14px;line-height:1.95;color:rgba(255,255,255,.82);margin-bottom:1rem;">
+            There was no curriculum standard, no LMS, no SME to interview. Just a little girl who couldn&rsquo;t <em>not</em> teach. She understood instinctively what takes most instructional designers years to learn: that learning is most powerful when it meets people exactly where they are &mdash; even if where they are is a grandmother&rsquo;s living room on a Sunday afternoon.
+          </p>
+          <p style="font-size:14px;line-height:1.95;color:rgba(255,255,255,.82);">
+            <strong style="color:rgba(255,255,255,.95);">She never stopped.</strong> The worksheets became curriculum plans. The cousins became enterprise audiences. The living room became boardrooms, training sessions, and government classrooms across the country. But the drive &mdash; that irresistible pull toward helping someone understand something &mdash; has never changed.
+          </p>
+
+          <!-- Chalk doodle bullets -->
+          <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.6rem;">
+            <span style="border:1px dashed rgba(255,255,255,.3);color:rgba(255,255,255,.6);font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 14px;border-radius:50px;">&#9998; Tyler ISD — 17,000+ students</span>
+            <span style="border:1px dashed rgba(255,255,255,.3);color:rgba(255,255,255,.6);font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 14px;border-radius:50px;">&#9998; Chapel Hill ISD — National Champions</span>
+            <span style="border:1px dashed rgba(255,255,255,.3);color:rgba(255,255,255,.6);font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 14px;border-radius:50px;">&#9998; Students earned teaching contracts</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ③ EDUCATOR HIGHLIGHTS: subtle, light, not busy -->
+  <!-- ③ EDUCATOR HIGHLIGHTS -->
   <div style="background:linear-gradient(135deg,var(--green3),var(--yellow3));padding:2.5rem 3.5rem;">
     <div style="max-width:1100px;margin:0 auto;">
-      <div style="font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--charcoal);margin-bottom:1.25rem;text-align:center;opacity:.7;">Educator Highlights</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+      <div style="font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--charcoal);margin-bottom:1.1rem;text-align:center;opacity:.65;">Educator Highlights</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;">
         <div style="background:var(--white);border-radius:14px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow);">
-          <span style="font-size:28px;flex-shrink:0;">📚</span>
+          <span style="font-size:26px;flex-shrink:0;margin-top:2px;">&#128218;</span>
           <div>
             <div style="font-size:12px;font-weight:800;color:var(--ink);margin-bottom:.25rem;">Grant-Funded Novel &amp; Pen Pal Program</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.65;">Won a district grant to launch a 4th-grade reading and pen pal initiative — recognized publicly by district leadership for the innovation and student excitement it generated.</div>
+            <div style="font-size:11px;color:var(--muted);line-height:1.65;">Won a district grant to launch a 4th-grade reading and pen pal initiative — recognized publicly by district leadership and featured in district communications.</div>
           </div>
         </div>
         <div style="background:var(--white);border-radius:14px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow);">
-          <span style="font-size:28px;flex-shrink:0;">🎓</span>
+          <span style="font-size:26px;flex-shrink:0;margin-top:2px;">&#127891;</span>
           <div>
             <div style="font-size:12px;font-weight:800;color:var(--ink);margin-bottom:.25rem;">Superintendent Offered Seniors Teaching Contracts</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.65;">Students in Shayla’s Educators Rising program were offered contracts to return and teach after earning their bachelor’s degrees — and completed TEA educational aide certification. <em style="color:var(--green2);">#ProudTeacher</em></div>
+            <div style="font-size:11px;color:var(--muted);line-height:1.65;">Students in Shayla&rsquo;s program were offered contracts to return and teach after earning their degrees &mdash; and completed TEA educational aide certification. <em style="color:var(--green2);">#ProudTeacher</em></div>
           </div>
         </div>
       </div>
@@ -553,126 +592,283 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
 
   <!-- ④ PULLQUOTE -->
   <div style="background:linear-gradient(135deg,var(--pink3),var(--yellow3));padding:2.5rem 3.5rem;text-align:center;">
-    <blockquote style="font-family:&#39;Playfair Display&#39;,serif;font-size:clamp(18px,2.5vw,26px);font-style:italic;font-weight:400;color:var(--ink);line-height:1.6;max-width:760px;margin:0 auto .75rem;">“I have always believed that knowledge is one of the greatest gifts you can give another person. I’ve built my entire career around finding the right way to give it.”</blockquote>
-    <cite style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green2);font-style:normal;font-weight:800;">Meshayla Kemp — Enterprise Learning Architect</cite>
+    <blockquote style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,26px);font-style:italic;color:var(--ink);line-height:1.6;max-width:760px;margin:0 auto .75rem;">&ldquo;I have always believed that knowledge is one of the greatest gifts you can give another person. I&rsquo;ve built my entire career around finding the right way to give it.&rdquo;</blockquote>
+    <cite style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green2);font-style:normal;font-weight:800;">Meshayla Kemp &mdash; Enterprise Learning Architect</cite>
   </div>
 
-  <!-- ⑤ FAITH + close-up photo -->
+  <!-- ⑤ FAITH + close-up -->
   <div style="background:var(--white);display:grid;grid-template-columns:1fr 1fr;min-height:480px;">
     <div style="padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center;">
       <div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.85rem;">
         <span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>Faith &amp; Foundation
       </div>
-      <h3 style="font-family:&#39;Playfair Display&#39;,serif;font-size:clamp(24px,3vw,36px);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:1rem;letter-spacing:-.2px;">Grounded in<br><em style="color:var(--green2);">Something Greater</em></h3>
-      <p style="font-size:14px;line-height:1.9;color:var(--charcoal);margin-bottom:1rem;">
-        My faith is not separate from my work — it <em>is</em> my work. Deeply rooted in my Christian faith, I carry the belief that <strong>God is able to do exceedingly and abundantly above anything I could ever imagine.</strong> Life has brought real challenges and moments of doubt — but I always come back to one truth: I know who I am, and I know Whose I am.
-      </p>
-      <p style="font-size:14px;line-height:1.9;color:var(--charcoal);margin-bottom:1.5rem;">
-        I bring that same principle to every learning engagement. New technology, new processes, new curriculum can feel overwhelming — but with the right mindset and the right support, <strong style="color:var(--green2);">anything is learnable.</strong>
-      </p>
+      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:1rem;letter-spacing:-.2px;">Grounded in<br><em style="color:var(--green2);">Something Greater</em></h3>
+      <p style="font-size:14px;line-height:1.9;color:var(--charcoal);margin-bottom:1rem;">My faith is not separate from my work &mdash; it <em>is</em> my work. Deeply rooted in my Christian faith, I carry the belief that <strong>God is able to do exceedingly and abundantly above anything I could ever imagine.</strong> Life has brought real challenges &mdash; but I always return to one truth: I know who I am, and I know Whose I am.</p>
+      <p style="font-size:14px;line-height:1.9;color:var(--charcoal);margin-bottom:1.5rem;">I bring that same principle to every learning engagement. New technology, new processes, new curriculum can feel overwhelming &mdash; but with the right mindset and support, <strong style="color:var(--green2);">anything is learnable.</strong></p>
       <div style="display:flex;flex-direction:column;gap:.65rem;">
         <div style="background:var(--ink);border-radius:11px;padding:.9rem 1.1rem;border-left:4px solid var(--yellow2);">
-          <p style="font-family:&#39;Playfair Display&#39;,serif;font-size:13px;font-style:italic;color:rgba(253,250,246,.85);margin-bottom:.3rem;">“I can do all things through Christ who strengthens me.”</p>
+          <p style="font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(253,250,246,.85);margin-bottom:.3rem;">&ldquo;I can do all things through Christ who strengthens me.&rdquo;</p>
           <span style="font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--yellow2);">Philippians 4:13</span>
         </div>
         <div style="background:var(--ink);border-radius:11px;padding:.9rem 1.1rem;border-left:4px solid var(--green2);">
-          <p style="font-family:&#39;Playfair Display&#39;,serif;font-size:13px;font-style:italic;color:rgba(253,250,246,.85);margin-bottom:.3rem;">“Now unto Him that is able to do exceeding abundantly above all that we ask or think…”</p>
+          <p style="font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(253,250,246,.85);margin-bottom:.3rem;">&ldquo;Now unto Him that is able to do exceeding abundantly above all that we ask or think&hellip;&rdquo;</p>
           <span style="font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green2);">Ephesians 3:20</span>
         </div>
       </div>
     </div>
-    <!-- Close-up photo, skin softened -->
     <div style="position:relative;overflow:hidden;min-height:480px;">
       <img src="/assets/img/site/img-58a2de5720.webp" alt="Meshayla Kemp" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:blur(0.4px) contrast(0.96) brightness(1.02) saturate(1.05);" width="1000" height="1000" decoding="async" loading="lazy">
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,var(--white) 0%,transparent 35%);pointer-events:none;"></div>
     </div>
   </div>
 
-  <!-- ⑥ PROFESSIONAL JOURNEY + stats -->
+  <!-- ⑥ AI INTEGRATION — full feature image -->
+  <div style="background:var(--ink);overflow:hidden;">
+
+    <!-- Top label bar -->
+    <div style="background:rgba(141,201,110,.08);border-bottom:1px solid rgba(141,201,110,.15);padding:.75rem 3.5rem;display:flex;align-items:center;gap:.75rem;">
+      <span style="width:8px;height:8px;border-radius:50%;background:var(--green2);display:inline-block;animation:pulse 2s infinite;"></span>
+      <span style="font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green2);">AI Integration &amp; Creative Partnership</span>
+    </div>
+
+    <!-- Main grid: image left, text right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;min-height:580px;">
+
+      <!-- Full image — no cropping, fills left column -->
+      <div style="position:relative;overflow:hidden;">
+        <img src="/assets/img/site/img-cb63917687.webp"
+             alt="Meshayla Kemp — AI Creative Partner"
+             style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" width="1000" height="1191" decoding="async" loading="lazy">
+        <!-- Right edge fade into dark -->
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--ink) 100%);pointer-events:none;"></div>
+      </div>
+
+      <!-- Text: right column -->
+      <div style="padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:1rem;letter-spacing:-.3px;">
+          AI Isn&rsquo;t Just a Tool.<br><em style="font-style:italic;color:var(--green2);">It&rsquo;s a Creative Partner.</em>
+        </h3>
+        <p style="font-size:14px;line-height:1.9;color:rgba(253,250,246,.72);margin-bottom:1rem;">
+          I don&rsquo;t just teach others to integrate AI &mdash; I live it in every phase of my work. From building AI-accelerated curriculum crosswalks that mapped six states&rsquo; education standards in days, to deploying automated voiceover pipelines through WellSaid Labs and Murf.ai, to using strategic ChatGPT prompting for instructional design and content architecture &mdash; AI is embedded in how I think, design, and deliver.
+        </p>
+        <p style="font-size:14px;line-height:1.9;color:rgba(253,250,246,.72);margin-bottom:1.5rem;">
+          The image on the left? <strong style="color:var(--cream);">Created entirely through strategic prompting in ChatGPT.</strong> Every detail &mdash; the likeness, the branding, the messaging, the composition &mdash; was directed through intentional, iterative prompts. This is what AI-enhanced creative work looks like when a skilled human is in the driver&rsquo;s seat.
+        </p>
+
+        <!-- Process strip: matches image's process list -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem;">
+          <div style="background:rgba(253,250,246,.05);border:1px solid rgba(253,250,246,.1);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem;">
+            <span style="color:var(--green2);font-weight:800;font-size:12px;">&#8594;</span>
+            <span style="font-size:11px;font-weight:700;color:rgba(253,250,246,.8);">Discover</span>
+          </div>
+          <div style="background:rgba(253,250,246,.05);border:1px solid rgba(253,250,246,.1);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem;">
+            <span style="color:var(--green2);font-weight:800;font-size:12px;">&#8594;</span>
+            <span style="font-size:11px;font-weight:700;color:rgba(253,250,246,.8);">Strategize</span>
+          </div>
+          <div style="background:rgba(253,250,246,.05);border:1px solid rgba(253,250,246,.1);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem;">
+            <span style="color:var(--green2);font-weight:800;font-size:12px;">&#8594;</span>
+            <span style="font-size:11px;font-weight:700;color:rgba(253,250,246,.8);">Create</span>
+          </div>
+          <div style="background:rgba(253,250,246,.05);border:1px solid rgba(253,250,246,.1);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem;">
+            <span style="color:var(--green2);font-weight:800;font-size:12px;">&#8594;</span>
+            <span style="font-size:11px;font-weight:700;color:rgba(253,250,246,.8);">Elevate</span>
+          </div>
+          <div style="background:rgba(141,201,110,.12);border:1px solid rgba(141,201,110,.3);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem;grid-column:1/-1;">
+            <span style="color:var(--green2);font-weight:800;font-size:12px;">&#10003;</span>
+            <span style="font-size:11px;font-weight:800;color:var(--green2);">Impact — Delivered.</span>
+          </div>
+        </div>
+
+        <!-- AI tools -->
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">ChatGPT (Strategic Prompting)</span>
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">Midjourney</span>
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">WellSaid Labs</span>
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">Murf.ai</span>
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">Claude AI</span>
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">Microsoft Copilot</span>
+          <span style="background:rgba(181,217,156,.12);color:var(--green2);border:1px solid rgba(181,217,156,.25);padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700;">Canva AI</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom full-width tagline bar -->
+    <div style="background:rgba(141,201,110,.06);border-top:1px solid rgba(141,201,110,.12);padding:1.1rem 3.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <span style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--cream);">&ldquo;Together, we brainstorm. Create. Elevate. <em style="color:var(--green2);">That&rsquo;s the magic.</em>&rdquo;</span>
+      <span style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(253,250,246,.35);">Purpose. Strategy. Impact.</span>
+    </div>
+
+  </div>
+
+<!-- ⑦ PROFESSIONAL JOURNEY + stats -->
   <div style="background:var(--cream);padding:4rem 3.5rem;">
     <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;">
       <div>
         <div style="display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.85rem;">
           <span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>The Professional Journey
         </div>
-        <h3 style="font-family:&#39;Playfair Display&#39;,serif;font-size:clamp(24px,3vw,36px);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:1rem;letter-spacing:-.2px;">Marrying Business &amp;<br><em style="color:var(--green2);">Education on Purpose</em></h3>
-        <p style="font-size:14px;line-height:1.9;color:var(--charcoal);margin-bottom:1rem;">The MBA and the M.Ed. were not accidents. They were a deliberate decision to build a rare combination: <strong>the business fluency to speak to executive stakeholders, and the instructional expertise to design learning that actually changes behavior.</strong></p>
-        <p style="font-size:14px;line-height:1.9;color:var(--charcoal);">Every deliverable I produce is designed with real people in mind — the employee nervous about a new platform, the student who never felt learning was made for them, the team that needs to change and doesn’t know how. That is always my why.</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:1rem;letter-spacing:-.2px;">Marrying Business &amp;<br><em style="color:var(--green2);">Education on Purpose</em></h3>
+        <p style="font-size:14px;line-height:1.9;color:var(--charcoal);margin-bottom:1rem;">The MBA and M.Ed. were not accidents. They were a deliberate decision to build something rare: <strong>the business fluency to speak to executive stakeholders, and the instructional expertise to design learning that actually changes behavior.</strong></p>
+        <p style="font-size:14px;line-height:1.9;color:var(--charcoal);">Every deliverable I produce is designed with real people in mind &mdash; the employee nervous about a new platform, the student who never felt like learning was made for them, the team that needs to change and doesn&rsquo;t know how. That has always been my why.</p>
         <div style="display:flex;gap:.85rem;margin-top:1.5rem;flex-wrap:wrap;">
           <div style="background:var(--green3);border-radius:11px;padding:.8rem 1.1rem;border:1px solid var(--green2);flex:1;min-width:115px;text-align:center;">
-            <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:22px;font-weight:700;color:var(--ink);">MBA</div>
+            <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);">MBA</div>
             <div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:2px;">Business Administration</div>
           </div>
           <div style="background:var(--pink3);border-radius:11px;padding:.8rem 1.1rem;border:1px solid var(--pink2);flex:1;min-width:115px;text-align:center;">
-            <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:22px;font-weight:700;color:var(--ink);">M.Ed.</div>
+            <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);">M.Ed.</div>
             <div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:2px;">Educational Technology</div>
           </div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;">
         <div style="background:var(--ink);border-radius:16px;padding:1.5rem;text-align:center;grid-column:1/-1;">
-          <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:48px;font-weight:700;color:var(--green2);line-height:1;">10+</div>
+          <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--green2);line-height:1;">10+</div>
           <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(253,250,246,.5);margin-top:5px;">Years of Experience</div>
         </div>
         <div style="background:var(--pink3);border-radius:16px;padding:1.25rem;text-align:center;border:1px solid var(--pink2);">
-          <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1;">9+</div>
+          <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1;">9+</div>
           <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:3px;">Industries</div>
         </div>
         <div style="background:var(--yellow3);border-radius:16px;padding:1.25rem;text-align:center;border:1px solid var(--yellow2);">
-          <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1;">100%</div>
+          <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1;">100%</div>
           <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:3px;">First Submission</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ⑦ DEI -->
+
+  <!-- MBA meets M.Ed. — icon illustration -->
+  <div style="max-width:560px;margin:2rem auto 0;text-align:center;" role="img" aria-label="Decorative icon: a briefcase representing the MBA in Business and a book representing the M.Ed. in Educational Technology, joined by a heart. Created with Claude AI per WCAG 2.1 AA and Section 504.">
+<svg viewBox="0 0 560 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+<style>
+@keyframes beat{0%,100%{transform:scale(1)}45%{transform:scale(1.25)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes pop{0%{opacity:0;transform:translateY(0)}50%{opacity:1;transform:translateY(-14px)}100%{opacity:0;transform:translateY(-28px)}}
+.hb{animation:beat 1.5s ease-in-out infinite;transform-origin:280px 98px}
+.briefcase{animation:bob 3s ease-in-out infinite;transform-origin:120px 100px}
+.book{animation:bob 3s .5s ease-in-out infinite;transform-origin:440px 100px}
+.p1{animation:pop 2s .0s ease-out infinite}
+.p2{animation:pop 2s .6s ease-out infinite}
+.p3{animation:pop 2s 1.2s ease-out infinite}
+</style>
+
+<!-- ── BRIEFCASE ── -->
+<g class="briefcase">
+  <!-- handle -->
+  <path d="M92 62 Q92 46 108 46 Q124 46 124 62" fill="none" stroke="#1B3A5C" stroke-width="7" stroke-linecap="round"/>
+  <!-- body -->
+  <rect x="60" y="62" width="96" height="76" rx="10" fill="#1B3A5C"/>
+  <!-- clasp bar -->
+  <rect x="60" y="97" width="96" height="9" fill="#0D2238"/>
+  <!-- clasp buckle -->
+  <rect x="100" y="89" width="20" height="18" rx="4" fill="#FFD166" stroke="#C9993A" stroke-width="1.5"/>
+  <!-- shine lines -->
+  <line x1="75" y1="75" x2="75" y2="130" stroke="rgba(255,255,255,.08)" stroke-width="4"/>
+  <line x1="85" y1="75" x2="85" y2="130" stroke="rgba(255,255,255,.05)" stroke-width="2"/>
+  <!-- wedding ring -->
+  <circle cx="156" cy="100" r="12" fill="none" stroke="#FFD166" stroke-width="4"/>
+  <circle cx="156" cy="100" r="4" fill="#FFD166"/>
+  <!-- diamond -->
+  <polygon points="156,88 151,93 156,95 161,93" fill="#B8E4FF" stroke="#8DC0E0" stroke-width=".5"/>
+  <!-- label -->
+  <text x="108" y="162" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#EE9BB8">Business</text>
+  <text x="108" y="178" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8AB4CC" font-style="italic">M.B.A.</text>
+</g>
+
+<!-- ── FLOATING HEARTS ── -->
+<g class="p1" transform="translate(256,55)"><path d="M0 14 C0 14-11 3-11-5 C-11-11-6-15-1-15 C0-15 0-10 0-10 C0-10 0-15 1-15 C6-15 11-11 11-5 C11 3 0 14 0 14Z" fill="#F7C5D8"/></g>
+<g class="p2" transform="translate(280,38)"><path d="M0 16 C0 16-12 4-12-5 C-12-12-7-17-1-17 C0-17 0-11 0-11 C0-11 0-17 1-17 C7-17 12-12 12-5 C12 4 0 16 0 16Z" fill="#EE9BB8"/></g>
+<g class="p3" transform="translate(304,50)"><path d="M0 14 C0 14-10 3-10-5 C-10-11-5-15 0-15 C0-15 0-10 0-10 C0-10 0-15 0-15 C5-15 10-11 10-5 C10 3 0 14 0 14Z" fill="#F7C5D8"/></g>
+
+<!-- ── CENTRE HEART ── -->
+<g class="hb">
+  <path d="M280 115 C280 115 248 93 248 72 C248 57 258 50 268 50 C274 50 280 57 280 57 C280 57 286 50 292 50 C302 50 312 57 312 72 C312 93 280 115 280 115Z" fill="#EE9BB8" stroke="#C4547A" stroke-width="2"/>
+  <text x="280" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="white">always</text>
+</g>
+
+<!-- ── connecting line / arms reaching ── -->
+<line x1="156" y1="100" x2="248" y2="85" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3" opacity=".5"/>
+<line x1="312" y1="85" x2="404" y2="100" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3" opacity=".5"/>
+
+<!-- ── BOOK ── -->
+<g class="book">
+  <!-- body -->
+  <rect x="404" y="62" width="76" height="96" rx="6" fill="#8DC96E"/>
+  <!-- spine -->
+  <rect x="404" y="62" width="14" height="96" rx="4" fill="#5A9D4E"/>
+  <!-- pages right edge -->
+  <rect x="476" y="65" width="6" height="90" rx="2" fill="#F5F0E8"/>
+  <!-- page lines -->
+  <line x1="424" y1="80" x2="472" y2="80" stroke="#4A8D3E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="424" y1="90" x2="472" y2="90" stroke="#4A8D3E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="424" y1="100" x2="472" y2="100" stroke="#4A8D3E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="424" y1="110" x2="472" y2="110" stroke="#4A8D3E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="424" y1="120" x2="472" y2="120" stroke="#4A8D3E" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="424" y1="130" x2="460" y2="130" stroke="#4A8D3E" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- grad cap on book -->
+  <rect x="410" y="46" width="64" height="11" rx="3" fill="#1C1A17"/>
+  <rect x="428" y="35" width="28" height="16" rx="4" fill="#2D2B28"/>
+  <ellipse cx="442" cy="35" rx="14" ry="5" fill="#1C1A17"/>
+  <!-- tassel -->
+  <line x1="468" y1="51" x2="480" y2="68" stroke="#FFD166" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="481" cy="72" r="5" fill="#FFD166"/>
+  <!-- wedding ring -->
+  <circle cx="404" cy="100" r="12" fill="none" stroke="#FFD166" stroke-width="4"/>
+  <circle cx="404" cy="100" r="4" fill="#FFD166"/>
+  <polygon points="404,88 399,93 404,95 409,93" fill="#B8E4FF" stroke="#8DC0E0" stroke-width=".5"/>
+  <!-- label -->
+  <text x="445" y="180" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#8DC96E">Education</text>
+  <text x="445" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8AD890" font-style="italic">M.Ed. · Ed. Technology</text>
+</g>
+
+<!-- bottom tagline -->
+<text x="280" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#605850">On purpose. By design. ✦</text>
+
+</svg>
+  </div>
+
+
+  <!-- ⑧ DEI -->
   <div style="background:linear-gradient(160deg,var(--green3),var(--cream));padding:3.5rem 3.5rem;">
     <div style="max-width:1100px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:1.75rem;">
         <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:.75rem;">
           <span style="width:18px;height:2px;background:var(--green2);display:inline-block;"></span>Commitment to DEI
         </div>
-        <h3 style="font-family:&#39;Playfair Display&#39;,serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);line-height:1.3;letter-spacing:-.2px;">Learning Belongs to Everyone.<br><em style="color:var(--green2);">I Know This Firsthand.</em></h3>
+        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);line-height:1.3;letter-spacing:-.2px;">Learning Belongs to Everyone.<br><em style="color:var(--green2);">I Know This Firsthand.</em></h3>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.75rem;">
-        <p style="font-size:13px;line-height:1.85;color:var(--charcoal);">As a Black woman entrepreneur navigating spaces not always designed with me in mind, my commitment to DEI is personal first. <strong>I am neurodivergent — and my ADHD is my superpower.</strong> My brain sees the full picture and every tiny piece within it simultaneously.</p>
-        <p style="font-size:13px;line-height:1.85;color:var(--charcoal);">I can walk into any curriculum, training program, or OCM engagement and instantly identify what’s missing, what’s misaligned, and what will become a blocker before it surfaces. <strong style="color:var(--green2);">My ADHD doesn’t get in the way of the work. It’s the reason the work is exceptional.</strong></p>
+        <p style="font-size:13px;line-height:1.85;color:var(--charcoal);">As a Black woman entrepreneur navigating spaces not always designed with me in mind, my commitment to DEI is personal first. <strong>I am neurodivergent &mdash; and my ADHD is my superpower.</strong> My brain sees the full picture and every tiny piece within it simultaneously.</p>
+        <p style="font-size:13px;line-height:1.85;color:var(--charcoal);">I can walk into any curriculum, training program, or OCM engagement and instantly identify what&rsquo;s missing, what&rsquo;s misaligned, and what will become a blocker before it surfaces. <strong style="color:var(--green2);">My ADHD doesn&rsquo;t get in the way of the work. It&rsquo;s the reason the work is exceptional.</strong></p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
         <div style="background:var(--white);border-radius:14px;padding:1.25rem;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow);">
-          <div style="font-size:28px;margin-bottom:.45rem;">♿</div>
-          <div style="font-size:11px;font-weight:800;color:var(--ink);margin-bottom:.3rem;">Accessibility-First</div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5;">WCAG/ADA compliance built in from day one.</div>
+          <div style="font-size:28px;margin-bottom:.45rem;">&#9855;</div><div style="font-size:11px;font-weight:800;color:var(--ink);margin-bottom:.3rem;">Accessibility-First</div><div style="font-size:11px;color:var(--muted);line-height:1.5;">WCAG/ADA compliance built in from day one.</div>
         </div>
         <div style="background:var(--white);border-radius:14px;padding:1.25rem;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow);">
-          <div style="font-size:28px;margin-bottom:.45rem;">🌟</div>
-          <div style="font-size:11px;font-weight:800;color:var(--ink);margin-bottom:.3rem;">Representation</div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5;">Content designed to reflect diverse audiences.</div>
+          <div style="font-size:28px;margin-bottom:.45rem;">&#127775;</div><div style="font-size:11px;font-weight:800;color:var(--ink);margin-bottom:.3rem;">Representation</div><div style="font-size:11px;color:var(--muted);line-height:1.5;">Content designed to reflect diverse audiences.</div>
         </div>
         <div style="background:var(--ink);border-radius:14px;padding:1.25rem;text-align:center;box-shadow:var(--shadow);">
-          <div style="font-size:28px;margin-bottom:.45rem;">🧠</div>
-          <div style="font-size:11px;font-weight:800;color:var(--cream);margin-bottom:.3rem;">ADHD is My Superpower</div>
-          <div style="font-size:11px;color:rgba(253,250,246,.55);line-height:1.5;">Holistic and granular — catching gaps others miss.</div>
+          <div style="font-size:28px;margin-bottom:.45rem;">&#129504;</div><div style="font-size:11px;font-weight:800;color:var(--cream);margin-bottom:.3rem;">ADHD is My Superpower</div><div style="font-size:11px;color:rgba(253,250,246,.55);line-height:1.5;">Holistic and granular &mdash; catching gaps others miss.</div>
         </div>
         <div style="background:var(--white);border-radius:14px;padding:1.25rem;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow);">
-          <div style="font-size:28px;margin-bottom:.45rem;">🤝</div>
-          <div style="font-size:11px;font-weight:800;color:var(--ink);margin-bottom:.3rem;">Woman-Owned</div>
-          <div style="font-size:11px;color:var(--muted);line-height:1.5;">Kemp Advisory Group — equity and excellence.</div>
+          <div style="font-size:28px;margin-bottom:.45rem;">&#129309;</div><div style="font-size:11px;font-weight:800;color:var(--ink);margin-bottom:.3rem;">Woman-Owned</div><div style="font-size:11px;color:var(--muted);line-height:1.5;">Kemp Advisory Group &mdash; equity and excellence.</div>
         </div>
       </div>
     </div>
   </div>
 
 </section>
+
 <!-- PASSION / PHILOSOPHY -->
 <section class="passion" id="philosophy">
   <div class="passion-inner">
     <blockquote>“The best training doesn’t feel like training. It feels like the answer to a problem you already had.”</blockquote>
     <cite>Meshayla Kemp — Enterprise Learning Architect</cite>
-    <div class="method" data-method><div class="method-intro"><div class="method-kicker">How I work</div><h2 class="method-title">The Lesson Plan Method</h2><p class="method-sub">Every engagement starts the way a good teacher starts a lesson: with the learner. Five steps, in order. Choose one to see what it looks like in practice.</p></div><div class="m-tabs" role="tablist" aria-label="The five steps of the Lesson Plan Method"><button type="button" class="m-tab" role="tab" id="mt1" aria-controls="mp1" aria-selected="true" tabindex="0"><span class="m-n">01</span><span class="m-t">Diagnose First</span></button><button type="button" class="m-tab" role="tab" id="mt2" aria-controls="mp2" aria-selected="false" tabindex="-1"><span class="m-n">02</span><span class="m-t">Design for the Learner</span></button><button type="button" class="m-tab" role="tab" id="mt3" aria-controls="mp3" aria-selected="false" tabindex="-1"><span class="m-n">03</span><span class="m-t">Build for Transfer</span></button><button type="button" class="m-tab" role="tab" id="mt4" aria-controls="mp4" aria-selected="false" tabindex="-1"><span class="m-n">04</span><span class="m-t">Leverage AI Strategically</span></button><button type="button" class="m-tab" role="tab" id="mt5" aria-controls="mp5" aria-selected="false" tabindex="-1"><span class="m-n">05</span><span class="m-t">Measure What Matters</span></button></div><div class="m-panels"><div class="m-panel" role="tabpanel" id="mp1" aria-labelledby="mt1"><div class="m-sound"><span>Sound familiar?</span>&ldquo;We need a course on this by Friday.&rdquo;</div><h3 class="m-ph">Diagnose First</h3><p class="m-what">A training request is not yet a problem to solve. Before anything is built, I find the real performance gap and ask whether training is even the right fix.</p><ul class="m-checks"><li>Performance gap named before anything is built</li><li>Stakeholder, gap and DIF analyses completed</li><li>A clear answer to: is this a training problem?</li></ul><a class="m-proof" href="/case-studies/leap-framework/">See it in action: Leap, Don&rsquo;t Escalate &rarr;</a></div><div class="m-panel" role="tabpanel" id="mp2" aria-labelledby="mt2"><div class="m-sound"><span>Sound familiar?</span>&ldquo;The content is all there, so why is nobody finishing it?&rdquo;</div><h3 class="m-ph">Design for the Learner</h3><p class="m-what">Audience analysis drives every design decision, not the content inventory. I design for the person who is nervous about the new platform, not for the slide count.</p><ul class="m-checks"><li>Audience analysis before learning objectives</li><li>Role-based paths so people choose what fits their work</li><li>Accessibility (WCAG/ADA) built in from day one</li></ul><a class="m-proof" href="/case-studies/sap-concur-lms/">See it in action: 500 Learners, 500 Roads &rarr;</a></div><div class="m-panel" role="tabpanel" id="mp3" aria-labelledby="mt3"><div class="m-sound"><span>Sound familiar?</span>&ldquo;They passed the quiz, but nothing changed on the job.&rdquo;</div><h3 class="m-ph">Build for Transfer</h3><p class="m-what">Learning only counts when it shows up in the work. I pair practice with the tools people use in the moment, so training carries past the course.</p><ul class="m-checks"><li>Scenario-based practice built around real situations</li><li>Job aids and coaching guides that travel with the learner</li><li>Post-launch reinforcement, such as office hours</li></ul><a class="m-proof" href="/case-studies/clm-pcm-rollout/">See it in action: Two Planes, One Runway &rarr;</a></div><div class="m-panel" role="tabpanel" id="mp4" aria-labelledby="mt4"><div class="m-sound"><span>Sound familiar?</span>&ldquo;Everyone is using AI, and nobody agrees on how.&rdquo;</div><h3 class="m-ph">Leverage AI Strategically</h3><p class="m-what">Generative AI is a collaborator, not a shortcut. I use it where it speeds the work and keep a human in charge of the result.</p><ul class="m-checks"><li>AI used where it saves time: crosswalks, drafting, voiceover</li><li>A human in the driver's seat for every deliverable</li><li>Instructional integrity kept intact</li></ul><a class="m-proof" href="/case-studies/economics-curriculum-crosswalk/">See it in action: Six States, One Map &rarr;</a></div><div class="m-panel" role="tabpanel" id="mp5" aria-labelledby="mt5"><div class="m-sound"><span>Sound familiar?</span>&ldquo;How do we know it actually worked?&rdquo;</div><h3 class="m-ph">Measure What Matters</h3><p class="m-what">Evaluation is designed in from the start, not retrofitted when someone asks for proof. Measures tie back to what the business or the state needs to see.</p><ul class="m-checks"><li>Kirkpatrick and SAT-aligned evaluation planned from day one</li><li>Assessments that give reviewers evidence they can verify</li><li>Findings fed back into job aids and revisions</li></ul><a class="m-proof" href="/case-studies/michigan-certification/">See it in action: Right the First Time &rarr;</a></div></div></div>
-  
-  </div>
+    </div>
 </section>
 
 
