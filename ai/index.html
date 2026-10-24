@@ -116,22 +116,6 @@ h2.s-h2 em{font-style:italic;color:var(--green2);}
 .pending{font-size:12.5px;color:var(--muted);margin-top:1rem;font-style:italic;}
 
 /* LIVE DEMO */
-.demo{margin-top:1.5rem;background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.2rem 1.3rem;}
-.demo h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
-.demo form{display:flex;gap:.6rem;flex-wrap:wrap;}
-.demo input[type=text]{flex:1 1 260px;min-width:0;font:inherit;font-size:15px;padding:11px 16px;border:2px solid var(--border);border-radius:50px;background:var(--cream);color:var(--ink);}
-.demo input[type=text]:focus-visible{border-color:var(--green2);}
-.demo button{font:inherit;cursor:pointer;}
-.demo .go{background:var(--ink);color:var(--cream);border:0;border-radius:50px;padding:11px 24px;font-size:13px;font-weight:700;}
-.demo .go:disabled{opacity:.6;cursor:wait;}
-.demo .ex{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.8rem;}
-.demo .ex button{font-size:12px;font-weight:700;background:var(--cream);border:1px solid var(--border);border-radius:50px;padding:4px 12px;color:var(--charcoal);}
-.demo .ex button:hover{border-color:var(--green2);}
-.demo .out{margin-top:1rem;font-size:14.5px;color:var(--charcoal);}
-.demo .out .ans{white-space:pre-line;background:var(--green3);border:1px solid var(--green2);border-radius:14px;padding:12px 16px;}
-.demo .out .no{background:var(--yellow3);border:1px solid #B38F00;border-radius:14px;padding:12px 16px;}
-.demo .out ul{margin:.7rem 0 0 1.1rem;font-size:13.5px;}
-.demo .fine{font-size:12px;color:var(--muted);margin-top:.8rem;}
 
 /* LIVE TOOLS STRIP + SCREENSHOTS */
 .tools{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:1.6rem;}
@@ -225,15 +209,93 @@ footer{padding:2rem;text-align:center;font-size:12.5px;color:var(--muted);}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
 
+
+/* ===== Standards tutor console ===== */
+.hero{overflow-x:clip;}
+.hero-demo{position:relative;}
+.hero-demo::before{content:"";position:absolute;inset:-18px -14px -22px -14px;z-index:0;border-radius:36px;
+  background:radial-gradient(60% 55% at 15% 10%,rgba(247,197,216,.55),transparent 70%),radial-gradient(55% 50% at 90% 95%,rgba(184,217,156,.6),transparent 70%);filter:blur(14px);}
+.demo{position:relative;z-index:1;margin:0;border-radius:22px;padding:1px;
+  background:linear-gradient(135deg,rgba(238,155,184,.9),rgba(255,224,102,.9) 50%,rgba(94,154,60,.85));
+  box-shadow:0 1px 1px rgba(28,26,23,.04),0 12px 24px -8px rgba(28,26,23,.14),0 36px 70px -24px rgba(28,26,23,.22);}
+.demo-in{background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);border-radius:21px;overflow:hidden;}
+.d-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1.25rem;border-bottom:1px solid var(--border);background:rgba(253,250,246,.8);}
+.d-live{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--charcoal);}
+.d-dot{width:8px;height:8px;border-radius:50%;background:var(--green2);box-shadow:0 0 0 0 rgba(94,154,60,.55);animation:dpulse 2.4s ease-out infinite;}
+@keyframes dpulse{0%{box-shadow:0 0 0 0 rgba(94,154,60,.5)}70%,100%{box-shadow:0 0 0 9px rgba(94,154,60,0)}}
+.d-meta{font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:.2px;}
+.d-body{padding:1.35rem 1.35rem 1.1rem;}
+.demo-h{font-family:'Playfair Display',serif;font-size:25px;line-height:1.15;letter-spacing:-.2px;margin-bottom:.3rem;}
+.demo-sub{font-size:13.5px;color:var(--muted);margin-bottom:1rem;line-height:1.55;}
+.d-field{position:relative;display:flex;align-items:center;gap:.4rem;background:#fff;border:1.5px solid rgba(28,26,23,.14);border-radius:16px;padding:6px 6px 6px 14px;
+  transition:border-color .2s,box-shadow .2s;box-shadow:0 1px 2px rgba(28,26,23,.05);}
+.d-field:focus-within{border-color:var(--green2);box-shadow:0 0 0 4px rgba(94,154,60,.16),0 1px 2px rgba(28,26,23,.05);}
+.d-field svg{flex:none;color:var(--muted);}
+.demo input[type=text]{flex:1 1 auto;min-width:0;font:inherit;font-size:16px;font-weight:600;padding:10px 4px;border:0;background:transparent;color:var(--ink);outline:0;}
+.demo input[type=text]::placeholder{color:#8d8279;font-weight:500;}
+.d-key{flex:none;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);border:1px solid var(--border);border-bottom-width:2px;border-radius:6px;padding:4px 7px;background:var(--cream);}
+.d-field:focus-within .d-key{display:none;}
+.demo button{font:inherit;cursor:pointer;}
+.demo .go{flex:none;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);border:0;border-radius:12px;padding:11px 18px;font-size:13.5px;font-weight:800;letter-spacing:.2px;transition:transform .15s,background .2s;}
+.demo .go:hover{background:var(--charcoal);transform:translateY(-1px);}
+.demo .go:active{transform:translateY(0);}
+.demo .go:disabled{opacity:.65;cursor:progress;}
+.d-ex-l{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:1rem 0 .5rem;}
+.demo .ex{display:flex;flex-wrap:wrap;gap:.45rem;}
+.demo .ex button{font-size:12.5px;font-weight:700;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 13px;color:var(--charcoal);transition:border-color .2s,background .2s,transform .15s;}
+.demo .ex button:hover{border-color:var(--green2);background:var(--green3);transform:translateY(-1px);}
+.demo .out{margin-top:1.1rem;font-size:14.5px;color:var(--charcoal);min-height:0;}
+.demo .out:empty{display:none;}
+
+.u-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.8rem;font-size:12px;}
+.u-l{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-right:.2rem;}
+.u-chip{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--charcoal);background:var(--cream);border:1px solid var(--border);border-radius:999px;padding:3px 10px;}
+.u-chip.fix{background:var(--yellow3);border-color:rgba(179,143,0,.45);}
+.u-chip s{color:var(--muted);text-decoration-thickness:1px;}
+
+.r-card{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.1rem;background:linear-gradient(180deg,var(--green3),#f4fbea);border:1px solid rgba(94,154,60,.45);border-radius:16px;padding:1.05rem 1.15rem;animation:rin .5s cubic-bezier(.2,.8,.2,1) both;}
+.r-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:76px;padding:.55rem .7rem;border-radius:12px;background:var(--ink);color:var(--cream);text-align:center;}
+.r-badge b{font:800 17px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3px;}
+.r-badge span{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;opacity:.75;margin-top:4px;}
+.r-main{min-width:0;}
+.r-sub{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--green2);margin-bottom:.35rem;}
+.r-text{font-family:'Playfair Display',serif;font-size:19px;line-height:1.38;color:var(--ink);}
+.r-cite{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:.75rem;font-size:12px;color:var(--muted);}
+.r-cite code{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(255,255,255,.75);border:1px solid rgba(94,154,60,.35);border-radius:8px;padding:3px 8px;color:var(--charcoal);}
+.r-copy{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--charcoal);background:#fff;border:1px solid var(--border);border-radius:8px;padding:4px 10px;transition:border-color .2s;}
+.r-copy:hover{border-color:var(--green2);}
+.r-more{margin-top:.9rem;animation:rin .5s .08s cubic-bezier(.2,.8,.2,1) both;}
+.r-more h3{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem;}
+.r-row{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:baseline;padding:.55rem .1rem;border-top:1px solid var(--border);font-size:13.5px;}
+.r-row:first-of-type{border-top:0;}
+.r-row code{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--green2);white-space:nowrap;}
+.r-row span{color:var(--charcoal);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.r-hint{font-size:12.5px;color:var(--muted);margin-top:.5rem;}
+.r-no{display:grid;grid-template-columns:auto 1fr;gap:.9rem;background:var(--yellow3);border:1px solid rgba(179,143,0,.5);border-radius:16px;padding:1rem 1.15rem;animation:rin .5s cubic-bezier(.2,.8,.2,1) both;}
+.r-no svg{color:#8a6d00;margin-top:2px;}
+.r-no p{font-size:14.5px;line-height:1.6;color:var(--charcoal);}
+.r-no .tries{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem;}
+.r-no .tries button{font-size:12px;font-weight:700;background:#fff;border:1px solid rgba(179,143,0,.4);border-radius:999px;padding:4px 11px;color:var(--charcoal);}
+.r-skel{display:grid;gap:.6rem;padding:1.1rem;border-radius:16px;border:1px solid var(--border);background:#fff;}
+.r-skel i{display:block;height:12px;border-radius:6px;background:linear-gradient(90deg,#eee7df 25%,#f8f3ec 50%,#eee7df 75%);background-size:200% 100%;animation:shim 1.2s linear infinite;}
+.r-skel i:nth-child(1){width:34%}.r-skel i:nth-child(2){width:96%}.r-skel i:nth-child(3){width:82%}
+@keyframes shim{to{background-position:-200% 0}}
+@keyframes rin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.d-foot{border-top:1px solid var(--border);background:rgba(253,250,246,.8);padding:.75rem 1.35rem;font-size:12px;color:var(--muted);}
+.d-foot summary{cursor:pointer;font-weight:800;color:var(--charcoal);list-style:none;display:flex;align-items:center;gap:8px;}
+.d-foot summary::-webkit-details-marker{display:none;}
+.d-foot summary::before{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s;}
+.d-foot[open] summary::before{transform:rotate(45deg);}
+.d-foot p{margin-top:.55rem;line-height:1.65;}
+@media(max-width:560px){.d-body{padding:1.1rem 1rem .9rem}.r-card{grid-template-columns:1fr}.r-badge{flex-direction:row;gap:.6rem;justify-content:flex-start;padding:.5rem .8rem}.r-badge span{margin:0}.demo .go span{display:none}.d-key{display:none}.r-text{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.d-dot,.r-skel i,.r-card,.r-more,.r-no{animation:none!important}}
+
 /* ===== REDESIGN: layered layout ===== */
 section{padding:3.5rem 0;}
 .hero{padding:6.5rem 0 2.2rem;}
 .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:2.5rem;align-items:center;}
 .hero h1{font-size:clamp(32px,4.2vw,50px);}
 .hero p.lede{font-size:15.5px;margin-bottom:1.5rem;line-height:1.75;}
-.hero-demo .demo{margin-top:0;box-shadow:var(--shadow-md);}
-.demo-h{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:.15rem;}
-.demo-sub{font-size:13.5px;color:var(--muted);margin-bottom:.8rem;}
 .btn-dark.sm,.btn-soft.sm{padding:9px 18px;font-size:12.5px;cursor:pointer;font-family:inherit;}
 button.btn-soft,button.btn-dark{font-family:inherit;}
 .stats{margin-top:2rem;}
@@ -376,22 +438,33 @@ body.dlg-open{overflow:hidden;}
         </div>
       </div>
       <div class="hero-demo">
-<div class="demo" id="demo" hidden>
-        <h2 class="demo-h">Try it live</h2><p class="demo-sub">Ask about any K&ndash;5 Texas standard: reading, math, science, social studies and more.</p>
-        <form id="demo-form" autocomplete="off">
-          <label for="demo-q" class="skip" style="position:absolute;left:-999px">Ask about a K&ndash;5 Texas math standard</label>
-          <input type="text" id="demo-q" maxlength="300" placeholder="e.g. fifth grade rounding decimals" required>
-          <button class="go" type="submit">Ask</button>
+<div class="demo" id="demo" hidden><div class="demo-in">
+        <div class="d-bar"><span class="d-live"><span class="d-dot" aria-hidden="true"></span>Live &middot; Standards tutor</span><span class="d-meta">2,259 standards &middot; 10 subjects &middot; K&ndash;5</span></div>
+        <div class="d-body">
+        <h2 class="demo-h">Ask a standard. Get the source.</h2>
+        <p class="demo-sub">Type it the way you would say it: &ldquo;5th grade rounding decimals,&rdquo; &ldquo;gr k counting,&rdquo; or a code like &ldquo;TEKS 3.6B.&rdquo;</p>
+        <form id="demo-form" autocomplete="off" role="search">
+          <label for="demo-q" class="skip" style="position:absolute;left:-999px">Ask about a K&ndash;5 Texas standard</label>
+          <div class="d-field">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="text" id="demo-q" maxlength="300" placeholder="Grade, subject, topic or TEKS code" required>
+            <kbd class="d-key" aria-hidden="true">/</kbd>
+            <button class="go" type="submit"><span>Ask</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
         </form>
-        <div class="ex" id="demo-ex" aria-label="Example questions">
-          <button type="button">fifth grade rounding decimals</button>
+        <div class="d-ex-l" id="d-ex-l">Try one</div>
+        <div class="ex" id="demo-ex" role="group" aria-labelledby="d-ex-l">
+          <button type="button">5th grade rounding decimals</button>
+          <button type="button">TEKS 3.6B</button>
+          <button type="button">gr k counting</button>
           <button type="button">third grade science energy</button>
           <button type="button">Alamo and the Texas Revolution</button>
-          <button type="button">kindergarten rhyming words</button>
           <button type="button">Explain photosynthesis for fifth graders</button>
         </div>
         <div class="out" id="demo-out" role="status" aria-live="polite"></div>
-        <p class="fine">Source: Texas Essential Knowledge and Skills, K&ndash;5, revised June 2024 (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, nothing you type is stored.</p>
+        </div>
+        <details class="d-foot"><summary>How this answer is made</summary><p>Keyword retrieval over the Texas Essential Knowledge and Skills, K&ndash;5, revised June 2024 (Texas Education Agency, published for information only). The answer quotes the standard and cites it; no AI-generated text. When the standards do not cover a question, it says so. Nothing you type is stored.</p></details>
+      </div>
       </div>
       </div>
     </div>
@@ -815,25 +888,73 @@ body.dlg-open{overflow:hidden;}
   var box=document.getElementById('demo'); if(!box||!window.fetch) return;
   box.hidden=false;
   var form=document.getElementById('demo-form'),q=document.getElementById('demo-q'),out=document.getElementById('demo-out'),btn=form.querySelector('.go');
+  var NS='http://www.w3.org/2000/svg';
   function el(tag,cls,text){var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
+  function icon(d,size){var s=document.createElementNS(NS,'svg');s.setAttribute('width',size||16);s.setAttribute('height',size||16);s.setAttribute('viewBox','0 0 24 24');s.setAttribute('fill','none');s.setAttribute('stroke','currentColor');s.setAttribute('stroke-width','2.2');s.setAttribute('stroke-linecap','round');s.setAttribute('stroke-linejoin','round');s.setAttribute('aria-hidden','true');var p=document.createElementNS(NS,'path');p.setAttribute('d',d);s.appendChild(p);return s;}
+  var SUBJ={MATH:'Mathematics',ELAR:'Reading & Language Arts',SCI:'Science',SS:'Social Studies',HEALTH:'Health',PE:'Physical Education',ART:'Art',MUSIC:'Music',THEATRE:'Theatre',TECH:'Technology'};
+  function gradeLabel(g){return g==='K'?'Kindergarten':g?'Grade '+g:'';}
+  function understood(u){
+    if(!u) return null; var chips=[];
+    if(u.grade) chips.push(el('span','u-chip',gradeLabel(u.grade)));
+    if(u.subject) chips.push(el('span','u-chip',SUBJ[u.subject]||u.subject));
+    if(u.code) chips.push(el('span','u-chip','Standard '+u.code));
+    (u.corrected||[]).forEach(function(c){var ch=el('span','u-chip fix');var s=el('s',null,c[0]);ch.appendChild(document.createTextNode('Using '));ch.appendChild(el('b',null,c[1]));ch.appendChild(document.createTextNode(' for '));ch.appendChild(s);chips.push(ch);});
+    if(!chips.length) return null;
+    var row=el('div','u-row'); row.appendChild(el('span','u-l','Understood')); chips.forEach(function(c){row.appendChild(c);}); return row;
+  }
+  function statement(d){
+    var a=d.answer||''; var i=a.indexOf('): '); var t=i>-1?a.slice(i+3):a; t=t.split('\n')[0];
+    t=t.replace(/^the student is expected to\s+/i,''); return t.charAt(0).toUpperCase()+t.slice(1);
+  }
+  function copyBtn(text){
+    var b=el('button','r-copy'); b.type='button'; b.appendChild(icon('M9 9h10v10H9zM5 15V5h10',14)); var l=el('span',null,'Copy citation'); b.appendChild(l);
+    b.addEventListener('click',function(){
+      var done=function(){l.textContent='Copied'; setTimeout(function(){l.textContent='Copy citation';},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){});}
+    });
+    return b;
+  }
+  function declined(d){
+    var c=el('div','r-no'); c.appendChild(icon('M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z',22));
+    var w=el('div'); w.appendChild(el('p',null,d.answer||'I could not find that in the standards.'));
+    var t=el('div','tries'); ['5th grade rounding decimals','third grade science energy','kindergarten rhyming words'].forEach(function(x){var b=el('button',null,x);b.type='button';b.addEventListener('click',function(){q.value=x;ask(x);});t.appendChild(b);});
+    w.appendChild(t); c.appendChild(w); return c;
+  }
   function show(d){
     out.textContent='';
-    if(d.error){out.appendChild(el('div','no',d.error));return;}
-    out.appendChild(el('div',d.answered?'ans':'no',d.answer));
-    if(d.answered&&d.matches&&d.matches.length){
-      var ul=el('ul'); d.matches.forEach(function(m){ul.appendChild(el('li',null,m.teks_code+' \u2014 '+m.citation+' ('+(m.subject?m.subject+', ':'')+m.strand+')'));});
-      out.appendChild(el('p',null,'Closest standards:')); out.appendChild(ul);
+    if(d.error){var e=el('div','r-no'); e.appendChild(icon('M12 9v4M12 17h.01',22)); e.appendChild(el('p',null,d.error)); out.appendChild(e); return;}
+    var u=understood(d.understood); if(u) out.appendChild(u);
+    if(!d.answered){out.appendChild(declined(d));return;}
+    var m=d.matches&&d.matches[0]; var card=el('div','r-card');
+    var badge=el('div','r-badge'); var parts=m?m.teks_code.split(' '):['',''];
+    badge.appendChild(el('b',null,parts.slice(1).join(' ')||parts[0])); badge.appendChild(el('span',null,parts.length>1?parts[0]:'TEKS')); card.appendChild(badge);
+    var main=el('div','r-main');
+    main.appendChild(el('div','r-sub',m?((gradeLabel(m.grade)+' · '+(m.subject||'')).replace(/^ · /,'')):'Standard'));
+    main.appendChild(el('p','r-text',statement(d)));
+    var cite=el('div','r-cite'); var c=m?m.citation:(d.citations&&d.citations[0])||''; cite.appendChild(el('code',null,c)); if(c) cite.appendChild(copyBtn(m?m.teks_code+' ('+c+')':c)); main.appendChild(cite);
+    card.appendChild(main); out.appendChild(card);
+    if(d.matches&&d.matches.length>1){
+      var more=el('div','r-more'); more.appendChild(el('h3',null,'Also relevant'));
+      var multi=d.understood&&d.understood.code&&!d.understood.subject;
+      if(multi){more.firstChild.textContent='Same code in other subjects';}
+      d.matches.slice(1).forEach(function(x){var r=el('div','r-row'); r.appendChild(el('code',null,x.teks_code)); r.appendChild(el('span',null,(multi&&x.subject?x.subject+': ':'')+x.text)); more.appendChild(r);});
+      if(multi){more.appendChild(el('p','r-hint','Add a subject to narrow it, for example \u201cTEKS '+d.understood.code+' math\u201d.'));}
+      out.appendChild(more);
     }
   }
   function ask(text){
-    text=text.trim(); if(!text) return; btn.disabled=true; out.textContent='Looking\u2026';
+    text=text.trim(); if(!text) return; btn.disabled=true;
+    out.textContent=''; var sk=el('div','r-skel'); sk.appendChild(el('i')); sk.appendChild(el('i')); sk.appendChild(el('i')); out.appendChild(sk);
     fetch('/api/ask?q='+encodeURIComponent(text)).then(function(r){return r.json();}).then(show)
-      .catch(function(){out.textContent='The live demo is unavailable right now. Please try again later.';})
+      .catch(function(){out.textContent='';var e=el('div','r-no'); e.appendChild(icon('M12 9v4M12 17h.01',22)); e.appendChild(el('p',null,'The live demo is unavailable right now. Please try again later.')); out.appendChild(e);})
       .then(function(){btn.disabled=false;});
   }
   form.addEventListener('submit',function(e){e.preventDefault();ask(q.value);});
   document.getElementById('demo-ex').addEventListener('click',function(e){
     if(e.target.tagName==='BUTTON'){q.value=e.target.textContent;ask(q.value);}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/'&&!/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement||{}).tagName||'')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();q.focus();q.select();}
   });
 })();
 </script>
