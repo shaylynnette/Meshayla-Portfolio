@@ -25,9 +25,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
 <style>
 
 :root {
@@ -409,6 +409,8 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
 /* mobile: inline grid column counts must still collapse on phones */
 @media(max-width:720px){.contact-cards{grid-template-columns:1fr !important;}.skills-grid{grid-template-columns:1fr !important;}}
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="332a992e-4499-4650-96b2-0a3848fadcd6" data-domains="meshayla.com,www.meshayla.com"></script>
+<script defer src="/assets/js/track.js"></script>
 </head>
 <body>
 <!-- NAV -->
@@ -422,7 +424,7 @@ footer{background:#0F0E0C;padding:2rem 3.5rem;display:flex;align-items:center;ju
     <li><a href="/ai/">AI</a></li>
     <li><a href="/resume">Resume</a></li>
     <li><a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="/contact" class="nav-cta">Let’s Connect</a></li>
+    <li><a href="https://calendly.com/meshayla-kempadvisory/30min" target="_blank" rel="noopener" class="nav-cta" data-track="book-call-nav">Book a call</a></li>
   </ul>
 </nav>
 

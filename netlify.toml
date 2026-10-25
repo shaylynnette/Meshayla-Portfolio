@@ -1,5 +1,7 @@
 [build]
   publish = "."
+  # Adds content hashes (?v=...) to local CSS/JS references so they can be cached for a year.
+  command = "node scripts/fingerprint.mjs"
 
 [functions]
   directory = "netlify/functions"
@@ -15,15 +17,24 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
+# CSS and JS are referenced with a content hash (?v=...) added at build time by
+# scripts/fingerprint.mjs, so a changed file always gets a new URL.
 [[headers]]
   for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/assets/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Fonts never change in place: a new font file gets a new file name.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
 
 # Basic security headers on every page
 [[headers]]

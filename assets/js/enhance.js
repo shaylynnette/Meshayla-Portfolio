@@ -49,6 +49,41 @@
     });
   }
 
+  /* 2b. Headline reveal: words slide up out of a mask. Hero plays on load, section titles when scrolled to.
+     Skipped for reduced motion; the heading keeps one accessible name and is never hidden without JS. */
+  if (!reduce) {
+    var heads = $$('.hero-h1, .s-h2, .hs-h');
+    var hio = hasIO ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('go'); hio.unobserve(e.target); } });
+    }, { threshold: 0.6 }) : null;
+    heads.forEach(function (h) {
+      if (h.querySelector('a, button, img, svg')) return;
+      var tmp = document.createElement('div');
+      tmp.innerHTML = h.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+      var label = tmp.textContent.replace(/\s+/g, ' ').trim(), n = 0;
+      (function split(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (c) {
+          if (c.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            c.textContent.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+              var w = document.createElement('span'), i = document.createElement('span');
+              w.className = 'w'; i.textContent = part; i.style.setProperty('--i', n++);
+              w.appendChild(i); frag.appendChild(w);
+            });
+            node.replaceChild(frag, c);
+          } else if (c.nodeType === 1 && c.tagName !== 'BR') split(c);
+        });
+      })(h);
+      h.setAttribute('aria-label', label);
+      Array.prototype.slice.call(h.children).forEach(function (c) { c.setAttribute('aria-hidden', 'true'); });
+      h.classList.add('kin');
+      if (h.classList.contains('hero-h1') || !hio) requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.add('go'); }); });
+      else hio.observe(h);
+    });
+  }
+
   /* 3. Scroll-spy: highlight the nav link for the section in view (hash links only) */
   var spyLinks = $$('nav .nav-links a[href^="#"]').filter(function (a) { return a.getAttribute('href').length > 1; });
   if (hasIO && spyLinks.length) {
@@ -68,7 +103,7 @@
   }
 
   /* 4. Count-up stats: [data-count] keeps its final value in the HTML */
-  function fmt(n, el) { return (el.dataset.prefix || '') + Math.round(n) + (el.dataset.suffix || ''); }
+  function fmt(n, el) { return (el.dataset.prefix || '') + Math.round(n).toLocaleString('en-US') + (el.dataset.suffix || ''); }
   var counters = $$('[data-count]');
   if (counters.length) {
     if (!hasIO || reduce) {
@@ -90,6 +125,72 @@
       counters.forEach(function (el) { el.textContent = fmt(0, el); cio.observe(el); });
     }
   }
+
+  /* 4c. Mobile booking dock: the header links collapse on small screens, so keep one booking
+     button reachable once the visitor scrolls past the hero. Hidden while the page's own
+     booking buttons are on screen so it never doubles up. */
+  var bookLink = document.querySelector('a.nav-cta[href*="calendly.com"]');
+  if (bookLink) {
+    var dock = document.createElement('a');
+    dock.className = 'cta-dock';
+    dock.href = bookLink.href;
+    dock.target = '_blank';
+    dock.rel = 'noopener';
+    dock.setAttribute('data-track', 'book-call-dock');
+    dock.textContent = 'Book a 30-minute call';
+    document.body.appendChild(dock);
+    var visible = new Set();
+    function syncDock() {
+      var y = window.scrollY || document.documentElement.scrollTop;
+      dock.classList.toggle('show', y > 600 && visible.size === 0);
+    }
+    if (hasIO) {
+      var dio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); });
+        syncDock();
+      });
+      $$('a[data-track^="book-call"]:not(.cta-dock):not(.nav-cta)').forEach(function (a) { dio.observe(a); });
+    }
+    window.addEventListener('scroll', syncDock, { passive: true });
+    syncDock();
+  }
+
+  /* 4c2. Recommendations rail: arrow buttons scroll one card-width, counter shows what is in view */
+  var rail = document.querySelector('.tm-quotes');
+  if (rail) {
+    var prevB = document.querySelector('.tm-prev'), nextB = document.querySelector('.tm-next'), cnt = document.querySelector('.tm-count');
+    var cardsEl = $$('.tm-q', rail);
+    var step = function () { var c = cardsEl[0]; return c ? c.getBoundingClientRect().width + 18 : 340; };
+    var syncRail = function () {
+      var max = rail.scrollWidth - rail.clientWidth - 4;
+      prevB.disabled = rail.scrollLeft <= 4;
+      nextB.disabled = rail.scrollLeft >= max;
+      var rr = rail.getBoundingClientRect(), first = 0, last = 0;
+      cardsEl.forEach(function (c, i) {
+        var r = c.getBoundingClientRect();
+        if (r.left >= rr.left - 8 && r.right <= rr.right + 8) { if (!first) first = i + 1; last = i + 1; }
+      });
+      if (first && cnt) cnt.textContent = (first === last ? first : first + '\u2013' + last) + ' of ' + cardsEl.length;
+    };
+    prevB.addEventListener('click', function () { rail.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    nextB.addEventListener('click', function () { rail.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    rail.addEventListener('scroll', function () { requestAnimationFrame(syncRail); }, { passive: true });
+    window.addEventListener('resize', syncRail);
+    syncRail();
+  }
+
+  /* 4d. Pull-quote links open the full recommendations and jump to that person */
+  $$('a[data-rec]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var d = document.querySelector('details.tm-all');
+      var tab = document.querySelector('.lap-t[data-go="' + a.getAttribute('data-rec') + '"]');
+      if (!d) return;
+      e.preventDefault();
+      d.open = true;
+      d.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      if (tab) setTimeout(function () { tab.click(); }, reduce ? 0 : 350);
+    });
+  });
 
   /* 5. Build filter: buttons toggle cards by data-status */
   var fwrap = document.querySelector('[data-filters]');
