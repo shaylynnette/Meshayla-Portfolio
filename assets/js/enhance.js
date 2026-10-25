@@ -49,6 +49,41 @@
     });
   }
 
+  /* 2b. Headline reveal: words slide up out of a mask. Hero plays on load, section titles when scrolled to.
+     Skipped for reduced motion; the heading keeps one accessible name and is never hidden without JS. */
+  if (!reduce) {
+    var heads = $$('.hero-h1, .s-h2, .hs-h');
+    var hio = hasIO ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('go'); hio.unobserve(e.target); } });
+    }, { threshold: 0.6 }) : null;
+    heads.forEach(function (h) {
+      if (h.querySelector('a, button, img, svg')) return;
+      var tmp = document.createElement('div');
+      tmp.innerHTML = h.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+      var label = tmp.textContent.replace(/\s+/g, ' ').trim(), n = 0;
+      (function split(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (c) {
+          if (c.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            c.textContent.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+              var w = document.createElement('span'), i = document.createElement('span');
+              w.className = 'w'; i.textContent = part; i.style.setProperty('--i', n++);
+              w.appendChild(i); frag.appendChild(w);
+            });
+            node.replaceChild(frag, c);
+          } else if (c.nodeType === 1 && c.tagName !== 'BR') split(c);
+        });
+      })(h);
+      h.setAttribute('aria-label', label);
+      Array.prototype.slice.call(h.children).forEach(function (c) { c.setAttribute('aria-hidden', 'true'); });
+      h.classList.add('kin');
+      if (h.classList.contains('hero-h1') || !hio) requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.add('go'); }); });
+      else hio.observe(h);
+    });
+  }
+
   /* 3. Scroll-spy: highlight the nav link for the section in view (hash links only) */
   var spyLinks = $$('nav .nav-links a[href^="#"]').filter(function (a) { return a.getAttribute('href').length > 1; });
   if (hasIO && spyLinks.length) {
@@ -132,6 +167,30 @@
     }
     window.addEventListener('scroll', syncDock, { passive: true });
     syncDock();
+  }
+
+  /* 4c2. Recommendations rail: arrow buttons scroll one card-width, counter shows what is in view */
+  var rail = document.querySelector('.tm-quotes');
+  if (rail) {
+    var prevB = document.querySelector('.tm-prev'), nextB = document.querySelector('.tm-next'), cnt = document.querySelector('.tm-count');
+    var cardsEl = $$('.tm-q', rail);
+    var step = function () { var c = cardsEl[0]; return c ? c.getBoundingClientRect().width + 18 : 340; };
+    var syncRail = function () {
+      var max = rail.scrollWidth - rail.clientWidth - 4;
+      prevB.disabled = rail.scrollLeft <= 4;
+      nextB.disabled = rail.scrollLeft >= max;
+      var rr = rail.getBoundingClientRect(), first = 0, last = 0;
+      cardsEl.forEach(function (c, i) {
+        var r = c.getBoundingClientRect();
+        if (r.left >= rr.left - 8 && r.right <= rr.right + 8) { if (!first) first = i + 1; last = i + 1; }
+      });
+      if (first && cnt) cnt.textContent = (first === last ? first : first + '\u2013' + last) + ' of ' + cardsEl.length;
+    };
+    prevB.addEventListener('click', function () { rail.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    nextB.addEventListener('click', function () { rail.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    rail.addEventListener('scroll', function () { requestAnimationFrame(syncRail); }, { passive: true });
+    window.addEventListener('resize', syncRail);
+    syncRail();
   }
 
   /* 4d. Pull-quote links open the full recommendations and jump to that person */
