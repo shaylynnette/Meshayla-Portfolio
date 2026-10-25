@@ -126,20 +126,6 @@
     }
   }
 
-  /* 4b. Conversion tracking hooks. Any element with [data-track="name"] reports a click to whichever
-     analytics provider is present on the page; with none installed this does nothing. */
-  function track(name) {
-    try {
-      if (window.umami && typeof window.umami.track === 'function') window.umami.track(name);
-      else if (typeof window.plausible === 'function') window.plausible(name);
-      else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: name });
-    } catch (err) { /* analytics must never break navigation */ }
-  }
-  document.addEventListener('click', function (e) {
-    var t = e.target.closest && e.target.closest('[data-track]');
-    if (t) track(t.getAttribute('data-track'));
-  });
-
   /* 4c. Mobile booking dock: the header links collapse on small screens, so keep one booking
      button reachable once the visitor scrolls past the hero. Hidden while the page's own
      booking buttons are on screen so it never doubles up. */
