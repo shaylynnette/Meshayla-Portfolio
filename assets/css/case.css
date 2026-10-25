@@ -58,3 +58,6 @@
 .cs-cta .plink{background:var(--green2);color:var(--ink);}
 .cs-cta .plink:hover{background:var(--green);}
 .cs-cta .doc-btn{color:var(--ink);}
+
+.cs-quote{margin:1.2rem 0;padding:.9rem 1.2rem;border-left:4px solid var(--green2);background:var(--green3);border-radius:0 14px 14px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2vw,20px);line-height:1.6;color:var(--ink);max-width:760px;}
+.cs-quote cite{display:block;margin-top:.4rem;font:600 12.5px/1.4 Nunito,sans-serif;font-style:normal;color:var(--muted);}
