@@ -23,7 +23,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
 <style>
 :root{
   --pink:#F7C5D8;--pink2:#EE9BB8;--pink3:#FDF0F5;
@@ -357,7 +359,7 @@ body.dlg-open{overflow:hidden;}
     <li><a href="/ai/" aria-current="page">AI</a></li>
     <li><a href="/resume">Resume</a></li>
     <li><a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="#connect" class="nav-cta">Let&rsquo;s Connect</a></li>
+    <li><a href="https://calendly.com/meshayla-kempadvisory/30min" target="_blank" rel="noopener" class="nav-cta" data-track="book-call-nav">Book a call</a></li>
   </ul>
 </nav>
 
@@ -372,7 +374,7 @@ body.dlg-open{overflow:hidden;}
         <p class="lede">I design and ship AI systems end to end: standards-grounded retrieval, evaluation harnesses, guardrails and the change management that gets them adopted. Ten years leading enterprise learning and enablement for utilities, government and education.</p>
         <div class="btns">
           <a class="btn-dark" href="#work">See selected work</a>
-          <a class="btn-soft" href="/assets/Meshayla-Kemp-Resume.pdf" download>Download r&eacute;sum&eacute;</a>
+          <a class="btn-soft" href="/assets/Meshayla-Kemp-Resume.pdf" download data-track="resume-download">Download r&eacute;sum&eacute;</a>
         </div>
       </div>
       <div class="hero-demo">
@@ -602,7 +604,7 @@ body.dlg-open{overflow:hidden;}
       </li>
     </ol>
         </details>
-        <div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="/assets/Meshayla-Kemp-Resume.pdf" download>Download r&eacute;sum&eacute; (PDF)</a><a class="btn-soft" href="/resume.html">Read the full r&eacute;sum&eacute;</a></div>
+        <div class="btns" style="margin-top:1.2rem"><a class="btn-dark" href="/assets/Meshayla-Kemp-Resume.pdf" download data-track="resume-download">Download r&eacute;sum&eacute; (PDF)</a><a class="btn-soft" href="/resume.html">Read the full r&eacute;sum&eacute;</a></div>
       </div>
     </div>
   </div>

@@ -68,7 +68,7 @@
   }
 
   /* 4. Count-up stats: [data-count] keeps its final value in the HTML */
-  function fmt(n, el) { return (el.dataset.prefix || '') + Math.round(n) + (el.dataset.suffix || ''); }
+  function fmt(n, el) { return (el.dataset.prefix || '') + Math.round(n).toLocaleString('en-US') + (el.dataset.suffix || ''); }
   var counters = $$('[data-count]');
   if (counters.length) {
     if (!hasIO || reduce) {
@@ -90,6 +90,62 @@
       counters.forEach(function (el) { el.textContent = fmt(0, el); cio.observe(el); });
     }
   }
+
+  /* 4b. Conversion tracking hooks. Any element with [data-track="name"] reports a click to whichever
+     analytics provider is present on the page; with none installed this does nothing. */
+  function track(name) {
+    try {
+      if (window.umami && typeof window.umami.track === 'function') window.umami.track(name);
+      else if (typeof window.plausible === 'function') window.plausible(name);
+      else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: name });
+    } catch (err) { /* analytics must never break navigation */ }
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-track]');
+    if (t) track(t.getAttribute('data-track'));
+  });
+
+  /* 4c. Mobile booking dock: the header links collapse on small screens, so keep one booking
+     button reachable once the visitor scrolls past the hero. Hidden while the page's own
+     booking buttons are on screen so it never doubles up. */
+  var bookLink = document.querySelector('a.nav-cta[href*="calendly.com"]');
+  if (bookLink) {
+    var dock = document.createElement('a');
+    dock.className = 'cta-dock';
+    dock.href = bookLink.href;
+    dock.target = '_blank';
+    dock.rel = 'noopener';
+    dock.setAttribute('data-track', 'book-call-dock');
+    dock.textContent = 'Book a 30-minute call';
+    document.body.appendChild(dock);
+    var visible = new Set();
+    function syncDock() {
+      var y = window.scrollY || document.documentElement.scrollTop;
+      dock.classList.toggle('show', y > 600 && visible.size === 0);
+    }
+    if (hasIO) {
+      var dio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); });
+        syncDock();
+      });
+      $$('a[data-track^="book-call"]:not(.cta-dock):not(.nav-cta)').forEach(function (a) { dio.observe(a); });
+    }
+    window.addEventListener('scroll', syncDock, { passive: true });
+    syncDock();
+  }
+
+  /* 4d. Pull-quote links open the full recommendations and jump to that person */
+  $$('a[data-rec]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var d = document.querySelector('details.tm-all');
+      var tab = document.querySelector('.lap-t[data-go="' + a.getAttribute('data-rec') + '"]');
+      if (!d) return;
+      e.preventDefault();
+      d.open = true;
+      d.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      if (tab) setTimeout(function () { tab.click(); }, reduce ? 0 : 350);
+    });
+  });
 
   /* 5. Build filter: buttons toggle cards by data-status */
   var fwrap = document.querySelector('[data-filters]');
