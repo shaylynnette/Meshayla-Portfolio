@@ -207,3 +207,7 @@ nav.scrolled{box-shadow:0 6px 24px rgba(28,26,23,.10);background:rgba(253,250,24
 .kin .w>span{display:inline-block;transform:translateY(110%);transition:transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 55ms);}
 .kin.go .w>span{transform:none;}
 @media(prefers-reduced-motion:reduce){.kin .w>span{transform:none;transition:none;}}
+
+/* "Read my story" link: dark text with a green underline so it is readable on the pale green band */
+.he-story>a{display:inline-block;margin-top:.4rem;color:var(--ink,#1C1A17);font-weight:800;text-decoration:underline;text-decoration-color:var(--green2,#8DC96E);text-decoration-thickness:3px;text-underline-offset:5px;}
+.he-story>a:hover,.he-story>a:focus-visible{text-decoration-color:var(--ink,#1C1A17);}
