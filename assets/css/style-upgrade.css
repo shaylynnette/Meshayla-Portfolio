@@ -90,3 +90,22 @@
 .hero-links a{font-weight:800;font-size:14px;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--green2);padding-bottom:1px;}
 .hero-links a:hover,.hero-links a:focus-visible{background:var(--green3);}
 .hero-links span{font-size:11px;margin-right:.2rem;}
+
+/* My businesses: spinning-ring logos with a site preview */
+.home-biz{padding:4.5rem 3.5rem;background:var(--cream);}
+.biz-in{max-width:1100px;margin:0 auto;}
+.biz-in .s-pill{margin-bottom:.2rem;}
+.biz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:1.6rem;}
+.biz-c{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.55rem;background:#fff;border:1px solid var(--border);border-radius:22px;padding:1.6rem 1.1rem 1.2rem;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;}
+.biz-c:hover,.biz-c:focus-visible{transform:translateY(-5px);box-shadow:0 16px 36px rgba(28,26,23,.14);}
+.biz-c .cl-ring{width:92px;height:92px;margin-bottom:.5rem;}
+.biz-c .cl-ring>img{object-fit:contain;padding:9px;background:#fff;border-radius:50%;}
+.biz-c b{font-family:'Playfair Display',serif;font-size:19px;line-height:1.2;color:var(--ink);}
+.biz-t{font-size:13px;line-height:1.55;color:var(--charcoal);}
+.biz-shot{display:block;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-top:.3rem;background:var(--cream);}
+.biz-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;}
+.biz-tile{display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--yellow3));}
+.biz-tile img{width:auto;height:74%;object-fit:contain;}
+.biz-c u{text-decoration:none;font-size:12.5px;font-weight:800;color:#2F5A17;margin-top:auto;padding-top:.5rem;}
+@media(max-width:1020px){.biz-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.home-biz{padding:3rem 1.2rem;}.biz-grid{grid-template-columns:1fr;}}
