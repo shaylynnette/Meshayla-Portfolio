@@ -1,0 +1,134 @@
+/* Review form, owner approval page and the approved-reviews carousel.
+   Uses the site tokens (Playfair Display + Nunito, pink/green/yellow). Mobile-first, 44px tap targets. */
+
+/* ---------- Form page ---------- */
+.rv-hero{background:linear-gradient(145deg,var(--pink3,#FDF0F5),var(--yellow3,#FFF9D6) 55%,var(--green3,#E8F5D9));padding:3.2rem 0 4.5rem;border-bottom:1px solid var(--border);}
+.rv-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);line-height:1.1;color:var(--ink);margin:.3rem 0 .8rem;letter-spacing:-.4px;}
+.rv-hero h1 em{font-style:italic;color:#2F5A17;}
+.rv-hero p{max-width:600px;font-size:clamp(16px,1.8vw,19px);line-height:1.65;color:var(--charcoal);}
+.rv-wrap{max-width:760px;margin:-3rem auto 3rem;padding:0 1.2rem;position:relative;}
+.rv-card{background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:0 16px 44px rgba(28,26,23,.10);padding:clamp(1.3rem,3.4vw,2.4rem);}
+.rv-step{padding:1.5rem 0;border-top:1px solid var(--border);}
+.rv-step:first-of-type{border-top:0;padding-top:.2rem;}
+.rv-q{display:flex;align-items:baseline;gap:.8rem;font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,25px);color:var(--ink);margin:0 0 .3rem;padding:0;}
+.rv-q i{font-style:normal;font-weight:300;font-size:1.5em;line-height:1;color:var(--green2,#8DC96E);min-width:1.1em;}
+.rv-help{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 1rem 0;}
+fieldset.rv-step{border-left:0;border-right:0;border-bottom:0;margin:0;min-width:0;}
+.rv-opt{font-size:12px;font-weight:700;color:var(--muted);margin-left:.4rem;font-family:'Nunito',sans-serif;}
+
+/* Stars: radios in reverse order so hover and selection fill left to right */
+.rv-stars{display:inline-flex;flex-direction:row-reverse;justify-content:flex-end;gap:.1rem;}
+.rv-stars input{position:absolute;opacity:0;width:1px;height:1px;}
+.rv-stars label{cursor:pointer;font-size:clamp(38px,9vw,48px);line-height:1;padding:.1rem .15rem;color:#E4DED6;transition:color .15s,transform .15s;user-select:none;-webkit-tap-highlight-color:transparent;}
+.rv-stars label:hover,.rv-stars label:hover~label,.rv-stars input:checked~label{color:var(--yellow2,#FFCD00);}
+.rv-stars label:hover{transform:scale(1.12);}
+.rv-stars input:focus-visible+label{outline:3px solid var(--green2,#8DC96E);outline-offset:2px;border-radius:8px;}
+.rv-stars-note{display:inline-block;margin-left:.8rem;font-weight:800;font-size:14px;color:#2F5A17;min-height:1.4em;vertical-align:middle;}
+
+/* Choice chips */
+.rv-chips{display:flex;flex-wrap:wrap;gap:.55rem;}
+.rv-chips input{position:absolute;opacity:0;width:1px;height:1px;}
+.rv-chips label{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1.05rem;border:1.5px solid var(--border);border-radius:999px;background:#fff;font:700 14px 'Nunito',sans-serif;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,color .15s;}
+.rv-chips label:hover{border-color:var(--green2,#8DC96E);}
+.rv-chips input:checked+label{background:var(--ink);color:var(--cream,#FDFAF6);border-color:var(--ink);}
+.rv-chips input:focus-visible+label{outline:3px solid var(--green2,#8DC96E);outline-offset:2px;}
+
+/* Text fields */
+.rv-field{display:block;margin:0 0 1rem;}
+.rv-field>span{display:block;font-weight:800;font-size:14px;color:var(--ink);margin-bottom:.35rem;}
+.rv-in,.rv-ta{width:100%;font:16px/1.6 'Nunito',sans-serif;color:var(--ink);background:var(--cream,#FDFAF6);border:1.5px solid rgba(28,26,23,.16);border-radius:14px;padding:.8rem 1rem;transition:border-color .15s,box-shadow .15s,background .15s;}
+.rv-ta{min-height:170px;resize:vertical;}
+.rv-in:focus,.rv-ta:focus{outline:0;border-color:var(--green2,#8DC96E);box-shadow:0 0 0 4px rgba(141,201,110,.25);background:#fff;}
+.rv-meta{display:flex;justify-content:space-between;gap:1rem;font-size:12.5px;color:var(--muted);margin-top:.35rem;}
+.rv-count.ok{color:#2F5A17;font-weight:800;}
+.rv-nudge{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem;}
+.rv-nudge button{font:600 12.5px 'Nunito',sans-serif;color:var(--charcoal);background:var(--yellow3,#FFF9D6);border:1px solid var(--yellow2,#FFCD00);border-radius:999px;padding:.4rem .8rem;cursor:pointer;min-height:36px;}
+.rv-nudge button:hover,.rv-nudge button:focus-visible{background:var(--yellow,#FFE066);}
+.rv-two{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+/* Photo drop zone */
+.rv-drop{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;border:2px dashed rgba(28,26,23,.22);border-radius:18px;background:var(--pink3,#FDF0F5);padding:1.5rem 1rem;cursor:pointer;transition:border-color .15s,background .15s;}
+.rv-drop:hover,.rv-drop.over,.rv-drop:focus-visible{border-color:var(--green2,#8DC96E);background:var(--green3,#E8F5D9);outline:0;}
+.rv-drop b{font-size:15px;color:var(--ink);}
+.rv-drop span{font-size:13px;color:var(--muted);}
+.rv-drop .rv-ico{font-size:28px;line-height:1;}
+.rv-drop[aria-disabled="true"]{opacity:.5;cursor:not-allowed;}
+.rv-thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.7rem;margin-top:.9rem;list-style:none;padding:0;}
+.rv-thumb{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;background:#eee;border:1px solid var(--border);}
+.rv-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.rv-thumb button{position:absolute;top:6px;right:6px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(28,26,23,.82);color:#fff;font:700 16px/1 'Nunito',sans-serif;cursor:pointer;}
+.rv-thumb button:hover,.rv-thumb button:focus-visible{background:#B3261E;}
+
+/* Consent, errors, submit */
+.rv-consent{display:flex;gap:.8rem;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--charcoal);background:var(--green3,#E8F5D9);border:1px solid var(--green,#B8D99C);border-radius:14px;padding:1rem;}
+.rv-consent input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:#2F5A17;}
+.rv-privacy{font-size:12.5px;line-height:1.7;color:var(--muted);margin:.9rem 0 0;}
+.rv-err{display:block;color:#B3261E;font-size:13px;font-weight:700;margin-top:.35rem;}
+.rv-in[aria-invalid="true"],.rv-ta[aria-invalid="true"]{border-color:#B3261E;}
+.rv-summary{background:#FDECEA;border:1px solid #F2B8B5;color:#8C1D18;border-radius:14px;padding:.9rem 1.1rem;font-weight:700;font-size:14px;margin-bottom:1.2rem;}
+.rv-summary[hidden]{display:none;}
+.rv-submit{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:0 2rem;border:0;border-radius:999px;background:var(--ink);color:var(--cream,#FDFAF6);font:800 16px 'Nunito',sans-serif;cursor:pointer;transition:background .2s,transform .2s;margin-top:1.2rem;width:100%;}
+.rv-submit:hover:not(:disabled),.rv-submit:focus-visible{background:var(--charcoal,#3B3530);transform:translateY(-2px);}
+.rv-submit:disabled{opacity:.65;cursor:progress;}
+.rv-spin{width:16px;height:16px;border-radius:50%;border:3px solid rgba(255,255,255,.35);border-top-color:#fff;animation:cl-spin .8s linear infinite;display:none;}
+.rv-submit[data-busy] .rv-spin{display:inline-block;}
+.rv-hp{position:absolute !important;left:-9999px;width:1px;height:1px;overflow:hidden;}
+
+/* Thank-you state */
+.rv-done{text-align:center;padding:2rem 0 .6rem;}
+.rv-done[hidden]{display:none;}
+.rv-done .cl-ring{margin:0 auto 1.6rem;}
+.rv-done .cl-ring>b{font-size:38px;color:#2F5A17;}
+.rv-done h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.6vw,36px);color:var(--ink);margin-bottom:.6rem;}
+.rv-done p{max-width:520px;margin:0 auto 1.4rem;font-size:15.5px;line-height:1.75;color:var(--charcoal);}
+
+@media(max-width:600px){.rv-two{grid-template-columns:1fr;}.rv-stars-note{display:block;margin:.3rem 0 0;}}
+@media(prefers-reduced-motion:reduce){.rv-stars label,.rv-submit,.rv-in,.rv-ta{transition:none;}.rv-spin{animation:none;}}
+
+/* ---------- Approved reviews carousel (home page) ---------- */
+.home-rv{padding:3.5rem 3.5rem;background:var(--green3,#E8F5D9);}
+.home-rv[hidden]{display:none;}
+.rv-cards .pv-card{flex-basis:min(380px,86%);}
+.rv-stars-out{color:var(--yellow2,#FFCD00);font-size:20px;letter-spacing:2px;line-height:1;}
+.rv-stars-out span{color:#E4DED6;}
+.rv-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:var(--ink);margin:0;white-space:pre-line;}
+.rv-pics{display:flex;gap:.5rem;}
+.rv-pics button{padding:0;border:0;background:none;cursor:pointer;border-radius:12px;overflow:hidden;width:76px;height:76px;flex:none;border:1px solid var(--border);}
+.rv-pics button:hover,.rv-pics button:focus-visible{outline:3px solid var(--green2,#8DC96E);outline-offset:2px;}
+.rv-pics img{width:100%;height:100%;object-fit:cover;display:block;}
+.rv-cta{text-align:center;margin-top:1.2rem;}
+.rv-lb{border:0;border-radius:18px;padding:0;max-width:min(92vw,900px);background:#111;}
+.rv-lb::backdrop{background:rgba(28,26,23,.8);}
+.rv-lb img{display:block;max-width:100%;max-height:84vh;margin:0 auto;}
+.rv-lb button{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font:700 20px 'Nunito',sans-serif;cursor:pointer;}
+@media(max-width:960px){.home-rv{padding:2.5rem 1.2rem;}}
+
+/* ---------- Owner approval page ---------- */
+.ad-wrap{max-width:920px;margin:0 auto;padding:0 1.2rem 3rem;}
+.ad-login{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.6rem;max-width:520px;box-shadow:0 10px 30px rgba(28,26,23,.08);}
+.ad-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1.2rem;}
+.ad-tabs button{font:800 14px 'Nunito',sans-serif;min-height:44px;padding:0 1.2rem;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--ink);cursor:pointer;}
+.ad-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--cream,#FDFAF6);border-color:var(--ink);}
+.ad-item{background:#fff;border:1px solid var(--border);border-radius:18px;padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:0 6px 18px rgba(28,26,23,.05);}
+.ad-top{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between;margin-bottom:.6rem;}
+.ad-top b{font-size:16px;color:var(--ink);}
+.ad-top small{color:var(--muted);font-size:12.5px;}
+.ad-text{white-space:pre-line;font-size:15px;line-height:1.7;color:var(--charcoal);margin:.4rem 0 .8rem;}
+.ad-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem;}
+.ad-actions button{font:800 14px 'Nunito',sans-serif;min-height:44px;padding:0 1.3rem;border-radius:999px;border:0;cursor:pointer;}
+.ad-yes{background:var(--green2,#8DC96E);color:var(--ink);}
+.ad-no{background:var(--yellow3,#FFF9D6);color:var(--ink);border:1px solid var(--yellow2,#FFCD00) !important;}
+.ad-del{background:#fff;color:#B3261E;border:1px solid #F2B8B5 !important;}
+.ad-empty{text-align:center;padding:2.4rem 1rem;color:var(--muted);background:#fff;border:1px dashed var(--border);border-radius:18px;}
+.ad-msg{font-weight:700;font-size:14px;min-height:1.4em;margin:.5rem 0;}
+
+/* ---------- Owner reply ---------- */
+.rv-reply{background:var(--pink3,#FDF0F5);border-left:4px solid var(--pink2,#EE9BB8);border-radius:0 14px 14px 0;padding:.8rem 1rem;margin-top:.2rem;}
+.rv-reply b{display:block;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#7a2f4d;margin-bottom:.25rem;}
+.rv-reply p{font-size:14px;line-height:1.65;color:var(--charcoal);margin:0;white-space:pre-line;}
+.ad-reply{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);}
+.ad-reply label{display:block;font-weight:800;font-size:13px;margin-bottom:.35rem;}
+.ad-reply textarea{width:100%;min-height:84px;font:15px/1.6 'Nunito',sans-serif;border:1.5px solid rgba(28,26,23,.16);border-radius:12px;padding:.7rem .9rem;background:var(--cream,#FDFAF6);}
+.ad-reply textarea:focus{outline:0;border-color:var(--green2,#8DC96E);box-shadow:0 0 0 4px rgba(141,201,110,.25);}
+.ad-reply .ad-save{margin-top:.5rem;font:800 14px 'Nunito',sans-serif;min-height:44px;padding:0 1.3rem;border-radius:999px;border:0;background:var(--ink);color:var(--cream,#FDFAF6);cursor:pointer;}
+.ad-reply small{color:var(--muted);margin-left:.6rem;}
