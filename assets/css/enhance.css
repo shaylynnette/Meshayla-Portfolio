@@ -211,3 +211,13 @@ nav.scrolled{box-shadow:0 6px 24px rgba(28,26,23,.10);background:rgba(253,250,24
 /* "Read my story" link: dark text with a green underline so it is readable on the pale green band */
 .he-story>a{display:inline-block;margin-top:.4rem;color:var(--ink,#1C1A17);font-weight:800;text-decoration:underline;text-decoration-color:var(--green2,#8DC96E);text-decoration-thickness:3px;text-underline-offset:5px;}
 .he-story>a:hover,.he-story>a:focus-visible{text-decoration-color:var(--ink,#1C1A17);}
+
+/* ---- Editorial accents (2026-10-31): numbered project labels, kicker line, bolder hero word ---- */
+.hc-grid{counter-reset:hcn;}
+.hc{counter-increment:hcn;}
+.hc-tag{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;}
+.hc-tag::before{content:"P." counter(hcn,decimal-leading-zero) "  \00B7  ";color:var(--muted,#7A6E68);font-weight:500;}
+.hw-kicker{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted,#7A6E68);margin:-.2rem 0 1.4rem;}
+.hero-h1 em{display:inline-block;font-style:normal;font-weight:900;font-size:1.12em;letter-spacing:-.02em;line-height:1;text-shadow:3px 3px 0 var(--pink,#F7C5D8);}
+@media(max-width:600px){.hero-h1 em{font-size:1.04em;text-shadow:2px 2px 0 var(--pink,#F7C5D8);}}
+@media(prefers-reduced-motion:no-preference){.hero-h1 em{transition:transform .25s ease;}.hero-h1 em:hover{transform:rotate(-1.5deg);}}
