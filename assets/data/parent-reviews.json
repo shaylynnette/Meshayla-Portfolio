@@ -1,0 +1,14 @@
+{
+  "_how_to_add": "Add one object per approved review to the list below. A review only appears on the site when consent is true and it has a video file AND a captions (.vtt) file. Keep names shortened (first name and last initial).",
+  "_example": {
+    "name": "Maria T.",
+    "role": "Parent of a 3rd grader",
+    "academy": "GC Academy",
+    "quote": "One short sentence from the video, in the parent's own words.",
+    "video": "/assets/video/parents/maria-t.mp4",
+    "poster": "/assets/video/parents/maria-t.webp",
+    "captions": "/assets/video/parents/maria-t.vtt",
+    "consent": true
+  },
+  "reviews": []
+}

@@ -1,0 +1,8 @@
+{
+  "name": "meshayla-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "meshayla.com: static site plus a few Netlify functions",
+  "scripts": { "test": "node --test netlify/tests/*.test.ts" },
+  "dependencies": { "@netlify/blobs": "^8.1.0", "@netlify/functions": "^2.8.2" }
+}

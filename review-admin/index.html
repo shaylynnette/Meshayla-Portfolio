@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Approvals | Meshayla Kemp</title>
+<meta name="description" content="Owner-only review approvals.">
+<link rel="canonical" href="https://www.meshayla.com/review-admin/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F7C5D8">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/case.css">
+<link rel="stylesheet" href="/assets/css/work.css">
+<link rel="stylesheet" href="/assets/css/clients.css">
+<link rel="stylesheet" href="/assets/css/reviews.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="332a992e-4499-4650-96b2-0a3848fadcd6" data-domains="meshayla.com,www.meshayla.com"></script>
+<script defer src="/assets/js/track.js"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Meshayla <span>Kemp</span></div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'\u2715':'\u2630';">&#9776;</button>
+  <ul class="nav-links" onclick="if(event.target.tagName==='A'){var n=this.closest('nav');n.classList.remove('open');var b=n.querySelector('.nav-toggle');b.textContent='\u2630';b.setAttribute('aria-expanded','false');}">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/k12/">K-12</a></li>
+    <li><a href="/ai/">AI</a></li>
+    <li><a href="/resume">Resume</a></li>
+    <li><a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://calendly.com/meshayla-kempadvisory/30min" target="_blank" rel="noopener" class="nav-cta" data-track="book-call-nav">Book a call</a></li>
+  </ul>
+</nav>
+<main class="cs-main">
+<header class="rv-hero"><div class="cs-wrap"><div class="s-pill">Owner only</div><h1>Review <em>approvals</em></h1><p>Read what came in, approve it, and add a public reply.</p></div></header>
+<div class="rv-wrap"><div class="ad-wrap" style="padding:0">
+<div id="ad-login" class="ad-login"><h2 class="rv-q" style="margin-bottom:.6rem">Sign in</h2><p class="rv-help">Enter your review token. It is kept only in this browser tab.</p><p id="ad-loginmsg" class="rv-err"></p>
+<label class="rv-field"><span>Token</span><input id="ad-token" class="rv-in" type="password" autocomplete="current-password"></label><button id="ad-go" class="rv-submit" type="button" style="margin-top:.4rem"><span class="rv-label">Open approvals</span></button></div>
+<div id="ad-panel" hidden><div id="ad-tabs" class="ad-tabs" role="group" aria-label="Filter by status"><button type="button" data-s="pending" aria-pressed="true">Waiting</button><button type="button" data-s="approved" aria-pressed="false">Published</button><button type="button" data-s="rejected" aria-pressed="false">Rejected</button><button type="button" id="ad-out" aria-pressed="false">Sign out</button></div>
+<p id="ad-msg" class="ad-msg" role="status" aria-live="polite"></p><div id="ad-list"></div></div>
+</div></div></main>
+<script src="/assets/js/review-admin.js" defer></script>
+<footer><div class="f-brand">Meshayla Kemp</div><div class="f-copy">&copy; 2026 Kemp Advisory Group, LLC &bull; All rights reserved</div><div class="f-links"><a href="/">Home</a><a href="/projects">Projects</a><a href="/ai/">AI</a><a href="/resume">Resume</a><a href="/review">Leave a review</a>
+    <a href="https://kempadvisory.com" target="_blank" rel="noopener">KAG</a><a href="https://www.linkedin.com/in/meshaylakemp/" target="_blank" rel="noopener">LinkedIn</a></div></footer>
+</body>
+</html>
