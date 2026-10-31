@@ -58,7 +58,7 @@
       img.onload = function () {
         var s = Math.min(1, MAX_EDGE / Math.max(img.width, img.height)), w = Math.round(img.width * s), h = Math.round(img.height * s);
         var c = document.createElement('canvas'); c.width = w; c.height = h;
-        c.getContext('2d').drawImage(img, 0, 0, w, h); URL.revokeObjectURL(url);
+        var cx = c.getContext('2d'); cx.fillStyle = '#fff'; cx.fillRect(0, 0, w, h); cx.drawImage(img, 0, 0, w, h); URL.revokeObjectURL(url);
         var q = 0.84;
         (function attempt() {
           c.toBlob(function (b) {

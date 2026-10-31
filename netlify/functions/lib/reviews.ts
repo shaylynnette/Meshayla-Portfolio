@@ -90,7 +90,8 @@ export function validate(input: SubmitInput, nowMs: number): Validated | Invalid
   // A missing or nonsense timestamp counts as a bot too (Number("") is 0, which would look "opened long ago").
   const opened = clean(input.openedAt, 20) === "" ? NaN : Number(input.openedAt);
   const age = nowMs - opened;
-  if (!Number.isFinite(opened) || opened <= 0 || age < LIMITS.minFillSeconds * 1000) return { ok: false, errors: {}, bot: true };
+  // A visitor whose device clock runs ahead of ours gives a negative age; that is a real person, not a bot.
+  if (!Number.isFinite(opened) || opened <= 0 || (age >= 0 && age < LIMITS.minFillSeconds * 1000)) return { ok: false, errors: {}, bot: true };
 
   const errors: FieldErrors = {};
   const name = shortenName(input.name);
@@ -155,6 +156,7 @@ export async function allowSubmission(store: Store, who: string, nowMs: number):
   const cur = (await store.getJSON<{ c: number }>(key))?.c ?? 0;
   if (cur >= LIMITS.perHour) return false;
   await store.setJSON(key, { c: cur + 1 });
+  await store.remove(`rl/${who}/${Math.floor(nowMs / 3_600_000) - 1}`); // keep nothing about a visitor longer than needed
   return true;
 }
 

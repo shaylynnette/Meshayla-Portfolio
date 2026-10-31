@@ -27,7 +27,7 @@
         pics.forEach(function (u, i) {
           var b = el('button'); b.type = 'button'; b.setAttribute('aria-label', 'Open photo ' + (i + 1) + ' from ' + r.name);
           var im = el('img'); im.src = u; im.alt = ''; im.loading = 'lazy'; b.appendChild(im);
-          b.addEventListener('click', function () { lbImg.src = u; lbImg.alt = 'Photo shared by ' + r.name; lb.showModal(); });
+          b.addEventListener('click', function () { lbImg.src = u; lbImg.alt = 'Photo shared by ' + r.name; if (lb.showModal) lb.showModal(); else window.open(u, '_blank', 'noopener'); });
           row.appendChild(b);
         });
         body.appendChild(row);

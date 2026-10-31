@@ -135,3 +135,16 @@ test("reply rejects over-long text and unknown or malformed ids", async () => {
   assert.equal(await setReply(rs, "doesnotexist1", "hi", NOW), null);
   assert.equal(await setReply(rs, "../bad", "hi", NOW), null);
 });
+
+test("a visitor whose clock runs ahead is not mistaken for a bot", () => {
+  const r = validate(base({ openedAt: String(NOW + 3_600_000) }), NOW);
+  assert.ok(r.ok);
+});
+
+test("rate-limit counters from earlier hours are cleaned up", async () => {
+  const st = memoryStore();
+  await allowSubmission(st, "abc", NOW - 3_600_000);
+  await allowSubmission(st, "abc", NOW);
+  const keys = await st.keys("rl/abc/");
+  assert.equal(keys.length, 1);
+});

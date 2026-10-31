@@ -46,7 +46,7 @@
         var pics = el('div', 'rv-pics');
         r.photos.forEach(function (p) {
           var img = el('img'); img.alt = 'Photo from ' + r.name; var b = el('button'); b.type = 'button'; b.appendChild(img); pics.appendChild(b);
-          api('/api/review-admin?photo=' + r.id + '/' + p.n).then(function (x) { return x.blob(); }).then(function (bl) { var u = URL.createObjectURL(bl); blobUrls.push(u); img.src = u; });
+          api('/api/review-admin?photo=' + r.id + '/' + p.n).then(function (x) { return x.blob(); }).then(function (bl) { var u = URL.createObjectURL(bl); blobUrls.push(u); img.src = u; }).catch(function () { img.alt = 'Photo could not be loaded'; });
         });
         card.appendChild(pics);
       }

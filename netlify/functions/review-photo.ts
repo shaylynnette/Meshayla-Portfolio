@@ -11,7 +11,7 @@ export default async (_req: Request, context: Context): Promise<Response> => {
   const photo = await blobStore("review-photos").getBytes(`${id}/${n}`);
   if (!photo) return new Response("Not found", { status: 404 });
   return new Response(photo.data, {
-    headers: { "content-type": photo.type, "cache-control": "public, max-age=3600", "x-content-type-options": "nosniff", "content-security-policy": "default-src 'none'; sandbox" },
+    headers: { "content-type": photo.type, "cache-control": "public, max-age=60", "x-content-type-options": "nosniff", "content-security-policy": "default-src 'none'; sandbox" },
   });
 };
 

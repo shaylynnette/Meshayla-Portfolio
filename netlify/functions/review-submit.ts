@@ -8,7 +8,7 @@ const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
 
 async function hash(s: string) {
-  const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${Netlify.env.get("REVIEW_SALT") ?? "meshayla"}:${s}`));
+  const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${Netlify.env.get("REVIEW_SALT") ?? Netlify.env.get("REVIEW_ADMIN_TOKEN") ?? "meshayla"}:${s}`));
   return Array.from(new Uint8Array(d).slice(0, 12), (x) => x.toString(16).padStart(2, "0")).join("");
 }
 

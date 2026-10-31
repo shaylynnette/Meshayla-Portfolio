@@ -13,7 +13,10 @@ const json = (body: unknown, status = 200) =>
 export default async (req: Request): Promise<Response> => {
   const secret = Netlify.env.get("REVIEW_ADMIN_TOKEN");
   if (!secret) return json({ error: "Moderation is not set up yet. Add REVIEW_ADMIN_TOKEN in Netlify." }, 503);
-  if (!isOwner(req.headers.get("authorization"), secret)) return json({ error: "Not authorized." }, 401);
+  if (!isOwner(req.headers.get("authorization"), secret)) {
+    await new Promise((r) => setTimeout(r, 600)); // slows down password guessing
+    return json({ error: "Not authorized." }, 401);
+  }
 
   const reviews = blobStore("reviews"), photos = blobStore("review-photos");
   const url = new URL(req.url);
