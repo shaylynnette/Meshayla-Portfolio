@@ -1,0 +1,57 @@
+/* Style upgrade: bolder, more energetic moments (rotating badge, floating name card, ticker ribbon,
+   numbered steps, checklist card, scroll reveals) in the site's own palette and fonts.
+   Everything here is additive and respects prefers-reduced-motion. */
+
+/* Hero video: soft glow, rotating badge, floating name card */
+.hv-wrap{position:relative;isolation:isolate;}
+.hv-wrap::before{content:'';position:absolute;inset:-8% -6%;z-index:-1;border-radius:40px;background:radial-gradient(60% 60% at 30% 25%,rgba(247,197,216,.75),transparent 70%),radial-gradient(55% 55% at 80% 80%,rgba(184,217,156,.7),transparent 70%),radial-gradient(40% 40% at 85% 15%,rgba(255,224,102,.55),transparent 70%);filter:blur(18px);}
+.hv-badge{position:absolute;top:-34px;right:-26px;width:104px;height:104px;z-index:2;pointer-events:none;}
+.hv-badge svg{width:100%;height:100%;animation:cl-spin 22s linear infinite;}
+.hv-badge text{font:800 9.6px 'Nunito',sans-serif;letter-spacing:.2em;fill:var(--ink);text-transform:uppercase;}
+.hv-badge b{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:25px;line-height:1;color:var(--ink);}
+.hv-badge b small{font:800 9px 'Nunito',sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:2px;}
+.hv-badge::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--pink2),var(--yellow2),var(--green2),var(--pink2));box-shadow:0 8px 22px rgba(28,26,23,.18);z-index:-1;}
+.hv-badge svg{position:relative;}
+.hv-card{position:absolute;left:-18px;top:-18px;z-index:2;display:flex;align-items:center;gap:.65rem;background:var(--ink);color:var(--cream);padding:.55rem .95rem .55rem .6rem;border-radius:14px;box-shadow:0 10px 26px rgba(28,26,23,.28);pointer-events:none;}
+.hv-card i{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink2),var(--yellow2));color:var(--ink);font:700 14px 'Playfair Display',serif;font-style:normal;}
+.hv-card b{display:block;font-size:13px;line-height:1.2;}
+.hv-card span{display:block;font-size:11px;opacity:.75;line-height:1.3;}
+
+/* Ticker ribbon */
+.ribbon{position:relative;z-index:1;margin:-1.2rem 0 -1.2rem;padding:1.4rem 0;overflow:hidden;}
+.ribbon-in{display:flex;width:max-content;background:linear-gradient(95deg,var(--pink2),var(--yellow2) 50%,var(--green2));transform:rotate(-1.2deg);box-shadow:0 8px 24px rgba(28,26,23,.14);padding:.8rem 0;animation:rb-scroll 38s linear infinite;}
+.ribbon:hover .ribbon-in,.ribbon:focus-within .ribbon-in{animation-play-state:paused;}
+.ribbon ul{display:flex;align-items:center;list-style:none;flex:none;}
+.ribbon li{display:flex;align-items:center;white-space:nowrap;font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(17px,2vw,22px);color:var(--ink);}
+.ribbon li::after{content:'\25C6';font-style:normal;font-size:.6em;margin:0 1.6rem;color:rgba(28,26,23,.55);}
+@keyframes rb-scroll{to{transform:translateX(-50%) rotate(-1.2deg);}}
+@media(prefers-reduced-motion:reduce){.ribbon-in{animation:none;width:auto;flex-wrap:wrap;justify-content:center;}.ribbon ul[aria-hidden="true"]{display:none;}.hv-badge svg{animation:none;}}
+
+/* How we work together */
+.home-how{padding:4.5rem 3.5rem;background:linear-gradient(180deg,var(--cream),var(--pink3));}
+.how-in{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:start;}
+.how-h{font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,40px);line-height:1.15;margin:.4rem 0 1.6rem;color:var(--ink);}
+.how-h em{color:#2F5A17;}
+.how-steps{list-style:none;display:grid;gap:1.1rem;counter-reset:s;}
+.how-steps li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.how-steps .how-n{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font:700 20px 'Playfair Display',serif;line-height:1;color:var(--ink);box-shadow:0 6px 14px rgba(28,26,23,.12);}
+.how-steps li:nth-child(1) .how-n{background:var(--pink);}
+.how-steps li:nth-child(2) .how-n{background:var(--yellow);}
+.how-steps li:nth-child(3) .how-n{background:var(--green);}
+.how-steps li:nth-child(4) .how-n{background:var(--ink);color:var(--cream);}
+.how-steps b{display:block;font-size:16px;color:var(--ink);line-height:1.3;}
+.how-steps span{display:block;font-size:14px;line-height:1.65;color:var(--charcoal);}
+.how-card{position:relative;background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.6rem 1.5rem 1.5rem;box-shadow:var(--shadow-md);overflow:hidden;}
+.how-card::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--pink2),var(--yellow2),var(--green2));}
+.how-card h3{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 .3rem;color:var(--ink);}
+.how-card>p{font-size:13px;color:var(--muted);margin:0 0 1rem;}
+.how-card ul{list-style:none;display:grid;gap:.8rem;margin:0 0 1.3rem;}
+.how-card li{position:relative;padding-left:2rem;font-size:14px;line-height:1.55;color:var(--charcoal);}
+.how-card li::before{content:'\2713';position:absolute;left:0;top:.05em;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--green3);color:#2F5A17;font-weight:800;font-size:12px;border:1px solid var(--green);}
+.how-card .btn-dark,.how-card .btn-green{display:inline-block;text-align:center;}
+@media(max-width:860px){.home-how{padding:3rem 1.2rem;}.how-in{grid-template-columns:1fr;gap:1.8rem;}.hv-badge{right:-8px;top:-30px;width:88px;height:88px;}.hv-card{left:-6px;}}
+
+/* Scroll reveals (only when JS has marked the page, so content never stays hidden) */
+.js-rv .rv-up{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s);}
+.js-rv .rv-up.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.js-rv .rv-up{opacity:1;transform:none;transition:none;}}
