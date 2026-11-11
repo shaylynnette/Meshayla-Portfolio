@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI work | Meshayla Kemp</title>
-<meta name="description" content="Meshayla Kemp designs, directs and ships AI-enabled learning systems: standards-grounded retrieval, a Claude tutor prototype with guardrails, teacher tools and the training around them. Each build is labeled by status.">
+<meta name="description" content="Meshayla Kemp designs, directs and ships AI-enabled learning systems: standards-grounded retrieval, a tutor loop designed for Claude, with guardrails, teacher tools and the training around them. Each build is labeled by status.">
 <link rel="canonical" href="https://www.meshayla.com/ai/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI work | Meshayla Kemp">
-<meta property="og:description" content="Standards-grounded retrieval, a Claude tutor prototype with guardrails, teacher tools and enablement, each labeled by status.">
+<meta property="og:description" content="Standards-grounded retrieval, a tutor loop designed for Claude with guardrails, teacher tools and enablement, each labeled by status.">
 <meta property="og:url" content="https://www.meshayla.com/ai/">
 <meta property="og:site_name" content="Meshayla Kemp">
 <meta property="og:image" content="https://www.meshayla.com/assets/img/og-card.png">
@@ -355,7 +355,7 @@ body.dlg-open{overflow:hidden;}
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/ai/" aria-current="page">AI work</a></li>
-    <li><a href="/k12/">K-12 products</a></li>
+    <li><a href="/k12/">K&ndash;12 products</a></li>
     <li><a href="/projects">Projects</a></li>
     <li><a href="/resume">Résumé</a></li>
     <li><a href="/about">About</a></li>
@@ -371,7 +371,7 @@ body.dlg-open{overflow:hidden;}
       <div class="hero-copy">
         <p class="roles">AI solution architect &nbsp;&bull;&nbsp; Developer and educator enablement &nbsp;&bull;&nbsp; Learning engineer</p>
         <h1>AI for learning, <em>built with evidence and guardrails</em></h1>
-        <p class="lede">I design, specify, direct and ship AI-enabled learning systems: standards-grounded retrieval, a Claude tutor with guardrails, and the teacher tools and training that get them adopted. Ten years leading enablement for schools, utilities, government and enterprise.</p>
+        <p class="lede">I design, specify, direct and ship AI-enabled learning systems: standards-grounded retrieval, a tutor loop designed for Claude, with guardrails, and the teacher tools and training that get them adopted. Ten years leading enablement for schools, utilities, government and enterprise.</p>
         <div class="btns">
           <a class="btn-dark" href="#demo">Try it live</a>
           <a class="btn-soft" href="#builds">See the builds</a>
@@ -393,7 +393,7 @@ body.dlg-open{overflow:hidden;}
           <button type="button">kindergarten rhyming words</button>
         </div>
         <div class="out" id="demo-out" role="status" aria-live="polite"></div>
-        <p class="fine">Source: Texas Essential Knowledge and Skills, K&ndash;5, revised June 2024 (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, nothing you type is stored.</p>
+        <p class="fine">Source: Texas Essential Knowledge and Skills, K&ndash;5, revised June 2024 (Texas Education Agency, published for information only). Keyword retrieval, no AI-generated text, the function does not log or store what you type.</p>
       </div>
       <noscript><p class="fine">The live demo needs JavaScript. The retrieval design is described below.</p></noscript>
       </div>
@@ -413,7 +413,7 @@ body.dlg-open{overflow:hidden;}
       <div><div class="s-pill">Skills at a glance</div><h2 class="s-h2" id="skills-h">What I work with, <em>grouped by the job</em></h2></div>
     </div>
     <div class="glance">
-      <div class="gl-c"><h3>Building with LLM APIs, tool use and agents</h3><div class="chips"><span class="chip">Claude (Anthropic SDK)</span><span class="chip">Tool-use loops</span><span class="chip">Cost caps and fallbacks</span><span class="chip">Output guards</span></div></div>
+      <div class="gl-c"><h3>Building with LLM APIs, tool use and agents</h3><div class="chips"><span class="chip">Anthropic SDK adapter (built, not yet run live)</span><span class="chip">Tool-use loops</span><span class="chip">Cost caps and fallbacks</span><span class="chip">Output guards</span></div></div>
       <div class="gl-c"><h3>RAG and standards-grounded retrieval</h3><div class="chips"><span class="chip">BM25 retrieval</span><span class="chip">Answer-or-decline rules</span><span class="chip">Citations to primary sources</span></div></div>
       <div class="gl-c"><h3>Evals, red-teaming and guardrails</h3><div class="chips"><span class="chip">Red-team attack taxonomy</span><span class="chip">Eval harnesses</span><span class="chip">Question-quality validators</span><span class="chip">Human review gates</span></div></div>
       <div class="gl-c"><h3>Developer and teacher education content</h3><div class="chips"><span class="chip">Labs and guides</span><span class="chip">Courses</span><span class="chip">Live training</span><span class="chip">Teacher tools</span></div></div>
@@ -435,47 +435,47 @@ body.dlg-open{overflow:hidden;}
 <details class="build" name="builds" open id="b-rag"><summary><span class="b-t">Standards-grounded TEKS tutor retrieval</span><span class="st st-live">Live</span></summary>
 <div class="b-body">
 <p class="b-what">Ask about a Texas K&ndash;5 standard in any of ten subjects and get the matching standard with its citation, or a clear &ldquo;not found.&rdquo; It uses BM25 keyword retrieval over 2,259 TEKS records and an answer-or-decline rule. It makes no model call and logs nothing you type.</p>
-<h4>What it demonstrates</h4>
+<h3>What it demonstrates</h3>
 <ul><li>Grounding every answer in a primary source I can cite.</li><li>Declining instead of guessing.</li><li>Shipping retrieval as a small serverless function with no stored data.</li></ul>
 <p class="b-note">Known limit: keyword matching can answer off-topic trivia that overlaps a standard&rsquo;s wording, such as a question about a state capital. The evaluation method and results are in the public repository.</p>
 <p class="b-links"><a class="btn-dark sm" href="#demo">Try it live</a><a class="btn-soft sm" href="https://github.com/shaylynnette/standards-grounded-rag-tutor" target="_blank" rel="noopener">Source and evaluation notes &#8599;</a></p>
 <p class="pending">Source is free to read and run. Commercial use needs a license (PolyForm Noncommercial).</p>
 </div></details>
 
-<details class="build" name="builds" id="b-tutor"><summary><span class="b-t">Claude-powered K&ndash;2 math tutor loop</span><span class="st st-proto">Prototype</span></summary>
+<details class="build" name="builds" id="b-tutor"><summary><span class="b-t">Grade 2 math tutor loop (Claude adapter built)</span><span class="st st-proto">Prototype</span></summary>
 <div class="b-body">
 <p class="b-what">A tutor loop in which the answer key never enters the model&rsquo;s context. Grading, hints and mastery run on the server, and the model works through four tools: get_question, submit_answer, get_hint and flag_for_teacher.</p>
-<h4>What it demonstrates</h4>
+<h3>What it demonstrates</h3>
 <ul>
 <li><b>Guardrails:</b> an output leak guard blocks the key whether it appears as digits, words, a letter or elimination language.</li>
 <li><b>Cost control:</b> per-student and daily cost caps, with a rule-based fallback when a cap is reached.</li>
 <li><b>Privacy:</b> pseudonymous ids, no free text stored, and RLS-protected pilot analytics.</li>
 <li><b>Red-teaming:</b> an attack taxonomy of 12 answer-extraction attacks and a 15-case harness.</li>
-<li><b>Teacher control:</b> teacher-controlled and not graded by default.</li>
+<li><b>Teacher control:</b> tutor work is not graded unless the teacher turns that on.</li>
 </ul>
-<p class="b-note">Status, plainly: the Anthropic SDK and Vertex AI adapters are built but not yet run against a live model. The harness results come from a mock model, so they test the guards and the loop, not a model&rsquo;s behavior.</p>
+<p class="b-note">Status: the Anthropic SDK and Vertex AI adapters are built but not yet run against a live model. The harness results come from a mock model, so they test the guards and the loop, not a model&rsquo;s behavior.</p>
 </div></details>
 
 <details class="build" name="builds" id="b-studio"><summary><span class="b-t">Kempbell Teacher Studio</span><span class="st st-proto">Prototype</span></summary>
 <div class="b-body">
 <p class="b-what">A rule-based teacher tool that runs in the browser and sends nothing to a server. It covers 2,259 TEKS standards, 1,246 of them with question banks.</p>
-<h4>What it demonstrates</h4>
-<ul><li>Privacy by architecture: the work happens on the teacher&rsquo;s device.</li><li>Google Drive, Docs and Sheets export (drive.file scope) and a Classroom share <span class="st st-pend">Built, pending partner verification</span> (Google).</li></ul>
+<h3>What it demonstrates</h3>
+<ul><li>Privacy by architecture: the work happens on the teacher&rsquo;s device.</li><li>Google Drive, Docs and Sheets export (drive.file scope only) and a Classroom share are built and not yet enabled. Docs export is in the Studio prototype and Sheets export is in the teacher-portal gradebook. Google verification has not been submitted.</li></ul>
 <p class="b-links"><a class="btn-soft sm" href="https://kempbellacademy.com/teacher-studio/" target="_blank" rel="noopener">Open the studio &#8599;</a></p>
 </div></details>
 
 <details class="build" name="builds" id="b-academy"><summary><span class="b-t">Kempbell Academy platform</span><span class="st st-pilot">Pilot-ready</span></summary>
 <div class="b-body">
 <p class="b-what">A K&ndash;5 learning platform with 472 lessons in 127 units, a learner app, a teacher portal and a gradebook.</p>
-<h4>What it demonstrates</h4>
+<h3>What it demonstrates</h3>
 <ul><li>22+ interactive lesson types and 8 arcade games.</li><li>Item banks with answer keys stripped from the public pools.</li><li>A 181-page set of generated curriculum documents covering 8,324 verified TEKS codes.</li></ul>
 <p class="b-links"><a class="btn-soft sm" href="https://kempbellacademy.com" target="_blank" rel="noopener">Visit Kempbell Academy &#8599;</a><a class="btn-soft sm" href="/k12/">K&ndash;12 products</a></p>
 </div></details>
 
 <details class="build" name="builds" id="b-gates"><summary><span class="b-t">Quality gates and lesson publisher</span><span class="st st-live">Live</span></summary>
 <div class="b-body">
-<p class="b-what">Five CI gates that fail the build, including automated axe-core accessibility scans and a question-quality validator. The validator checks for duplicates, &ldquo;none of the above,&rdquo; and longest-answer and answer-slot skew. About 400 automated tests cover the functions and learner code.</p>
-<h4>What it demonstrates</h4>
+<p class="b-what">Five CI gates that fail the build, including automated axe-core accessibility scans and a question-quality validator. The validator checks for duplicates, &ldquo;none of the above,&rdquo; and longest-answer and answer-slot skew. About 380 Netlify function tests plus 35 learner-side test files cover the code.</p>
+<h3>What it demonstrates</h3>
 <ul><li>Turning a reviewer&rsquo;s written rules into code, so a rule does not depend on someone remembering it.</li><li>Automated checks catch patterns; a person still reads every new set for meaning.</li></ul>
 </div></details>
 
@@ -484,7 +484,7 @@ body.dlg-open{overflow:hidden;}
 <p class="b-what">Privacy-by-design for a children&rsquo;s product, with policies drafted for attorney review.</p>
 <ul>
 <li>Sealed student names (WebCrypto, PBKDF2) created in the teacher&rsquo;s browser.</li>
-<li>SSO hardening for ClassLink and Clever: PKCE, a domain allow-list and no account takeover. <span class="st st-pend">Built, pending partner verification</span></li>
+<li>SSO hardening for ClassLink and Clever: PKCE, a domain allow-list and checks that block account takeover. <span class="st st-pend">Built, pending partner verification</span></li>
 <li>An HMAC-signed edge membership gate.</li>
 <li>A retention and deletion policy enforced in code.</li>
 <li>Stripe webhook idempotency, so a repeated event cannot double-apply.</li>
@@ -500,8 +500,8 @@ body.dlg-open{overflow:hidden;}
 
 <details class="build" name="builds" id="b-clients"><summary><span class="b-t">Client websites</span><span class="st st-live">Live</span></summary>
 <div class="b-body">
-<p class="b-what">Client-owned websites with brand kits, delivered for a hair-care brand and for a vocalist and child care specialist.</p>
-<p class="b-links"><a class="btn-soft sm" href="/case-studies/avelle-website/">Avelle case study</a><a class="btn-soft sm" href="/case-studies/priscilla-lyle-website/">Priscilla Lyle case study</a></p>
+<p class="b-what">A client-owned website with a brand kit for a vocalist and child care specialist (<span class="st st-live">Live</span>), and a product site for a hair-care brand (<span class="st st-dev">In development</span>, launching January 2027).</p>
+<p class="b-links"><a class="btn-soft sm" href="/case-studies/priscilla-lyle-website/">Priscilla Lyle case study</a><a class="btn-soft sm" href="/case-studies/avelle-website/">Avelle case study</a></p>
 </div></details>
 
 <details class="build" name="builds" id="b-prior"><summary><span class="b-t">AI in prior client work</span><span class="st">Prior client work</span></summary>
@@ -597,25 +597,25 @@ body.dlg-open{overflow:hidden;}
           <ol class="tl">
       <li>
         <div class="when">Aug 2025 &ndash; present</div>
-        <h4>Principal Learning Architect</h4>
+        <h3>Principal Learning Architect</h3>
         <div class="org">Kairos Worldwide / Kemp Advisory Group</div>
         <p>Embed generative AI prompting structures into role-based job-task analyses, so engineering and system specifications become clear instructional objectives for an enterprise software rollout.</p>
       </li>
       <li>
         <div class="when">Jul 2025 &ndash; Apr 2026</div>
-        <h4>Curriculum Strategy Consultant</h4>
+        <h3>Curriculum Strategy Consultant</h3>
         <div class="org">Accelerate Education</div>
         <p>Used AI analysis to build standards crosswalks across six states, and led an economics and financial literacy initiative to state approval with 100% compliance.</p>
       </li>
       <li>
         <div class="when">Feb 2024 &ndash; Jul 2025</div>
-        <h4>Lead Instructional Designer</h4>
+        <h3>Lead Instructional Designer</h3>
         <div class="org">Hurix Digital</div>
         <p>Brought generative AI and large language models into standard content pipelines and deployed AI voiceover platforms.</p>
       </li>
       <li>
         <div class="when">Jul 2023 &ndash; Aug 2024</div>
-        <h4>Senior Lead Instructional Designer</h4>
+        <h3>Senior Lead Instructional Designer</h3>
         <div class="org">Six Red Marbles</div>
         <p>Designed a statewide educator certification program that was approved on first submission, and used scripting and AI text tools in curriculum audits.</p>
       </li>

@@ -1,5 +1,5 @@
 // GET /api/ask?q=fifth+grade+rounding+decimals
-// Standards-grounded tutor: retrieves from the Texas K-5 math TEKS (19 TAC Ch. 111, Subch. A) and cites,
+// Standards-grounded tutor: retrieves from the Texas K-5 TEKS across ten subjects and cites,
 // or declines. Keyword retrieval (BM25); no model call, no stored data, no logging of questions.
 import { Index, ask, type Standard } from "./lib/retrieve.ts";
 import standards from "./lib/standards.json" with { type: "json" };

@@ -10,7 +10,7 @@
   function safe(p) { return /^\/api\/review-photo\/[a-z0-9]+\/[1-3]$/.test(p); }
 
   var lb = document.createElement('dialog'); lb.className = 'rv-lb'; lb.setAttribute('aria-label', 'Photo');
-  var lbImg = document.createElement('img'), lbX = el('button', '', '×'); lbX.type = 'button'; lbX.setAttribute('aria-label', 'Close photo');
+  var lbImg = document.createElement('img'); lbImg.alt = ''; var lbX = el('button', '', '×'); lbX.type = 'button'; lbX.setAttribute('aria-label', 'Close photo');
   lbX.addEventListener('click', function () { lb.close(); }); lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
   lb.appendChild(lbImg); lb.appendChild(lbX); document.body.appendChild(lb);
 
