@@ -146,17 +146,17 @@ window.KAG_CATALOG = [
   {
     id: "kempbell-academy",
     thumb: "/assets/img/t/kempbell-academy.jpg",
-    cover: "Coming soon",
+    cover: "K–5 open now",
     title: "Kempbell Academy",
     type: "learning",
     audiences: ["educators"],
-    category: "Online learning · Coming soon",
-    price: "Coming soon",
-    priceValue: null,
-    status: "coming-soon",
-    summary: "An online learning academy for every elementary learner, built on the same academic and faith-inspired approach as GC Academy.",
-    tags: ["homeschool", "kids", "boys", "elementary", "kemp academy", "kempacademy", "membership"],
-    actions: []
+    category: "Online learning · Grades K–5",
+    price: "Free",
+    priceValue: 0,
+    status: "free",
+    summary: "An online learning academy for every elementary learner, with lessons in math, reading, writing, science and social studies, built on the same academic approach as GC Academy.",
+    tags: ["homeschool", "kids", "boys", "elementary", "kemp academy", "kempacademy", "membership", "free", "k-5"],
+    actions: [{ label: "Start learning free", url: "https://kempbellacademy.com/" }]
   },
 
   /* ---------------------------------------------------------------

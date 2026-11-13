@@ -62,7 +62,7 @@
       return '<div class="cover bookimg">' + label + '<img src="' + esc(item.thumb) + '" alt="Cover of ' + esc(item.title) + '" width="100" height="150" loading="lazy" decoding="async"></div>';
     }
     if (item.thumb) {
-      return '<div class="cover shot">' + label + '<img src="' + esc(item.thumb) + '" alt="" width="640" height="400" loading="lazy" decoding="async"></div>';
+      return '<div class="cover shot">' + label + '<img src="' + esc(item.thumb) + '" alt="Preview of ' + esc(item.title) + '" width="640" height="400" loading="lazy" decoding="async"></div>';
     }
     if (item.type === "case-study" && /%$/.test(item.metric || "")) {
       var pv = Math.min(100, parseFloat(item.metric)) || 0, C = 2 * Math.PI * 34;
